@@ -108,8 +108,11 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
-
+    -
+     type: git
+     repo:
+      github: git@github.com:unix2dos/dohttp.git
+     branch: gh-pages
 
 
 
