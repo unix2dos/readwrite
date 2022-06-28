@@ -238,9 +238,9 @@ darkmode: false
 # External url should start with http:// or https://
 menu:
   home: / || fas fa-plane
-  Life: /categories/life || fas fa-feather
-  Note: /categories/note || fas fa-horse-head
-  Study: /categories/study || fas fa-dragon
+  Life: /categories/life/ || fas fa-feather
+  Note: /categories/note/ || fas fa-horse-head
+  Study: /categories/study/ || fas fa-dragon
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
