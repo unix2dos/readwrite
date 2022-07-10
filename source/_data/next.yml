@@ -239,7 +239,7 @@ darkmode: false
 menu:
   home: / || fas fa-plane
   Life: /categories/life/ || fas fa-feather-alt
-  Book: /categories/book/ || fas fa-spider
+  Book: /categories/book/ || fas fa-brain
   Note: /categories/note/ || fas fa-horse-head
   Study: /categories/study/ || fas fa-dragon
   #about: /about/ || fa fa-user
