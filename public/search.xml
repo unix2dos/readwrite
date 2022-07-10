@@ -1,482 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>高数-函数</title>
-    <url>/post/4ec556ad.html</url>
-    <content><![CDATA[<h1 id="1-函数无穷小"><a href="#1-函数无穷小" class="headerlink" title="1. 函数无穷小"></a>1. 函数无穷小</h1><h3 id="1-1-无穷小量"><a href="#1-1-无穷小量" class="headerlink" title="1.1 无穷小量"></a>1.1 无穷小量</h3><ul>
-<li>可以是函数，可以是数列。函数【<strong>函数</strong>是趋于谁的无穷小量】</li>
-<li>无穷小不是一个具体的数。</li>
-<li>0是无穷小（无穷小不是0）。</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="1-2-无穷大量"><a href="#1-2-无穷大量" class="headerlink" title="1.2 无穷大量"></a>1.2 无穷大量</h3><ul>
-<li>无穷大不是一个具体的数，而是一个函数。</li>
-</ul>
-<h3 id="1-3-无穷小量的比较"><a href="#1-3-无穷小量的比较" class="headerlink" title="1.3 无穷小量的比较"></a>1.3 无穷小量的比较</h3><p>高阶，低阶，同阶，等价，K阶【用的少】</p>
-<h3 id="1-4-无穷小代换"><a href="#1-4-无穷小代换" class="headerlink" title="1.4 无穷小代换"></a>1.4 无穷小代换</h3><p><img src="/post/4ec556ad/1.jpg" alt="image-20220709170257660"></p>
-<p>【注】只有整个式子的乘除因子才能用等价无穷小替换，有加减时不能替换。</p>
-<h1 id="2-连续性和间断点"><a href="#2-连续性和间断点" class="headerlink" title="2. 连续性和间断点"></a>2. 连续性和间断点</h1><p>左边接近A，右边接近A。极限存在，等于该点的函数值</p>
-<h3 id="2-1-点连续（左右连续）"><a href="#2-1-点连续（左右连续）" class="headerlink" title="2.1 点连续（左右连续）"></a>2.1 点连续（左右连续）</h3><p>左连续：从左边接近于A，注意要是实心的。</p>
-<p>右连续：从右边接近于A，注意要是实心的。</p>
-<p>连续：左连续+右连续。左极限&#x3D;右极限&#x3D;函数值。</p>
-<h3 id="2-2-区间连续"><a href="#2-2-区间连续" class="headerlink" title="2.2 区间连续"></a>2.2 区间连续</h3><p>函数f(x)在开区间(a，b)内连续，是指在(a，b)内每一点都连续。</p>
-<h3 id="2-3-间断点"><a href="#2-3-间断点" class="headerlink" title="2.3 间断点"></a>2.3 间断点</h3><p>在X0处不连续。</p>
-<p><img src="/post/4ec556ad/2.jpg" alt="image-20220709173602948"></p>
-]]></content>
-      <categories>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>高数</tag>
-        <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>观察蚂蚁</title>
-    <url>/post/85a77a0f.html</url>
-    <content><![CDATA[<p>今天外出扔垃圾, 没带钥匙, 锁在外面了2个小时</p>
-<p>实在无聊, 坐在小区的凳子上观察蚂蚁, 突然想起来上一次观察蚂蚁还是四五岁的时候</p>
-<p>突然间, 一种感觉袭上心头</p>
-<p>我生命中像只活过了两天</p>
-<p>一天是记忆里观察蚂蚁的那天</p>
-<p>一天是观察蚂蚁的今天</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>狗叫</title>
-    <url>/post/e143ea8.html</url>
-    <content><![CDATA[<p>晚上躺在床上要睡觉</p>
-<p>听到了几声狗叫</p>
-<p>想起小时候的村子里</p>
-<p>晚上睡觉时, 狗叫声都是连绵不绝</p>
-<p>今天听到的狗叫和小时候听到的狗叫</p>
-<p>像极了同一条狗</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>南门北门</title>
-    <url>/post/a1439c59.html</url>
-    <content><![CDATA[<p>打印论文送给老师, 喊的顺丰同城, 快递小哥打电话,  我说你来大厦北门. 他说我之前来都是南门阿, 我说南门疫情封了, 现在只有北门开, 他说那好吧. </p>
-<p>这时我抬头看了一眼大厦的封条, 上面写着此门封闭, 请走南门.  我又急忙说不对, 就是在南门, 快递小哥电话那头直接乐了</p>
-<p>小哥不一会来了, 问我要取件码, 我说4100, 他输在了手机上后显示错误. 然后说要订单取件码, 我这时才反应过来, 说原来不是在取外卖, 以为是要手机尾号呢. 这时小哥噗呲又乐了</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>北斗七星</title>
-    <url>/post/590aaabb.html</url>
-    <content><![CDATA[<p>晚上和小白菜在小区散步</p>
-<p>抬头看了一眼天空, 竟然发现了几颗不清晰的星星</p>
-<p>我说小时候满天都是繁星, 你见过北斗七星吗? 像勺子一样</p>
-<p>小白菜说她见过</p>
-<p>然后小白菜问我, 你说天上会有人吗?</p>
-<p>我说天上肯定有人啊, 神州十二号刚发射不久</p>
-<p>三个宇航员目前还没有返程</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>吞噬</title>
-    <url>/post/ab1856ce.html</url>
-    <content><![CDATA[<p>几个月前的郑爽事件, 加上最近比较火的林生斌事件, 徽州宴的老板娘事件。明星, 公众人物, 乃至普通大众, 只要罪恶放到了阳光下, 就会被舆论彻底吞噬。</p>
-<p>每个人心里都住着一个张三 , 人心隐藏着整个世界的败坏。我们参与吞噬别人, 有一天可能也会被别人吞噬。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>一本好书</title>
-    <url>/post/370cef3a.html</url>
-    <content><![CDATA[<p>以前买书只看销量和书名, 买了好多标题党的书。读完不仅没有收获,  还浪费了时间和买书的钱。</p>
-<p>现在买之前都会去豆瓣查一下, 有的书会有好多个李鬼, 同一个名字,  却完全不是一个东西。有的书还有好多个李逵, 不同出版社的李逵, 有的粗壮黝黑, 有的温柔似水, 买对李逵也很重要。</p>
-<p>后来清理书的时候, 发现了一个可以卖书的平台。试了下有的书买的时候很贵, 卖的时候却一文不值, 有的书本来不贵，平台也会给个好价。</p>
-<p>一本能卖上好价格的书, 大概率也是一本好书。书就像房子一样, 在市场上真正有流通价值的才是好书。</p>
-<p>一本烂书,  只能卖给收破烂的。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>耳机</title>
-    <url>/post/aedb5a3c.html</url>
-    <content><![CDATA[<p>我坐在地铁上，看着自己的手机，打开并连上了耳机。</p>
-<p>到站后，望了一眼人群</p>
-<p>大部分人都在看着自己的手机</p>
-<p>有的还带着耳机</p>
-<p>很多人陪你一起走过好多站</p>
-<p>却没有彼此互相看一眼</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>太阳</title>
-    <url>/post/1df9e2ae.html</url>
-    <content><![CDATA[<p>如果每天早晨6点起床，我就看到东边的太阳</p>
-<p>有的时候我却12点起床，就只能看到南边的太阳</p>
-<p>东边的太阳，会感觉到一天很长且有意义</p>
-<p>南边的太阳，让我想不出那天，都做过了什么</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>养父母</title>
-    <url>/post/a367268.html</url>
-    <content><![CDATA[<p>活了快30岁，突然有一天，身边的人告诉你，养育你20多年的父母只是养父母。</p>
-<p>你的亲生父母，倾尽全力找了你20多年，骑坏了多个摩托，却未曾见过一面。</p>
-<p>脑海中想一想父母的脸，再看向亲生父母的脸。</p>
-<p>闭上眼，你会想起谁的脸。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>穿越</title>
-    <url>/post/9aa6cbaa.html</url>
-    <content><![CDATA[<p>卧室墙上的一个挂表，已经用了好多年。</p>
-<p>不仅没有变老，还走的越来越快，每个月都多走五分钟。</p>
-<p>相对论说当一个物体的速度超越了光速，它就可以穿越到过去。</p>
-<p>而我每次把钟表调对，也像穿越回了一次过去。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>雨伞</title>
-    <url>/post/5faceb89.html</url>
-    <content><![CDATA[<p>小白菜刚给我买的雨伞丢了，一共用了两天时间。</p>
-<p>小白菜问我全自动的好用吗？我说那个伞还能自动呢？ 我都是费老大劲才合上。小白菜说有个按钮，按一下就自动合上了。看来我还没学会用就把它丢了。</p>
-<p>今天又下雨了，想起了雨伞，有点难过。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>二八大杠</title>
-    <url>/post/f3499088.html</url>
-    <content><![CDATA[<p>你有一个苹果，我有一个苹果，我们交换一下，每人还是只有一个苹果。你有一个思想，我有一个思想，我们交换一下，每人就有了两个思想。</p>
-<p>我们有时候会选择争论，相互抬杠，不过是彼此之间，交换思想中的一次碰撞。无论如何，抬杠和思想的碰撞这是学习过程的一部分，但目标应该是获取知识，而不是为了说服别人，让别人认为自己就是对的。</p>
-<p>有时候，我们需要停下来，听下对方的话，好好地想一想。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>国军</title>
-    <url>/post/1ba8cc9e.html</url>
-    <content><![CDATA[<p>和小白菜逛商场，里面有一家小型的apple零售店。路过看了下，还没有iphone13，只有12。小白菜问现在还有人买12吗，我说那不是四九年入国军吗。小白菜又问我入国军什么意思？我解释到，国军，国是国家的国，军是军队的军。</p>
-<p>还没说完，旁边路过一个老大爷就接话到，国军就是国民党呀。我面向老大爷说，哈哈，还是大爷您知道的多呀。</p>
-<p>买完东西后去结账，发现排我前面的正是刚才那位老大爷。老大爷看到我后直接乐了，笑着说国军。我回了一句，国军你好。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>元宇宙</title>
-    <url>/post/dbe32653.html</url>
-    <content><![CDATA[<p>抖音上柳叶熙一夜吸粉百万，一个虚拟的美妆博主仿佛把大家带进了元宇宙的世界。</p>
-<p>元宇宙像现实世界和虚拟世界交织在一起，就像三体里的汪淼通过穿戴装备进入到三体组织开发的游戏里，看到了一个三个太阳的世界，一个周文王，秦始皇，牛顿交织在一起的世界。</p>
-<p>这让我想起电影《黑客帝国》，又如缸中之脑的假说。一个脑子被放进了一个营养液的缸里，神经末梢连接在电脑上。对于他来说这个世界没什么不一样，他依然可以看到天空，依然可以每天苦逼的工作，依然奋斗一生只是为了买房。</p>
-<p>只不过他对整个世界的认知，全是被输入的程序。他甚至可以被输入一个信号，感觉到现在正在这里阅读这一段有趣而又荒唐的文字，然后开始思考现在过的生活是否也是一场大梦。</p>
-<p>外部世界真的存在吗？元宇宙又带来了什么？康德曾经感叹说，人类理性至今无法完备地证明外部世界存在。笛卡尔也曾经说没有任何可靠的迹象使人能够将清醒与睡梦加以区别。</p>
-<p>在梦中，我望向了小白菜，她说特别期待一个新生命的到来。恍惚间才发觉，若不是因所爱之人居住其中，这个宇宙也没什么大不了的。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>熵</title>
-    <url>/post/853e67f9.html</url>
-    <content><![CDATA[<p>最近终于换了新手机，从苹果7换成苹果13，粗略换算一下，就像苹果1一下子换到了苹果7，跨度之大分不清是穷还是节俭。</p>
-<p>宇宙中存在着一条让人绝望的熵增定律，一切东西都在从有序走向混乱。衣服穿久了会变旧，房间不收拾会变乱，手机会变得越来越卡，人也会衰老和死亡。物质总是向着熵增进行演化。</p>
-<p>熵增也存在于心理学中，为什么一个人懒散非常容易，因为它附和熵增定律。《少有人走的路上》说人身上有一种懒惰的原罪。不管我们精力多么旺盛，智慧多么过人，只要深人反省，就会发现自身懒惰的一面。它是我们内心熵的力量，它始终与我们对抗，阻止我们的心智走向成熟。</p>
-<p>人躺在床上容易，起床很难；刷抖音很容易，学习很难；打游戏容易，自律很难；放弃容易，坚持很难。如果要变得自律，就不得不逆着熵做功，进行熵减。生命本身就是自律的过程，即熵减的过程，所以向上的过程会非常痛苦。</p>
-<p>就像苹果7，为了不被淘汰，打游戏时就算发烫也得努力让自己不掉线和挂机，它明白只有熵减才能让自己更加顽强。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>九思</title>
-    <url>/post/76b8708b.html</url>
-    <content><![CDATA[<p>前两天看新闻，立陶宛被中国制裁和除名。颇为不好意思的是，知道这个新闻的好长时间内，我连立陶宛犯了什么错我都不知道。</p>
-<p>后来知道他在台湾开设了代表处，然后我就又有问题了，为什么他会和一个小小的台湾交好呢，难道在中国开代表处不能让他更快乐吗？他这么做深层次的原因是什么呢？又是出于何种目的呢？一个小小的立陶宛他是想不通吗？反正我是即想不通，又不明白真相。</p>
-<p>最近老美又来抵制冬奥会，抵制冬奥会的原因是什么呢？美国为什么又犯病了，美国怎么老是犯病呢？那么是不是也因为台湾问题呢？新闻里我没找到原因，但是舆论的洪流，已经足够让我接受美国老是这么使坏。</p>
-<p>我原因不知道，导致我不能根据他犯的错误有理有据的骂他。就算知道原因了，我也不明白深层次的真相又是啥，可能坏人是不需要原因的吧。那么我只好在骂美国的评论区里多点下赞。</p>
-<p>很多时候我真的不知道真相，也懒得寻找真相，因为我看的真相也不一定是真相，寻找的真相也不一定是真相。更重要的是我也懒得思考。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Boys or girls</title>
-    <url>/post/dd1e9cb1.html</url>
-    <content><![CDATA[<p>I sometimes ask myself whether I like boys or girls. I feel like I have risen to the philosophical level that it’s both great. </p>
-<p>I found Xuan, consciously or unconsciously, reveals that she likes boys. Although she didn’t say it clearly, I can read her heart. So I also kind of hope it’s a boy because I don’t want to see the downcast of Xuan. </p>
-<p>Boys can always accompany themselves to old age. But don’t drift away from home as I did; it will make me feel that boys can’t accompany us forever.</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>网络暴力</title>
-    <url>/post/c02ef065.html</url>
-    <content><![CDATA[<p>当孙海洋找到被拐多年孩子孙卓的时候，巨大的流量，让更多的孩子找到了自己的亲生父母。包括刘学州，遗书里也是说受到孙叔叔的影响，勇敢的去寻找自己的亲生父母。然而结局却是遭到亲生父母的二次抛弃，加上巨大的网络暴力，导致了刘学州的轻生。</p>
-<p>当大家转过头来，开始谴责网络暴力的时候，恰恰也在进行另外一种网络暴力。我认为网络暴力不仅仅是恶语伤人，人性中的温暖也是一种暴力。当网友疯狂的在孙卓评论下面刷美好祝愿的时候，当网友为刘学州轻生感到悲痛悼念送花的时候，这是人性中光辉的一面，同时也是一种光辉的暴力。</p>
-<p>因为孙卓的评论让本不应该认亲的人，可能选择了寻找亲生父母。而给刘学州送花的人让本应该团圆的孩子，可能选择了退缩。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Baby&#39;s name</title>
-    <url>/post/2306ab76.html</url>
-    <content><![CDATA[<p>The ancients said that give a child a good name better than give him a thousand gold.</p>
-<p>I have recently seen a lot of new baby names on Douyin, with a lot of likes and comments. Like the names in romance novels(e.g., “左柚”, “宋屿安”, “但子昂”).</p>
-<p>I feel that the name of a romance novel will be popular by the next generation of parents, but it is best not to take the kind of the name of GuoJingMing novel “&lt;Fantasy City&gt;“.</p>
-<p>Each historical stage has its popular name. The first two years were “子轩”, “子涵”, “诗涵”, “梓涵”, Before that, it was “建国”, “抗美”, “援朝”.</p>
-<p>I like the names of the Republic of China and Pre-Qin eras. The names in ci of Chu and The Book of poetry also seem to be popular and cultural.</p>
-<p>I think a very earthy and vulgar name is also a good name, the name hidden in the sea of people can better protect us.</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>About Note</title>
-    <url>/post/48450ab4.html</url>
-    <content><![CDATA[<p>I believe I am a tool seeker to the extreme, particularly when it comes to recording things. I have tried many note-taking tools and they are called divine artifacts. such as ‘Notion’, ‘Obsidian’,’Roam Research’.</p>
-<p>Then I realized I was wasting too much time on learning tools, and after rethinking, I decided to give up the note form and return to the note source. It is better to quietly write a note than to pursue a perfect note-taking tool.</p>
-<p>I take notes when I study and write down my daily life. Is it meaningful to do so? It makes sense to me that it is using the output to force input.</p>
-<p>If I don’t do anything for an entire day, there will be nothing to remember, and I will realize I need to do something. Taking notes will help me in remembering what I accomplished during the day and will serve as a reminder to quit doing nothing every day.</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>The locked woman</title>
-    <url>/post/92fc5941.html</url>
-    <content><![CDATA[<p>After four official statements were issued to the locked woman in Fengxian, the masses still questioned the identity of the woman. Yesterday, Jiangsu Province had to issue a new statement to investigate, from Fengxian to Xuzhou and then to Jiangsu, What makes it so difficult to deal with? It takes longer to debunk a lie with another lie than to discover the truth.</p>
-<p>“We know they’re lying, they know they’re lying, they know we know they’re lying, and we know they know we know they’re lying, but they’re still lying,” says one remark circulating on the internet. Isn’t this a ridiculous situation?</p>
-<p>The credibility that is no longer believed can still fulfill its political role, even if it seems flawed. Everyone receives what they want via it, then it is still functional and well-functioning, which is the true nature of ideology. In some ways, this type of ideology is much more terrifying because it is no longer the deliberate lying of a few, there is an open lie that everyone tacitly defends together.</p>
-<p>Naked lies no longer serve as dream generators but are still allow each individual to continue to live in a fictitious world where everyone is pretending to sleep. From another perspective, we believe we are rescuing the locked woman, in reality, she is rescuing us.</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>货拉拉司机小记</title>
-    <url>/post/b322c813.html</url>
-    <content><![CDATA[<p>周末去买了一个书柜，然后叫货拉拉搬回家。不一会一个六十左右的大爷开着小面来了，副驾驶还坐了一个人。我以为是上一单乘客，没想到抬书柜的时候，她还下来帮忙了。我说大爷你这副驾驶谁啊，我一会咋坐车啊？大爷不好意思的说，这人我可不能扔啊，这是我媳妇。</p>
-<p>大爷解释到他怕媳妇一个人无聊，偶尔拉货的时候让媳妇出来透透风。大妈尴尬的笑了，然后我看车里还有个小沙发，我说你车里还有个雅座，我坐沙发上吧。车开了，大爷给我聊天小伙子哪里人啊，我说山东的，然后又说菏泽的。他说咱们老乡啊，我是丰县的咱们挨的很近。</p>
-<p>我迟疑了一下，说丰县又是哪里的？他说是徐州的，归江苏。我随即来了一句，啊，是生了八个孩子的那个丰县吗？然后大爷说对。然后大妈又说因为八个孩子，县里很多干部被免了，整整十七个呢。我说是啊，这事老大了都惊动党中央了。</p>
-<p>大爷说其实这事搞的不对，不该把男人抓起来，也不该把女人送进精神病院。只因为在网上曝光了，人家一家子全散了，孩子也没有人照料了，孩子送到亲戚家了估计更难养了。我说，大爷这事吧涉及到拐卖妇女，主要是违法了。</p>
-<p>大爷：哼，就这事我都和我自己亲儿子抬杠，我儿子说花钱买女人不对，我说现在这社会哪个结婚不是买来的？这么贵的彩礼，本质上和花钱买媳妇有什么区别？大爷说完，我一时哑口无言。</p>
-<p>大爷又举了一个例子，说他村有一户因为太穷也把自己的女儿也卖给外地了，说现在过的也挺好，男人也疼她，现在都当奶奶了，膝下现在很多孙子。我想了想他说的话，又看了看副驾驶的大妈，站在大爷的角度，这个世界或许就是这样的。</p>
-<p>或许他也是对的。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>命运之手</title>
-    <url>/post/3e9cda3d.html</url>
-    <content><![CDATA[<p>如果出生在普通家庭，对大多数人改变命运的机会还是高考。但在小城市的教育环境中，读书成才还是很难的，除了师资力量，学习环境对没有足够自制力的孩子也是一种考验。</p>
-<p>现在发现自己，书不仅没有读好，还已经30岁了。于是把如今的一事无成都归于年少时的没有好好读书，感觉一生就这样了，然后开始后悔，后悔几分钟后又继续摆烂。</p>
-<p>可转念一想，少年时的读书时间只占生命中的一小段时间啊。初三高三加上大学，十年时间是可以左右一生的命运，但却无法定性一个人的命运。终然18岁的我高考失败了。28岁，38岁，48岁，78岁的我还是能够做出选择啊。</p>
-<p>一个人任何时候都可以拿起身边的书，开始改变。如果现在拿不起书，就算我坐时光穿梭机回到18岁的高中，还是无能为力。</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>The shadow of cave</title>
-    <url>/post/3c40c679.html</url>
-    <content><![CDATA[<p>How unfortunate that a woman who has been trafficked is forced to bear children and a lock around her neck. If there’s anything more unfortunate than that, it’s the matter that it’s become taboo to talk about it.</p>
-<p>We would rather concentrate on the athletes in the Winter Olympics than on the woman around us who suffer injustice. If the lock around a woman’s neck has no connection to you and me, what connection does the medal around a champion’s neck have to us?</p>
-<p>Ordinary people make up the majority of modern society. Ordinary people’s fates are more likely to overlap with ours than celebrity’s fates. We can’t truly feel unless it happens to us.</p>
-<p>We are easy to be believed and easy to be forgotten. We are frequently awakened and trapped again. We are still live in Plato’s cave, and the shadow in the darkness isn’t the entirety of this world.</p>
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《生育制度》</title>
-    <url>/post/481cb0e7.html</url>
-    <content><![CDATA[<h3 id="1-摘抄啊"><a href="#1-摘抄啊" class="headerlink" title="1.  摘抄啊"></a>1.  摘抄啊</h3><p><img src="/post/481cb0e7/1.png" alt="1"></p>
-<p><img src="/post/481cb0e7/2.png" alt="1"></p>
-<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/30258045/">https://book.douban.com/subject/30258045/</a></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《悉达多》</title>
-    <url>/post/7e60c686.html</url>
-    <content><![CDATA[<h1 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1. 摘抄"></a>1. 摘抄</h1><p>一只苍鹭飞过竹林上空,一刹那,悉达多把自己的灵魂与苍鹭合为一体,他变成了一只苍鹭,飞翔在树林和群山之上,吞食鲜鱼,他具有苍鹭的饥饿感,他发出苍鹭般的叫声,他像苍鹭一样死去。</p>
-<p>一只已经死了的豺狼躺在沙滩上,悉达多让自己的灵魂潜入了这具尸体,于是 他成为一只死豺狼,躺卧在沙滩上,逐渐膨胀、发臭、腐烂,被鬣狗撕得粉碎,被兀鹫剥去皮,逐漸化为残骸,化为尘土,被风吹散到各地。</p>
-<p>悉达多的灵魂经过死亡、经过腐烂、经过化为尘土后,又转回来了,他已品尝了轮回循环的阴郁滋味,像一个猎手似的怀着新的渴望冲出缺口,以逃脱这种轮回循环,找到事由的结局,开始无痛苦的永恒境界。</p>
-<p>他杀死自己的意识 他扼死自己的回忆,他让自我潜入上干种陌生的躯体,他是动物,是尸体,是石块,是木头,是流水。</p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《了不起的我:自我发展的心理学》</title>
-    <url>/post/bbbe77a6.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/bbbe77a6/1.png" alt="1"></p>
-<p><img src="/post/bbbe77a6/2.png" alt="1"></p>
-<p><img src="/post/bbbe77a6/3.png" alt="1"></p>
-<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/34836531/">https://book.douban.com/subject/34836531/</a></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《巨婴国》</title>
-    <url>/post/1f3db20d.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/1f3db20d/1.jpg" alt="1"></p>
-<p><img src="/post/1f3db20d/2.jpg" alt="2"></p>
-<p><img src="/post/1f3db20d/3.jpg" alt="3"></p>
-<p><img src="/post/1f3db20d/4.jpg" alt="4"></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《刑法学讲义》</title>
-    <url>/post/3f1ee622.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/3f1ee622/1.jpg" alt="1"></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《结构性改革》</title>
-    <url>/post/9c5aff0c.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/9c5aff0c/1.jpg" alt="1"></p>
-<p><img src="/post/9c5aff0c/2.jpg" alt="2"></p>
-<p><img src="/post/9c5aff0c/3.jpg" alt="3"></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《为何家会伤人》</title>
-    <url>/post/55834202.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/55834202/1.jpg" alt="1"></p>
-<p><img src="/post/55834202/2.jpg" alt="2"></p>
-<p><img src="/post/55834202/3.jpg" alt="3"></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《置身事内》</title>
-    <url>/post/55fa69d4.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/55fa69d4/1.jpg" alt="1"></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《厌女》</title>
-    <url>/post/70239433.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/70239433/1.jpg" alt="1"></p>
-<p><img src="/post/70239433/2.jpg" alt="2"></p>
-<p><img src="/post/70239433/3.jpg" alt="3"></p>
-<p><img src="/post/70239433/4.jpg" alt="3"></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《愿你拥有被爱照亮的生命》</title>
-    <url>/post/f78aeecc.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/f78aeecc/1.jpg" alt="1"></p>
-<p><img src="/post/f78aeecc/2.jpg" alt="1"></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《变革中国》</title>
-    <url>/post/f78aeecc.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/f78aeecc/1.jpg" alt="1"></p>
-<p><img src="/post/f78aeecc/2.jpg" alt="1"></p>
-<p><img src="/post/f78aeecc/3.jpg" alt="1"></p>
-<p><img src="/post/f78aeecc/4.jpg" alt="1"></p>
-<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/20366370/">https://book.douban.com/subject/20366370/</a></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《简读中国史:世界史坐标下的中国》</title>
-    <url>/post/8da0f6ef.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/8da0f6ef/1.jpg" alt="1"></p>
-<p><img src="/post/8da0f6ef/2.jpg" alt="2"></p>
-<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/34501169/">https://book.douban.com/subject/34501169/</a></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《稀缺》</title>
-    <url>/post/d8e495f6.html</url>
-    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/d8e495f6/1.jpg" alt="1"></p>
-<p><img src="/post/d8e495f6/2.jpg" alt="2"></p>
-<p><img src="/post/d8e495f6/3.jpg" alt="3"></p>
-<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/26178426/">https://book.douban.com/subject/26178426/</a></p>
-]]></content>
-      <categories>
-        <category>book</category>
-      </categories>
-  </entry>
-  <entry>
     <title>王东岳中西哲学启蒙课01-人类文明</title>
     <url>/post/4dcb19b2.html</url>
     <content><![CDATA[<p>薛定谔曾经专门讲一段话，他在一个演讲里讲科学和人文主义，他说一般人认为科学是有效用的。他说人们尊重科学，追求科学，就是科学能够带来巨大的生产力，能使人们的生活变得更舒适，力量变得更强大等等。<strong>他说这是对科学最大的污蔑。真正的科学，它是一种人文精神的表达，是人类精神的升华。他跟考古学语言学美学这些看起来没有任何用处的学问完全等同，它是人类精神的张扬，而不是实用的东西。</strong> </p>
@@ -657,6 +181,511 @@
       <tags>
         <tag>历史</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>高数01-导数</title>
+    <url>/post/2319f478.html</url>
+    <content><![CDATA[<p>学习高数不需要完全懂。当做马上考试，前半小时的时间，去学习。</p>
+<span id="more"></span>
+
+]]></content>
+      <tags>
+        <tag>高数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高数02-函数</title>
+    <url>/post/4ec556ad.html</url>
+    <content><![CDATA[<h1 id="1-函数无穷小"><a href="#1-函数无穷小" class="headerlink" title="1. 函数无穷小"></a>1. 函数无穷小</h1><h3 id="1-1-无穷小量"><a href="#1-1-无穷小量" class="headerlink" title="1.1 无穷小量"></a>1.1 无穷小量</h3><ul>
+<li>可以是函数，可以是数列。函数【<strong>函数</strong>是趋于谁的无穷小量】</li>
+<li>无穷小不是一个具体的数。</li>
+<li>0是无穷小（无穷小不是0）。</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="1-2-无穷大量"><a href="#1-2-无穷大量" class="headerlink" title="1.2 无穷大量"></a>1.2 无穷大量</h3><ul>
+<li>无穷大不是一个具体的数，而是一个函数。</li>
+</ul>
+<h3 id="1-3-无穷小量的比较"><a href="#1-3-无穷小量的比较" class="headerlink" title="1.3 无穷小量的比较"></a>1.3 无穷小量的比较</h3><p>高阶，低阶，同阶，等价，K阶【用的少】</p>
+<h3 id="1-4-无穷小代换"><a href="#1-4-无穷小代换" class="headerlink" title="1.4 无穷小代换"></a>1.4 无穷小代换</h3><p><img src="/post/4ec556ad/1.jpg" alt="image-20220709170257660"></p>
+<p>【注】只有整个式子的乘除因子才能用等价无穷小替换，有加减时不能替换。</p>
+<h1 id="2-连续性和间断点"><a href="#2-连续性和间断点" class="headerlink" title="2. 连续性和间断点"></a>2. 连续性和间断点</h1><p>左边接近A，右边接近A。极限存在，等于该点的函数值</p>
+<h3 id="2-1-点连续（左右连续）"><a href="#2-1-点连续（左右连续）" class="headerlink" title="2.1 点连续（左右连续）"></a>2.1 点连续（左右连续）</h3><p>左连续：从左边接近于A，注意要是实心的。</p>
+<p>右连续：从右边接近于A，注意要是实心的。</p>
+<p>连续：左连续+右连续。左极限&#x3D;右极限&#x3D;函数值。</p>
+<h3 id="2-2-区间连续"><a href="#2-2-区间连续" class="headerlink" title="2.2 区间连续"></a>2.2 区间连续</h3><p>函数f(x)在开区间(a，b)内连续，是指在(a，b)内每一点都连续。</p>
+<h3 id="2-3-间断点"><a href="#2-3-间断点" class="headerlink" title="2.3 间断点"></a>2.3 间断点</h3><p>在X0处不连续。</p>
+<p><img src="/post/4ec556ad/2.jpg" alt="image-20220709173602948"></p>
+]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>高数</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高数03-微积分</title>
+    <url>/post/e94b30a4.html</url>
+    <content><![CDATA[<h1 id="1-微分"><a href="#1-微分" class="headerlink" title="1. 微分"></a>1. 微分</h1><ul>
+<li>微分就是对函数加个撇 f’(x)  ，特别小的一个值。</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="2-积分"><a href="#2-积分" class="headerlink" title="2. 积分"></a>2. 积分</h1><ul>
+<li>积分就是函数所有微分的和。</li>
+</ul>
+<h1 id="3-临界点"><a href="#3-临界点" class="headerlink" title="3. 临界点"></a>3. 临界点</h1><p>函数值&#x3D;0，或函数值无意义。</p>
+<h1 id="4-绝对极值"><a href="#4-绝对极值" class="headerlink" title="4. 绝对极值"></a>4. 绝对极值</h1><img src="/post/e94b30a4/1.jpg" alt="image-20220710160706738" style="zoom:50%;">
+]]></content>
+      <tags>
+        <tag>高数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>观察蚂蚁</title>
+    <url>/post/85a77a0f.html</url>
+    <content><![CDATA[<p>今天外出扔垃圾, 没带钥匙, 锁在外面了2个小时</p>
+<p>实在无聊, 坐在小区的凳子上观察蚂蚁, 突然想起来上一次观察蚂蚁还是四五岁的时候</p>
+<p>突然间, 一种感觉袭上心头</p>
+<p>我生命中像只活过了两天</p>
+<p>一天是记忆里观察蚂蚁的那天</p>
+<p>一天是观察蚂蚁的今天</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>南门北门</title>
+    <url>/post/a1439c59.html</url>
+    <content><![CDATA[<p>打印论文送给老师, 喊的顺丰同城, 快递小哥打电话,  我说你来大厦北门. 他说我之前来都是南门阿, 我说南门疫情封了, 现在只有北门开, 他说那好吧. </p>
+<p>这时我抬头看了一眼大厦的封条, 上面写着此门封闭, 请走南门.  我又急忙说不对, 就是在南门, 快递小哥电话那头直接乐了</p>
+<p>小哥不一会来了, 问我要取件码, 我说4100, 他输在了手机上后显示错误. 然后说要订单取件码, 我这时才反应过来, 说原来不是在取外卖, 以为是要手机尾号呢. 这时小哥噗呲又乐了</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>北斗七星</title>
+    <url>/post/590aaabb.html</url>
+    <content><![CDATA[<p>晚上和小白菜在小区散步</p>
+<p>抬头看了一眼天空, 竟然发现了几颗不清晰的星星</p>
+<p>我说小时候满天都是繁星, 你见过北斗七星吗? 像勺子一样</p>
+<p>小白菜说她见过</p>
+<p>然后小白菜问我, 你说天上会有人吗?</p>
+<p>我说天上肯定有人啊, 神州十二号刚发射不久</p>
+<p>三个宇航员目前还没有返程</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>狗叫</title>
+    <url>/post/e143ea8.html</url>
+    <content><![CDATA[<p>晚上躺在床上要睡觉</p>
+<p>听到了几声狗叫</p>
+<p>想起小时候的村子里</p>
+<p>晚上睡觉时, 狗叫声都是连绵不绝</p>
+<p>今天听到的狗叫和小时候听到的狗叫</p>
+<p>像极了同一条狗</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>耳机</title>
+    <url>/post/aedb5a3c.html</url>
+    <content><![CDATA[<p>我坐在地铁上，看着自己的手机，打开并连上了耳机。</p>
+<p>到站后，望了一眼人群</p>
+<p>大部分人都在看着自己的手机</p>
+<p>有的还带着耳机</p>
+<p>很多人陪你一起走过好多站</p>
+<p>却没有彼此互相看一眼</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>吞噬</title>
+    <url>/post/ab1856ce.html</url>
+    <content><![CDATA[<p>几个月前的郑爽事件, 加上最近比较火的林生斌事件, 徽州宴的老板娘事件。明星, 公众人物, 乃至普通大众, 只要罪恶放到了阳光下, 就会被舆论彻底吞噬。</p>
+<p>每个人心里都住着一个张三 , 人心隐藏着整个世界的败坏。我们参与吞噬别人, 有一天可能也会被别人吞噬。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>太阳</title>
+    <url>/post/1df9e2ae.html</url>
+    <content><![CDATA[<p>如果每天早晨6点起床，我就看到东边的太阳</p>
+<p>有的时候我却12点起床，就只能看到南边的太阳</p>
+<p>东边的太阳，会感觉到一天很长且有意义</p>
+<p>南边的太阳，让我想不出那天，都做过了什么</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>一本好书</title>
+    <url>/post/370cef3a.html</url>
+    <content><![CDATA[<p>以前买书只看销量和书名, 买了好多标题党的书。读完不仅没有收获,  还浪费了时间和买书的钱。</p>
+<p>现在买之前都会去豆瓣查一下, 有的书会有好多个李鬼, 同一个名字,  却完全不是一个东西。有的书还有好多个李逵, 不同出版社的李逵, 有的粗壮黝黑, 有的温柔似水, 买对李逵也很重要。</p>
+<p>后来清理书的时候, 发现了一个可以卖书的平台。试了下有的书买的时候很贵, 卖的时候却一文不值, 有的书本来不贵，平台也会给个好价。</p>
+<p>一本能卖上好价格的书, 大概率也是一本好书。书就像房子一样, 在市场上真正有流通价值的才是好书。</p>
+<p>一本烂书,  只能卖给收破烂的。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>穿越</title>
+    <url>/post/9aa6cbaa.html</url>
+    <content><![CDATA[<p>卧室墙上的一个挂表，已经用了好多年。</p>
+<p>不仅没有变老，还走的越来越快，每个月都多走五分钟。</p>
+<p>相对论说当一个物体的速度超越了光速，它就可以穿越到过去。</p>
+<p>而我每次把钟表调对，也像穿越回了一次过去。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>养父母</title>
+    <url>/post/a367268.html</url>
+    <content><![CDATA[<p>活了快30岁，突然有一天，身边的人告诉你，养育你20多年的父母只是养父母。</p>
+<p>你的亲生父母，倾尽全力找了你20多年，骑坏了多个摩托，却未曾见过一面。</p>
+<p>脑海中想一想父母的脸，再看向亲生父母的脸。</p>
+<p>闭上眼，你会想起谁的脸。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>雨伞</title>
+    <url>/post/5faceb89.html</url>
+    <content><![CDATA[<p>小白菜刚给我买的雨伞丢了，一共用了两天时间。</p>
+<p>小白菜问我全自动的好用吗？我说那个伞还能自动呢？ 我都是费老大劲才合上。小白菜说有个按钮，按一下就自动合上了。看来我还没学会用就把它丢了。</p>
+<p>今天又下雨了，想起了雨伞，有点难过。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>二八大杠</title>
+    <url>/post/f3499088.html</url>
+    <content><![CDATA[<p>你有一个苹果，我有一个苹果，我们交换一下，每人还是只有一个苹果。你有一个思想，我有一个思想，我们交换一下，每人就有了两个思想。</p>
+<p>我们有时候会选择争论，相互抬杠，不过是彼此之间，交换思想中的一次碰撞。无论如何，抬杠和思想的碰撞这是学习过程的一部分，但目标应该是获取知识，而不是为了说服别人，让别人认为自己就是对的。</p>
+<p>有时候，我们需要停下来，听下对方的话，好好地想一想。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>元宇宙</title>
+    <url>/post/dbe32653.html</url>
+    <content><![CDATA[<p>抖音上柳叶熙一夜吸粉百万，一个虚拟的美妆博主仿佛把大家带进了元宇宙的世界。</p>
+<p>元宇宙像现实世界和虚拟世界交织在一起，就像三体里的汪淼通过穿戴装备进入到三体组织开发的游戏里，看到了一个三个太阳的世界，一个周文王，秦始皇，牛顿交织在一起的世界。</p>
+<p>这让我想起电影《黑客帝国》，又如缸中之脑的假说。一个脑子被放进了一个营养液的缸里，神经末梢连接在电脑上。对于他来说这个世界没什么不一样，他依然可以看到天空，依然可以每天苦逼的工作，依然奋斗一生只是为了买房。</p>
+<p>只不过他对整个世界的认知，全是被输入的程序。他甚至可以被输入一个信号，感觉到现在正在这里阅读这一段有趣而又荒唐的文字，然后开始思考现在过的生活是否也是一场大梦。</p>
+<p>外部世界真的存在吗？元宇宙又带来了什么？康德曾经感叹说，人类理性至今无法完备地证明外部世界存在。笛卡尔也曾经说没有任何可靠的迹象使人能够将清醒与睡梦加以区别。</p>
+<p>在梦中，我望向了小白菜，她说特别期待一个新生命的到来。恍惚间才发觉，若不是因所爱之人居住其中，这个宇宙也没什么大不了的。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>国军</title>
+    <url>/post/1ba8cc9e.html</url>
+    <content><![CDATA[<p>和小白菜逛商场，里面有一家小型的apple零售店。路过看了下，还没有iphone13，只有12。小白菜问现在还有人买12吗，我说那不是四九年入国军吗。小白菜又问我入国军什么意思？我解释到，国军，国是国家的国，军是军队的军。</p>
+<p>还没说完，旁边路过一个老大爷就接话到，国军就是国民党呀。我面向老大爷说，哈哈，还是大爷您知道的多呀。</p>
+<p>买完东西后去结账，发现排我前面的正是刚才那位老大爷。老大爷看到我后直接乐了，笑着说国军。我回了一句，国军你好。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>熵</title>
+    <url>/post/853e67f9.html</url>
+    <content><![CDATA[<p>最近终于换了新手机，从苹果7换成苹果13，粗略换算一下，就像苹果1一下子换到了苹果7，跨度之大分不清是穷还是节俭。</p>
+<p>宇宙中存在着一条让人绝望的熵增定律，一切东西都在从有序走向混乱。衣服穿久了会变旧，房间不收拾会变乱，手机会变得越来越卡，人也会衰老和死亡。物质总是向着熵增进行演化。</p>
+<p>熵增也存在于心理学中，为什么一个人懒散非常容易，因为它附和熵增定律。《少有人走的路上》说人身上有一种懒惰的原罪。不管我们精力多么旺盛，智慧多么过人，只要深人反省，就会发现自身懒惰的一面。它是我们内心熵的力量，它始终与我们对抗，阻止我们的心智走向成熟。</p>
+<p>人躺在床上容易，起床很难；刷抖音很容易，学习很难；打游戏容易，自律很难；放弃容易，坚持很难。如果要变得自律，就不得不逆着熵做功，进行熵减。生命本身就是自律的过程，即熵减的过程，所以向上的过程会非常痛苦。</p>
+<p>就像苹果7，为了不被淘汰，打游戏时就算发烫也得努力让自己不掉线和挂机，它明白只有熵减才能让自己更加顽强。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>九思</title>
+    <url>/post/76b8708b.html</url>
+    <content><![CDATA[<p>前两天看新闻，立陶宛被中国制裁和除名。颇为不好意思的是，知道这个新闻的好长时间内，我连立陶宛犯了什么错我都不知道。</p>
+<p>后来知道他在台湾开设了代表处，然后我就又有问题了，为什么他会和一个小小的台湾交好呢，难道在中国开代表处不能让他更快乐吗？他这么做深层次的原因是什么呢？又是出于何种目的呢？一个小小的立陶宛他是想不通吗？反正我是即想不通，又不明白真相。</p>
+<p>最近老美又来抵制冬奥会，抵制冬奥会的原因是什么呢？美国为什么又犯病了，美国怎么老是犯病呢？那么是不是也因为台湾问题呢？新闻里我没找到原因，但是舆论的洪流，已经足够让我接受美国老是这么使坏。</p>
+<p>我原因不知道，导致我不能根据他犯的错误有理有据的骂他。就算知道原因了，我也不明白深层次的真相又是啥，可能坏人是不需要原因的吧。那么我只好在骂美国的评论区里多点下赞。</p>
+<p>很多时候我真的不知道真相，也懒得寻找真相，因为我看的真相也不一定是真相，寻找的真相也不一定是真相。更重要的是我也懒得思考。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>网络暴力</title>
+    <url>/post/c02ef065.html</url>
+    <content><![CDATA[<p>当孙海洋找到被拐多年孩子孙卓的时候，巨大的流量，让更多的孩子找到了自己的亲生父母。包括刘学州，遗书里也是说受到孙叔叔的影响，勇敢的去寻找自己的亲生父母。然而结局却是遭到亲生父母的二次抛弃，加上巨大的网络暴力，导致了刘学州的轻生。</p>
+<p>当大家转过头来，开始谴责网络暴力的时候，恰恰也在进行另外一种网络暴力。我认为网络暴力不仅仅是恶语伤人，人性中的温暖也是一种暴力。当网友疯狂的在孙卓评论下面刷美好祝愿的时候，当网友为刘学州轻生感到悲痛悼念送花的时候，这是人性中光辉的一面，同时也是一种光辉的暴力。</p>
+<p>因为孙卓的评论让本不应该认亲的人，可能选择了寻找亲生父母。而给刘学州送花的人让本应该团圆的孩子，可能选择了退缩。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Boys or girls</title>
+    <url>/post/dd1e9cb1.html</url>
+    <content><![CDATA[<p>I sometimes ask myself whether I like boys or girls. I feel like I have risen to the philosophical level that it’s both great. </p>
+<p>I found Xuan, consciously or unconsciously, reveals that she likes boys. Although she didn’t say it clearly, I can read her heart. So I also kind of hope it’s a boy because I don’t want to see the downcast of Xuan. </p>
+<p>Boys can always accompany themselves to old age. But don’t drift away from home as I did; it will make me feel that boys can’t accompany us forever.</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Baby&#39;s name</title>
+    <url>/post/2306ab76.html</url>
+    <content><![CDATA[<p>The ancients said that give a child a good name better than give him a thousand gold.</p>
+<p>I have recently seen a lot of new baby names on Douyin, with a lot of likes and comments. Like the names in romance novels(e.g., “左柚”, “宋屿安”, “但子昂”).</p>
+<p>I feel that the name of a romance novel will be popular by the next generation of parents, but it is best not to take the kind of the name of GuoJingMing novel “&lt;Fantasy City&gt;“.</p>
+<p>Each historical stage has its popular name. The first two years were “子轩”, “子涵”, “诗涵”, “梓涵”, Before that, it was “建国”, “抗美”, “援朝”.</p>
+<p>I like the names of the Republic of China and Pre-Qin eras. The names in ci of Chu and The Book of poetry also seem to be popular and cultural.</p>
+<p>I think a very earthy and vulgar name is also a good name, the name hidden in the sea of people can better protect us.</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>About Note</title>
+    <url>/post/48450ab4.html</url>
+    <content><![CDATA[<p>I believe I am a tool seeker to the extreme, particularly when it comes to recording things. I have tried many note-taking tools and they are called divine artifacts. such as ‘Notion’, ‘Obsidian’,’Roam Research’.</p>
+<p>Then I realized I was wasting too much time on learning tools, and after rethinking, I decided to give up the note form and return to the note source. It is better to quietly write a note than to pursue a perfect note-taking tool.</p>
+<p>I take notes when I study and write down my daily life. Is it meaningful to do so? It makes sense to me that it is using the output to force input.</p>
+<p>If I don’t do anything for an entire day, there will be nothing to remember, and I will realize I need to do something. Taking notes will help me in remembering what I accomplished during the day and will serve as a reminder to quit doing nothing every day.</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>The locked woman</title>
+    <url>/post/92fc5941.html</url>
+    <content><![CDATA[<p>After four official statements were issued to the locked woman in Fengxian, the masses still questioned the identity of the woman. Yesterday, Jiangsu Province had to issue a new statement to investigate, from Fengxian to Xuzhou and then to Jiangsu, What makes it so difficult to deal with? It takes longer to debunk a lie with another lie than to discover the truth.</p>
+<p>“We know they’re lying, they know they’re lying, they know we know they’re lying, and we know they know we know they’re lying, but they’re still lying,” says one remark circulating on the internet. Isn’t this a ridiculous situation?</p>
+<p>The credibility that is no longer believed can still fulfill its political role, even if it seems flawed. Everyone receives what they want via it, then it is still functional and well-functioning, which is the true nature of ideology. In some ways, this type of ideology is much more terrifying because it is no longer the deliberate lying of a few, there is an open lie that everyone tacitly defends together.</p>
+<p>Naked lies no longer serve as dream generators but are still allow each individual to continue to live in a fictitious world where everyone is pretending to sleep. From another perspective, we believe we are rescuing the locked woman, in reality, she is rescuing us.</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>The shadow of cave</title>
+    <url>/post/3c40c679.html</url>
+    <content><![CDATA[<p>How unfortunate that a woman who has been trafficked is forced to bear children and a lock around her neck. If there’s anything more unfortunate than that, it’s the matter that it’s become taboo to talk about it.</p>
+<p>We would rather concentrate on the athletes in the Winter Olympics than on the woman around us who suffer injustice. If the lock around a woman’s neck has no connection to you and me, what connection does the medal around a champion’s neck have to us?</p>
+<p>Ordinary people make up the majority of modern society. Ordinary people’s fates are more likely to overlap with ours than celebrity’s fates. We can’t truly feel unless it happens to us.</p>
+<p>We are easy to be believed and easy to be forgotten. We are frequently awakened and trapped again. We are still live in Plato’s cave, and the shadow in the darkness isn’t the entirety of this world.</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>货拉拉司机小记</title>
+    <url>/post/b322c813.html</url>
+    <content><![CDATA[<p>周末去买了一个书柜，然后叫货拉拉搬回家。不一会一个六十左右的大爷开着小面来了，副驾驶还坐了一个人。我以为是上一单乘客，没想到抬书柜的时候，她还下来帮忙了。我说大爷你这副驾驶谁啊，我一会咋坐车啊？大爷不好意思的说，这人我可不能扔啊，这是我媳妇。</p>
+<p>大爷解释到他怕媳妇一个人无聊，偶尔拉货的时候让媳妇出来透透风。大妈尴尬的笑了，然后我看车里还有个小沙发，我说你车里还有个雅座，我坐沙发上吧。车开了，大爷给我聊天小伙子哪里人啊，我说山东的，然后又说菏泽的。他说咱们老乡啊，我是丰县的咱们挨的很近。</p>
+<p>我迟疑了一下，说丰县又是哪里的？他说是徐州的，归江苏。我随即来了一句，啊，是生了八个孩子的那个丰县吗？然后大爷说对。然后大妈又说因为八个孩子，县里很多干部被免了，整整十七个呢。我说是啊，这事老大了都惊动党中央了。</p>
+<p>大爷说其实这事搞的不对，不该把男人抓起来，也不该把女人送进精神病院。只因为在网上曝光了，人家一家子全散了，孩子也没有人照料了，孩子送到亲戚家了估计更难养了。我说，大爷这事吧涉及到拐卖妇女，主要是违法了。</p>
+<p>大爷：哼，就这事我都和我自己亲儿子抬杠，我儿子说花钱买女人不对，我说现在这社会哪个结婚不是买来的？这么贵的彩礼，本质上和花钱买媳妇有什么区别？大爷说完，我一时哑口无言。</p>
+<p>大爷又举了一个例子，说他村有一户因为太穷也把自己的女儿也卖给外地了，说现在过的也挺好，男人也疼她，现在都当奶奶了，膝下现在很多孙子。我想了想他说的话，又看了看副驾驶的大妈，站在大爷的角度，这个世界或许就是这样的。</p>
+<p>或许他也是对的。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>命运之手</title>
+    <url>/post/3e9cda3d.html</url>
+    <content><![CDATA[<p>如果出生在普通家庭，对大多数人改变命运的机会还是高考。但在小城市的教育环境中，读书成才还是很难的，除了师资力量，学习环境对没有足够自制力的孩子也是一种考验。</p>
+<p>现在发现自己，书不仅没有读好，还已经30岁了。于是把如今的一事无成都归于年少时的没有好好读书，感觉一生就这样了，然后开始后悔，后悔几分钟后又继续摆烂。</p>
+<p>可转念一想，少年时的读书时间只占生命中的一小段时间啊。初三高三加上大学，十年时间是可以左右一生的命运，但却无法定性一个人的命运。终然18岁的我高考失败了。28岁，38岁，48岁，78岁的我还是能够做出选择啊。</p>
+<p>一个人任何时候都可以拿起身边的书，开始改变。如果现在拿不起书，就算我坐时光穿梭机回到18岁的高中，还是无能为力。</p>
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《悉达多》</title>
+    <url>/post/7e60c686.html</url>
+    <content><![CDATA[<h1 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1. 摘抄"></a>1. 摘抄</h1><p>一只苍鹭飞过竹林上空,一刹那,悉达多把自己的灵魂与苍鹭合为一体,他变成了一只苍鹭,飞翔在树林和群山之上,吞食鲜鱼,他具有苍鹭的饥饿感,他发出苍鹭般的叫声,他像苍鹭一样死去。</p>
+<p>一只已经死了的豺狼躺在沙滩上,悉达多让自己的灵魂潜入了这具尸体,于是 他成为一只死豺狼,躺卧在沙滩上,逐渐膨胀、发臭、腐烂,被鬣狗撕得粉碎,被兀鹫剥去皮,逐漸化为残骸,化为尘土,被风吹散到各地。</p>
+<p>悉达多的灵魂经过死亡、经过腐烂、经过化为尘土后,又转回来了,他已品尝了轮回循环的阴郁滋味,像一个猎手似的怀着新的渴望冲出缺口,以逃脱这种轮回循环,找到事由的结局,开始无痛苦的永恒境界。</p>
+<p>他杀死自己的意识 他扼死自己的回忆,他让自我潜入上干种陌生的躯体,他是动物,是尸体,是石块,是木头,是流水。</p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《生育制度》</title>
+    <url>/post/481cb0e7.html</url>
+    <content><![CDATA[<h3 id="1-摘抄啊"><a href="#1-摘抄啊" class="headerlink" title="1.  摘抄啊"></a>1.  摘抄啊</h3><p><img src="/post/481cb0e7/1.png" alt="1"></p>
+<p><img src="/post/481cb0e7/2.png" alt="1"></p>
+<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/30258045/">https://book.douban.com/subject/30258045/</a></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《了不起的我:自我发展的心理学》</title>
+    <url>/post/bbbe77a6.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/bbbe77a6/1.png" alt="1"></p>
+<p><img src="/post/bbbe77a6/2.png" alt="1"></p>
+<p><img src="/post/bbbe77a6/3.png" alt="1"></p>
+<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/34836531/">https://book.douban.com/subject/34836531/</a></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《巨婴国》</title>
+    <url>/post/1f3db20d.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/1f3db20d/1.jpg" alt="1"></p>
+<p><img src="/post/1f3db20d/2.jpg" alt="2"></p>
+<p><img src="/post/1f3db20d/3.jpg" alt="3"></p>
+<p><img src="/post/1f3db20d/4.jpg" alt="4"></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《刑法学讲义》</title>
+    <url>/post/3f1ee622.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/3f1ee622/1.jpg" alt="1"></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《结构性改革》</title>
+    <url>/post/9c5aff0c.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/9c5aff0c/1.jpg" alt="1"></p>
+<p><img src="/post/9c5aff0c/2.jpg" alt="2"></p>
+<p><img src="/post/9c5aff0c/3.jpg" alt="3"></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《为何家会伤人》</title>
+    <url>/post/55834202.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/55834202/1.jpg" alt="1"></p>
+<p><img src="/post/55834202/2.jpg" alt="2"></p>
+<p><img src="/post/55834202/3.jpg" alt="3"></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《置身事内》</title>
+    <url>/post/55fa69d4.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/55fa69d4/1.jpg" alt="1"></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《厌女》</title>
+    <url>/post/70239433.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/70239433/1.jpg" alt="1"></p>
+<p><img src="/post/70239433/2.jpg" alt="2"></p>
+<p><img src="/post/70239433/3.jpg" alt="3"></p>
+<p><img src="/post/70239433/4.jpg" alt="3"></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《愿你拥有被爱照亮的生命》</title>
+    <url>/post/f78aeecc.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/f78aeecc/1.jpg" alt="1"></p>
+<p><img src="/post/f78aeecc/2.jpg" alt="1"></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《变革中国》</title>
+    <url>/post/f78aeecc.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/f78aeecc/1.jpg" alt="1"></p>
+<p><img src="/post/f78aeecc/2.jpg" alt="1"></p>
+<p><img src="/post/f78aeecc/3.jpg" alt="1"></p>
+<p><img src="/post/f78aeecc/4.jpg" alt="1"></p>
+<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/20366370/">https://book.douban.com/subject/20366370/</a></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《简读中国史:世界史坐标下的中国》</title>
+    <url>/post/8da0f6ef.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/8da0f6ef/1.jpg" alt="1"></p>
+<p><img src="/post/8da0f6ef/2.jpg" alt="2"></p>
+<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/34501169/">https://book.douban.com/subject/34501169/</a></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《稀缺》</title>
+    <url>/post/d8e495f6.html</url>
+    <content><![CDATA[<h3 id="1-摘抄"><a href="#1-摘抄" class="headerlink" title="1.  摘抄"></a>1.  摘抄</h3><p><img src="/post/d8e495f6/1.jpg" alt="1"></p>
+<p><img src="/post/d8e495f6/2.jpg" alt="2"></p>
+<p><img src="/post/d8e495f6/3.jpg" alt="3"></p>
+<h3 id="2-豆瓣"><a href="#2-豆瓣" class="headerlink" title="2. 豆瓣"></a>2. 豆瓣</h3><p><a href="https://book.douban.com/subject/26178426/">https://book.douban.com/subject/26178426/</a></p>
+]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
   </entry>
   <entry>
     <title>中国历史朝代</title>
