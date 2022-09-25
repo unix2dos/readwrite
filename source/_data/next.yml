@@ -241,7 +241,7 @@ menu:
   #Life: /categories/life/ || fas fa-feather-alt
   Book: /categories/book/ || fas fa-hat-cowboy
   Note: /categories/note/ || fas fa-horse-head
-  Study: /categories/study/ || fas fa-dragon
+  Think: /categories/think/ || fas fa-dragon
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
