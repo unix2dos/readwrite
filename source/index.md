@@ -1,7 +1,7 @@
 
 # 2022-12
 
-+ ![](2022_12/202212120031569.png) [12-12]
++ ![](https://raw.githubusercontent.com/unix2dos/picgo/master/202212120031569.png)  [12-12]
 
 + 试了obsidian，简直太好用了，放弃logseq。[12-05]
 
