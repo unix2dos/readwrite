@@ -1,7 +1,13 @@
 
 # 2022-12
 
-+ ![](https://raw.githubusercontent.com/unix2dos/picgo/master/202212120031569.png)  [12-12]
++ 你需要的不是一个Flomo，而是与自己对话。
+
+  你需要的不是一个Cubox，而是听别人说话。
+
+  你需要的不是一个思源笔记，而是说话给别人听。
+
+  [12-12]
 
 + 试了obsidian，简直太好用了，放弃logseq。[12-05]
 
