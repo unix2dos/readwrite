@@ -815,7 +815,7 @@ cnzz_siteid:
 # AppID and AppKey are recommended to be the same as valine's for counter compatibility.
 # Do not enable both `valine.visitor` and `leancloud_visitors`.
 leancloud_visitors:
-  enable: true
+  enable: false
   appid: GeP0yYVQfmJ224422VTor9HS-gzGzoHsz # Your leancloud application appid
   appkey: 6p5kFrCS2NlzNDNAEIy028No # Your leancloud application appkey
   # Required for apps from CN region
@@ -826,7 +826,7 @@ leancloud_visitors:
   security: false
 
 leancloud_counter_security:
-  enable_sync: true
+  enable_sync: false
   appid: GeP0yYVQfmJ224422VTor9HS-gzGzoHsz # Your leancloud application appid
   appkey: 6p5kFrCS2NlzNDNAEIy028No # Your leancloud application appkey
   username:
