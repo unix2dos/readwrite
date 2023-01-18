@@ -731,6 +731,14 @@ changyan:
   appkey:
   #post_meta_order: 0
 
+
+leancloud_counter_security:
+  enable_sync: true
+  appid: GeP0yYVQfmJ224422VTor9HS-gzGzoHsz # Your leancloud application appid
+  appkey: 6p5kFrCS2NlzNDNAEIy028No # Your leancloud application appkey
+  username:
+  password:
+
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
