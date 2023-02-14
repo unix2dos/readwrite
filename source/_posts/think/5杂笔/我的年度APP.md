@@ -2,7 +2,7 @@
 title: 我的年度APP
 categories:
   - think
-  - 杂笔
+  - 5杂笔
 abbrlink: d14e768c
 date: 2023-01-11 00:00:01
 ---
