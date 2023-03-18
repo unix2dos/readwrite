@@ -237,10 +237,10 @@ darkmode: false
 # When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
 # External url should start with http:// or https://
 menu:
-  home: / || fab fa-dropbox
-  Book: /categories/book/ || fab fa-docker
-  Note: /categories/note/ || fas fa-feather
-  Think: /categories/think/ || fas fa-dragon
+  home: / || fas fa-fingerprint
+  Book: /categories/1-book/ || fas fa-book-reader
+  Flash: /categories/2-flash/ || fas fa-shower
+  Timing: /categories/3-timing/ || fas fa-tasks
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
