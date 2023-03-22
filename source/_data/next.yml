@@ -239,8 +239,8 @@ darkmode: false
 menu:
   home: / || fas fa-fingerprint
   Book: /categories/1-book/ || fas fa-book-reader
-  Flash: /categories/2-flash/ || fas fa-shower
-  Timing: /categories/3-timing/ || fas fa-tasks
+  Timing: /categories/2-timing/ || fas fa-tasks
+  Flash: /categories/3-flash/ || fas fa-shower
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
