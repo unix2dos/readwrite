@@ -2,16 +2,11 @@
 doc_type: weread-highlights-reviews
 bookId: CB_AxhBxdByZ4wA6fW6gbEJJBfi
 author: 马修•沃克
-cover: 'https://res.weread.qq.com/wrepub/CB_5T31Gv1JG5zO6eg6cN8qN7HC_parsecover'
+cover: https://res.weread.qq.com/wrepub/CB_5T31Gv1JG5zO6eg6cN8qN7HC_parsecover
 reviewCount: 0
 noteCount: 4
-title: >-
-  《我们为什么要睡觉（让比尔•盖茨决定放下工作，好好睡觉！《纽约时报》畅销书排行榜NO.1，全球公认殿堂级睡眠百科全书，全景解析睡梦秘境，轻松摆脱睡眠问题！后浪出品）》
-categories:
-  - c_booking
-  - 01进行中
-abbrlink: a7923c7d
-date: 2023-04-12 00:00:00
+title: 《我们为什么要睡觉（让比尔•盖茨决定放下工作，好好睡觉！《纽约时报》畅销书排行榜NO.1，全球公认殿堂级睡眠百科全书，全景解析睡梦秘境，轻松摆脱睡眠问题！后浪出品）》
+date: 2023-04-12
 ---
 
 
