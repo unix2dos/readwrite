@@ -2,11 +2,15 @@
 doc_type: weread-highlights-reviews
 bookId: CB_4YnBx7ByZ4wA6fW6gbCwy4uJ
 author: 梁永安
-cover: https://res.weread.qq.com/wrepub/CB_F9BD5BD6JB7Q6em6ccEuq9X5_parsecover
+cover: 'https://res.weread.qq.com/wrepub/CB_F9BD5BD6JB7Q6em6ccEuq9X5_parsecover'
 reviewCount: 0
 noteCount: 8
 title: 《梁永安：阅读、游历和爱情（复旦大学人文学者、B站知识型博主 与青年人一起探讨社会转型时代该怎样生活）》
-date: 2023-04-14
+categories:
+  - c_booking
+  - 01进行中
+abbrlink: bbd013ee
+date: 2023-04-14 00:00:00
 ---
 
 
