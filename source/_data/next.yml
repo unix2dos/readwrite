@@ -238,10 +238,10 @@ darkmode: false
 # External url should start with http:// or https://
 menu:
   home: / || fas fa-home
-  Output: /categories/1-output/ || fas fa-brain
+  Output: /categories/1-output/ || fas fa-feather
   Feynman: /categories/2-feyman/ || fas fa-school
-  Book: /categories/3-book/ || fas fa-book-medical
-  Booking: /categories/4-booking/ || fas fa-book-dead
+  Book: /categories/3-book/ || fas fa-book
+  Booking: /categories/4-booking/ || fas fa-book-reader
   #about: /about/ || fa fa-user
   #tags: /tags/ || fa fa-tags
   #categories: /categories/ || fa fa-th
