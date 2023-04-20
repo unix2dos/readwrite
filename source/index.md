@@ -1,5 +1,5 @@
 ---
-title: 趣读写
+title:
 type: index
 comments: true
 abbrlink: '80736701'

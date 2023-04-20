@@ -1,7 +1,7 @@
 ---
 title: 我的年度APP
 categories:
-  - b_think
+  - 1_output
   - 4记录
 abbrlink: d14e768c
 date: 2023-01-11 00:00:01
