@@ -1,6 +1,6 @@
 ---
-title: categories
+title: index
 date: 2023-01-01 16:24:04
-type: "categories"
+type: "index"
 comments: true
 ---
