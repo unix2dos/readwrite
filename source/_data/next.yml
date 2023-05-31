@@ -239,7 +239,7 @@ darkmode: false
 menu:
   home: / || fas fa-home
   Output: /categories/1-output/ || fas fa-feather
-  Feynman: /categories/2-feyman/ || fas fa-school
+  Study: /categories/2-study/ || fas fa-school
   Book: /categories/3-book/ || fas fa-book
   Booking: /categories/4-booking/ || fas fa-book-reader
   #about: /about/ || fa fa-user
