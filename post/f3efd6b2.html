@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第1章 话说简单 📌 我在工作中一直在想方设法把技术变得简单。问题在于一谈到简单，人们只会想到诸如“少即是多”这样含糊其辞的话  ⏱ 2023-08-02 21:48:51    复杂的产品不可持续 📌 我们渴望简单，却被复杂的产品吸引。精密的装置、整排的开关，乃至鲁布·戈德堡机械，都确有某种魅力。2006年，技术专栏作家大卫·波格（David Pogue）把这种现象称为“夸耀效用原理”：人们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《简约至上：交互式设计四策略（第2版）》">
+<meta property="og:url" content="https://www.readwrite.fun/post/f3efd6b2.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="第1章 话说简单 📌 我在工作中一直在想方设法把技术变得简单。问题在于一谈到简单，人们只会想到诸如“少即是多”这样含糊其辞的话  ⏱ 2023-08-02 21:48:51    复杂的产品不可持续 📌 我们渴望简单，却被复杂的产品吸引。精密的装置、整排的开关，乃至鲁布·戈德堡机械，都确有某种魅力。2006年，技术专栏作家大卫·波格（David Pogue）把这种现象称为“夸耀效用原理”：人们">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-03T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-10T03:50:00.598Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.readwrite.fun/post/f3efd6b2.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《简约至上：交互式设计四策略（第2版）》 | 趣读写</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+        <li class="menu-item menu-item-booking">
+
+    <a href="/categories/4-booking/" rel="section"><i class="fas fa-book-reader fa-fw"></i>Booking</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.readwrite.fun/post/f3efd6b2.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="levon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="趣读写">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《简约至上：交互式设计四策略（第2版）》
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-08-03 00:00:00" itemprop="dateCreated datePublished" datetime="2023-08-03T00:00:00+00:00">2023-08-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-10 03:50:00" itemprop="dateModified" datetime="2023-09-10T03:50:00+00:00">2023-09-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/4-booking/" itemprop="url" rel="index"><span itemprop="name">4_booking</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/4-booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/" itemprop="url" rel="index"><span itemprop="name">01进行中</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/post/f3efd6b2.html" class="post-meta-item leancloud_visitors" data-flag-title="《简约至上：交互式设计四策略（第2版）》" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/f3efd6b2.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/f3efd6b2.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="第1章-话说简单"><a href="#第1章-话说简单" class="headerlink" title="第1章 话说简单"></a>第1章 话说简单</h2><ul>
+<li>📌 我在工作中一直在想方设法把技术变得简单。问题在于一谈到简单，人们只会想到诸如“少即是多”这样含糊其辞的话 <ul>
+<li>⏱ 2023-08-02 21:48:51</li>
+</ul>
+</li>
+</ul>
+<h2 id="复杂的产品不可持续"><a href="#复杂的产品不可持续" class="headerlink" title="复杂的产品不可持续"></a>复杂的产品不可持续</h2><ul>
+<li><p>📌 我们渴望简单，却被复杂的产品吸引。精密的装置、整排的开关，乃至鲁布·戈德堡机械，都确有某种魅力。2006年，技术专栏作家大卫·波格（David Pogue）把这种现象称为“夸耀效用原理”：人们喜欢自己被包围在不必要的功能中。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:50:23</li>
+</ul>
+</li>
+<li><p>📌 不断向软件中增加功能，同样也是不可持续的。客户希望增加功能，投资人也希望通过新功能提振产品。有时候他们是对的。然而功能越多，就越难发现真正对用户有价值的东西。新功能总有一天会归于平淡。增加复杂性意味着遗留代码越来越沉重，导致产品维护成本越来越高，而且也越来越难以灵活应对市场变化。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:51:34</li>
+</ul>
+</li>
+</ul>
+<h2 id="冒充简单"><a href="#冒充简单" class="headerlink" title="冒充简单"></a>冒充简单</h2><ul>
+<li><p>📌 冒充简单的例子随处可见，比如说明书，比如操作向导，都企图告诉人们某个事物很简单。而减肥药、高尔夫球俱乐部的激光瞄准镜，以及“足不出户发大财”的方案等貌似简单的东西，没有一个能够应验的。相反，它们会让事情变得更复杂，效果更差。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:52:03</li>
+</ul>
+</li>
+<li><p>📌 说明不会让事情变简单。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:52:51</li>
+</ul>
+</li>
+</ul>
+<h2 id="问题不可避免"><a href="#问题不可避免" class="headerlink" title="问题不可避免"></a>问题不可避免</h2><ul>
+<li>📌 寄希望于用户学习是不可持续的。 <ul>
+<li>⏱ 2023-08-02 21:53:15</li>
+</ul>
+</li>
+</ul>
+<h2 id="三种用户"><a href="#三种用户" class="headerlink" title="三种用户"></a>三种用户</h2><ul>
+<li><p>📌 提到简单，可以把用户分为三种类型。专家型用户愿意探索你的产品或服务，并且会给你提出各种改进建议。他们希望看到为他们量身定做的前所未有的技术。即便拿到的是一个从未见过的产品，他们也会摆出专家的态度。换句话说，他们舍得花时间研究新产品，探索产品的新功能。如果你是造手机的，他们就是那些想要浏览手机的文件系统，哪儿都动一动的人。不过，这一类用户总体上占少数。第二类可以叫作随意型用户。他们可能使用过类似的产品或服务。他们有兴趣使用更高级、更复杂的产品，却不愿意接触全新的东西——要想让他们认可新功能，那么新功能必须足够简单。比如说，他们可能会对更先进的手机感兴趣，但是必须保证能够轻松地导入他们宝贵的联系人。这一类用户比你想象得少，而且他们的学习意愿不强烈。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:55:29</li>
+</ul>
+</li>
+<li><p>📌 最大的一个用户群体是主流用户。他们自己不会因为你的技术而使用你的产品，使用你产品的目的是完成某项任务。他们会掌握一些重要功能的使用方法，但永远不会产生学会所有功能的想法。这些人的口头禅就是：“我的手机只要能打电话、能发短信就行了。”大多数人属于这一类。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:55:44</li>
+</ul>
+</li>
+<li><p>📌 你可能会天真地认为，一段时间以后，其中一类人就会升级为另一类人。但这几乎是不可能发生的。即便一个产品用了很多年，用户类型的标签也是不会变的。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:55:51</li>
+</ul>
+</li>
+<li><p>📌 主流用户占绝对的主体地位，专家型和随意型用户只是少数派。 </p>
+<ul>
+<li>⏱ 2023-08-02 21:56:27</li>
+</ul>
+</li>
+</ul>
+<h2 id="为主流用户而设计"><a href="#为主流用户而设计" class="headerlink" title="为主流用户而设计"></a>为主流用户而设计</h2><ul>
+<li>📌 福特的T型车并不是市场上的第一辆汽车，却是第一辆为平民大众制造的汽车。亨利·福特之所以能彻底改变汽车业，就是因为他毫不动摇地把典型用户作为自己的目标。他的核心理念就是简单。 <ul>
+<li>⏱ 2023-08-02 21:57:27</li>
+</ul>
+</li>
+</ul>
+<h2 id="简单意味着控制"><a href="#简单意味着控制" class="headerlink" title="简单意味着控制"></a>简单意味着控制</h2><ul>
+<li>📌 有时候，掌控的感觉意味着要完成一个任务：女人买裙子时想要感觉掌控着自己的形象。有时候，掌控又意味着获取信息：男人看新闻就是要了解世界上发生了什么事（从而感觉自己对世界局势有所掌控）。 <ul>
+<li>⏱ 2023-08-02 21:58:52</li>
+</ul>
+</li>
+</ul>
+<h2 id="愿景与战略"><a href="#愿景与战略" class="headerlink" title="愿景与战略"></a>愿景与战略</h2><ul>
+<li>📌 根据竞争战略之父迈克尔 ·波特的理论，一家公司为寻求竞争优势，有三种战略可以选择：差异化（通过树立壁垒来维持较高价格）、低成本（通过控制成本费用实现利润最大化）或专一化（专注于某个细分人群或细分市场）。 <ul>
+<li>⏱ 2023-08-02 22:00:41</li>
+</ul>
+</li>
+</ul>
+<h2 id="四个策略"><a href="#四个策略" class="headerlink" title="四个策略"></a>四个策略</h2><ul>
+<li>📌 几年来，我见过很多为简化电视遥控器而设计的方案，我把这些方案分成四大类。· 删除——去掉所有不必要的按钮，直至减到不能再减。· 组织——按照有意义的标准将按钮划分成组。· 隐藏——把那些不是最重要的按钮安排在活动仓盖之下，避免分散用户注意力。· 转移——只在遥控器上保留具备最基本功能的按钮，其他控制通过电视屏幕上的菜单、语音或手势来实现，从而将复杂性从遥控器转移到电视。 <ul>
+<li>⏱ 2023-08-02 22:02:25</li>
+</ul>
+</li>
+</ul>
+<h2 id="第4章-删除"><a href="#第4章-删除" class="headerlink" title="第4章 删除"></a>第4章 删除</h2><ul>
+<li>📌 传统的观点认为，功能越多，能力就越强，产品的用途也就越广。传统的观点还认为，功能多的产品能打败功能少的产品。但相对简单的产品却频繁地替代更复杂的产品。 <ul>
+<li>⏱ 2023-08-02 22:03:09</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么不能删"><a href="#什么不能删" class="headerlink" title="什么不能删"></a>什么不能删</h2><ul>
+<li><p>📌 截止日期当前，首先被砍掉的往往是实现难度大的功能。理由是这样能保证先发布一个MVP（Minimal Viable Product，最低限度可用产品），其他功能以后可以再加。但MVP应该符合愿景并提供某种价值。而以后再加功能必须是你有时间，而且有钱去做才行。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:04:12</li>
+</ul>
+</li>
+<li><p>📌 这其实是一个常见的模式。交工日期迫近，预算资金紧张，都可能导致功能被砍掉。设计团队经常会以提供尽可能多的功能为目标。那些耗时而又不容易实现的功能通常会被砍掉。如果有人强烈反对，得到的答复一般是他们的功能会在“第二期”或“第三期”实现。结果呢，无非就是得到一个由简单的功能叠加起来的毫无特色的产品，与市面上现有的平庸货色别无二致。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:04:20</li>
+</ul>
+</li>
+<li><p>📌 不要等着别人不分青红皂白地、无情地删除最有意思的功能。要总揽全局，保证只交付那些对用户体验而言真正有价值的功能和内容。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:04:36</li>
+</ul>
+</li>
+</ul>
+<h2 id="找到核心所在"><a href="#找到核心所在" class="headerlink" title="找到核心所在"></a>找到核心所在</h2><ul>
+<li><p>📌 体验的核心是最能打动用户的东西。找到它，删什么留什么就一目了然了。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:04:47</li>
+</ul>
+</li>
+<li><p>📌 与新增功能相比，客户更关注基本功能的改进。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:05:52</li>
+</ul>
+</li>
+</ul>
+<h2 id="但我们的用户想要"><a href="#但我们的用户想要" class="headerlink" title="但我们的用户想要"></a>但我们的用户想要</h2><ul>
+<li><p>📌 增加功能不一定会让用户体验更简单，反而经常会导致更多的迷惑。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:06:46</li>
+</ul>
+</li>
+<li><p>📌 要倾听用户的意见，但不能盲从。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:06:53</li>
+</ul>
+</li>
+</ul>
+<h2 id="导致出错的功能"><a href="#导致出错的功能" class="headerlink" title="导致出错的功能"></a>导致出错的功能</h2><ul>
+<li><p>📌 如果在设计的时候只盯住流程，那么结果很可能会创造更多的功能去处理出现的各种异常情况、问题和细节。要想避免这些复杂性，退一步想，把注意力集中到客户的目的上，问自己：“还有其他的解决方式吗？” </p>
+<ul>
+<li>⏱ 2023-08-02 22:08:10</li>
+</ul>
+</li>
+<li><p>📌 如果一个小变化导致了复杂的流程，就应该退一步去寻找更好的解决方案。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:08:20</li>
+</ul>
+</li>
+</ul>
+<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><ul>
+<li>📌 但这个控件可能会导致两方面的错误。如果你选择了将来的日期，就会有一条错误消息提示你，意思说白了就是你很笨。如果你选择了一年前的日期，同样会看到一条提示消息，告诉你再试一次，因为银行只提供12个月以内的对账单。匆匆忙忙的客户很容易在这个控件上犯错，无论显示什么错误消息，好像都没有那么友好、亲切和简单。问题实际上是这样，用户只需从过去的12个月的对账单中进行选择，可查询页面却要求他们输入日期。因此，我把两个日期控件改成了一个可用银行对账单的下拉列表。在重新设计的控件里，用户只能选择可用的对账单，因此都不用再设计错误消息了，系统维护起来自然也会更简单。用户在纠正错误的时候，总会分散一部分注意力，而且感觉遇到了麻烦。为了避免发生错误，设计人员经常会打断用户：“你确定要这样做吗？”但从某种角度来说，这种方式是很差劲的，因为这样会干扰所有人，即使人家的选择没错也不能幸免。在设计简单的体验时，关键的一步是确定哪些地方需要错误消息，或者检查错误日志，从中找出常见的错误消息。消除错误的来源是简化体验的一个重要思路。 <ul>
+<li>⏱ 2023-08-02 22:09:20</li>
+</ul>
+</li>
+</ul>
+<h2 id="如果功能不是必要的"><a href="#如果功能不是必要的" class="headerlink" title="如果功能不是必要的"></a>如果功能不是必要的</h2><ul>
+<li>📌 长远来看，增加功能有害无益。 <ul>
+<li>⏱ 2023-08-02 22:10:12</li>
+</ul>
+</li>
+</ul>
+<h2 id="真有影响吗"><a href="#真有影响吗" class="headerlink" title="真有影响吗"></a>真有影响吗</h2><ul>
+<li><p>📌 某项功能一旦发布，就一定会有人在某个地方使用它。如果用户喜欢它，就会改变自己的行为来适应这项功能。当用户离不开这项功能时，你再把它砍掉，即使是一个很不起眼的变化，都会激怒用户。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:10:29</li>
+</ul>
+</li>
+<li><p>📌 想在任何时候取悦所有用户是不可能的。因此，我们只能退而求其次，专注于目标客户的核心任务，只要让他们高兴、让他们满意就行了。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:11:15</li>
+</ul>
+</li>
+</ul>
+<h2 id="排定功能优先级"><a href="#排定功能优先级" class="headerlink" title="排定功能优先级"></a>排定功能优先级</h2><ul>
+<li>📌 · 确定用户想要达到的目的，并排定优先次序。对于电视遥控器而言，主要功能是选择要看的频道和调节音量（我觉得还应该有“字幕”）；其次是切换不同的视频源，比如流媒体播放器；而调整图片就不那么重要了。 <ul>
+<li>⏱ 2023-08-02 22:11:36</li>
+</ul>
+</li>
+</ul>
+<h2 id="负担"><a href="#负担" class="headerlink" title="负担"></a>负担</h2><ul>
+<li>📌 合作银行（Co-operative Bank）曾邀请我的合伙人理查德·凯迪克（Richard Caddick）帮他们提高网站主页的点击量。为此，他就从减少网站访客的负担着手，做了以下工作。· 删除没人会看的文字，比如银行名称下面的口号。· 简化布局，删除页面右侧的垂直边栏，让人容易分清哪些内容重要，哪些内容不重要。· 去掉重复的链接，例如“告诉我……”之类的下拉菜单，把可点击项的数量减少了20%。· 精简按钮和链接的样式，让人容易区分哪些可以点击，哪些不能点击。· 减少广告位和广告数量，让目标明确的客户不会被这些内容干扰。· 去掉分散注意力的元素，如分隔内容的线和横在页面上的黄色背景条，从而减少视觉上的干扰。这个小项目没用几周时间就完成了，但主页的点击量却因此明显提高，进而增加了填写申请表单的人数。去掉那些可有可无的选项、内容和分散人们注意力的玩意儿，可以减轻用户的负担，让用户专心去做自己想做的事。去掉分散注意力的视觉元素，可以让用户感觉速度更快、更可靠。把干扰性的细节都删除。 <ul>
+<li>⏱ 2023-08-02 22:13:12</li>
+</ul>
+</li>
+</ul>
+<h2 id="决策"><a href="#决策" class="headerlink" title="决策"></a>决策</h2><ul>
+<li>📌 选择有限，用户反而更欢喜 <ul>
+<li>⏱ 2023-08-02 22:13:47</li>
+</ul>
+</li>
+</ul>
+<h2 id="聪明的默认值"><a href="#聪明的默认值" class="headerlink" title="聪明的默认值"></a>聪明的默认值</h2><ul>
+<li>📌 默认值是节省用户时间和精力的有效方式，也是清除设计蓝图中“减速带”的首选方式。 <ul>
+<li>⏱ 2023-08-02 22:14:32</li>
+</ul>
+</li>
+</ul>
+<h2 id="选项和首选项"><a href="#选项和首选项" class="headerlink" title="选项和首选项"></a>选项和首选项</h2><ul>
+<li><p>📌 通常，选项是让用户自定义设置的。可以说，这是典型的专家行为——专家想要掌握自己的汽车，并且选择很多个性的配置。但主流用户只想买辆车开开。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:14:48</li>
+</ul>
+</li>
+<li><p>📌 主流用户不喜欢为设置选项和首选项劳心费神。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:15:38</li>
+</ul>
+</li>
+</ul>
+<h2 id="如果一个选项还嫌多"><a href="#如果一个选项还嫌多" class="headerlink" title="如果一个选项还嫌多"></a>如果一个选项还嫌多</h2><ul>
+<li><p>📌 可以到亚马逊或百思买这类大型站点上，看看他们对结账功能的设计。结账的时候，用户必须做出决定：买，还是走人。这些网售商都知道，任何一丝疑虑都会导致用户打消购买的念头。因而在结账这个环节，网售商删除了其他每个页面顶部和底部都有的导航链接。 </p>
+<ul>
+<li>⏱ 2023-08-02 22:16:37</li>
+</ul>
+</li>
+<li><p>📌 我想，大多数消费者都不会注意到这一点。他们为了买件东西，一路过关斩将——都在忙着填表单了。但网售商心里清楚，如果把那些链接放回去，消费者就会点击，销售机会也就消失了。如果你觉得从这个角度讲还没有说服力，那么可以想一想，在站点其他的页面和结账页面之间来回切换，这样浪费时间对用户有什么好处？ </p>
+<ul>
+<li>⏱ 2023-08-02 22:16:49</li>
+</ul>
+</li>
+</ul>
+<h2 id="视觉混乱"><a href="#视觉混乱" class="headerlink" title="视觉混乱"></a>视觉混乱</h2><ul>
+<li><p>📌 设计师爱德华·塔夫特（Edward Tufte）谈到要让“数据墨水率”越来越高。换句话说，墨水（或像素）不应该浪费在那些不是内容的地方或者重复的内容上。为此，他删除了图表中的网格线，只剩下坐标轴和折线。他的理由是，网格线分散了用户的注意力，导致他们不能专注于更重要的数据：图中的折线形状。 </p>
+<ul>
+<li>⏱ 2023-08-03 08:52:57</li>
+</ul>
+</li>
+<li><p>📌 以下是一些减少视觉混乱的方法。· 使用空白或浅背景色来划分页面，不要使用线条。为什么？因为线条在前景中，而空白和颜色在背景上，前景会更多地吸引人的注意力。· 尽可能少使用强调。如果仅加粗就行了，就不必又加粗、又放大、又变成红色。· 别使用粗黑线，匀称、浅色的线更好。· 控制信息的层次。如果页面中信息的层次超过了2或3个层次，就会导致用户迷惑。比如说，要少用数字、大字体或粗字体，最好总共不超过3个层次：标题、子标题和正文。· 减少元素大小的变化。例如，如果你在设计某个报纸的电子版，可能会有一大块放置头条新闻，另有5小块放置次要一些的新闻，千万不要让版面上出现大小都不同的6个区块。· 减少元素形状的变化。整个界面中最好只使用一种按钮样式，使用3或4种按钮样式就太花哨了。 </p>
+<ul>
+<li>⏱ 2023-08-03 08:53:18</li>
+</ul>
+</li>
+</ul>
+<h2 id="删减文字"><a href="#删减文字" class="headerlink" title="删减文字"></a>删减文字</h2><ul>
+<li><p>📌 删除引见性文字。通常，一打开页面，首先映入眼帘的是文章开头的那几句废话（“欢迎光临我们的网站，我们希望您心情愉快……”）。这些话听起来不会让人觉得你口才好，也并不吸引人，只会让读者纳闷作者到底想说什么。删掉这些文字，开门见山多好。 </p>
+<ul>
+<li>⏱ 2023-08-03 08:55:18</li>
+</ul>
+</li>
+<li><p>📌 “把每一页中的文字删掉一半，然后把剩下的再删掉一半。”——史蒂夫·克鲁格《点石成金》中第三条可用性法则 </p>
+<ul>
+<li>⏱ 2023-08-03 08:55:33</li>
+</ul>
+</li>
+</ul>
+<h2 id="精简句子"><a href="#精简句子" class="headerlink" title="精简句子"></a>精简句子</h2><ul>
+<li>📌 这些规则可以把文字变得简洁、清晰、有说服力。例如，· 请注意这一点，尽管Chrome同时被Mac和Windows操作系统所支持，但为了确保您的浏览体验最佳，我们还是建议本站点的所有用户使用到目前为止最新版本的Firefox浏览器。（69个字）可以简化为：· 为保证最佳效果，请使用最新版的Firefox。本站也支持Mac和Windows平台下的Chrome。（31个字） <ul>
+<li>⏱ 2023-08-03 08:56:08</li>
+</ul>
+</li>
+</ul>
+<h2 id="删减过多"><a href="#删减过多" class="headerlink" title="删减过多"></a>删减过多</h2><ul>
+<li>📌 在没有按钮的电梯里，人们会感觉是在浪费时间，心烦意乱。删除所有操控装置并没有简化体验，反而让体验更复杂。 <ul>
+<li>⏱ 2023-08-03 08:57:42</li>
+</ul>
+</li>
+</ul>
+<h2 id="第5章-组织"><a href="#第5章-组织" class="headerlink" title="第5章 组织"></a>第5章 组织</h2><ul>
+<li>📌 最好的遥控器设计只突出起点（开&#x2F;关按钮）和最重要的按钮（频道选择和音量调节）。 <ul>
+<li>⏱ 2023-08-03 20:03:51</li>
+</ul>
+</li>
+</ul>
+<h2 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h2><ul>
+<li><p>📌 有关分块的经典建议是把项组织到“7加减2”个块中。理论上讲，这个数字是人的大脑瞬间能够记住的最大数目。如果眼前有一个包含10项的列表，那么你很可能会像“狗熊掰棒子”一样，前脚看完后脚就忘了。 </p>
+<ul>
+<li>⏱ 2023-08-03 20:03:51</li>
+</ul>
+</li>
+<li><p>📌 不少心理学家认为人类的瞬间记忆存储空间其实更小，大约只有4项。不过，“7加减2”规则还是有效的，至少看起来人类还能应付得了这个数字。 </p>
+<ul>
+<li>⏱ 2023-08-03 20:03:51</li>
+</ul>
+</li>
+<li><p>📌 当然，没有人说不能分成更少的块。我就始终认为应该尽可能少分几个块，这样才能让主流用户感觉更简单。分块越少，选择越少，用户负担就越轻。 </p>
+<ul>
+<li>⏱ 2023-08-03 20:04:02</li>
+</ul>
+</li>
+</ul>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="错误-1"><a href="#错误-1" class="headerlink" title="错误"></a>错误</h2><h3 id="划线评论"><a href="#划线评论" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 消除错误的来源是简化体验的一个重要思路。  ^225207353-7KaKezfwC<ul>
+<li>💭 消除错误的来源是简化体验的一个重要思路。</li>
+<li>⏱ 2023-08-02 22:09:30</li>
+</ul>
+</li>
+</ul>
+<h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>读完了，打赏休息一下吧。</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="levon WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="levon Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/bdd1bbd4.html" rel="prev" title="《一个都不正经》4星">
+      <i class="fa fa-chevron-left"></i> 《一个都不正经》4星
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/42159e81.html" rel="next" title="《Go语言精进之路：从新手到高手的编程思想、方法和技巧1》">
+      《Go语言精进之路：从新手到高手的编程思想、方法和技巧1》 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-%E8%AF%9D%E8%AF%B4%E7%AE%80%E5%8D%95"><span class="nav-text">第1章 话说简单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E6%9D%82%E7%9A%84%E4%BA%A7%E5%93%81%E4%B8%8D%E5%8F%AF%E6%8C%81%E7%BB%AD"><span class="nav-text">复杂的产品不可持续</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%92%E5%85%85%E7%AE%80%E5%8D%95"><span class="nav-text">冒充简单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E4%B8%8D%E5%8F%AF%E9%81%BF%E5%85%8D"><span class="nav-text">问题不可避免</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E7%94%A8%E6%88%B7"><span class="nav-text">三种用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%B8%BB%E6%B5%81%E7%94%A8%E6%88%B7%E8%80%8C%E8%AE%BE%E8%AE%A1"><span class="nav-text">为主流用户而设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%84%8F%E5%91%B3%E7%9D%80%E6%8E%A7%E5%88%B6"><span class="nav-text">简单意味着控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%84%BF%E6%99%AF%E4%B8%8E%E6%88%98%E7%95%A5"><span class="nav-text">愿景与战略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E4%B8%AA%E7%AD%96%E7%95%A5"><span class="nav-text">四个策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E5%88%A0%E9%99%A4"><span class="nav-text">第4章 删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%88%A0"><span class="nav-text">什么不能删</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%BE%E5%88%B0%E6%A0%B8%E5%BF%83%E6%89%80%E5%9C%A8"><span class="nav-text">找到核心所在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%86%E6%88%91%E4%BB%AC%E7%9A%84%E7%94%A8%E6%88%B7%E6%83%B3%E8%A6%81"><span class="nav-text">但我们的用户想要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E8%87%B4%E5%87%BA%E9%94%99%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-text">导致出错的功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF"><span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E5%8A%9F%E8%83%BD%E4%B8%8D%E6%98%AF%E5%BF%85%E8%A6%81%E7%9A%84"><span class="nav-text">如果功能不是必要的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9C%9F%E6%9C%89%E5%BD%B1%E5%93%8D%E5%90%97"><span class="nav-text">真有影响吗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%AE%9A%E5%8A%9F%E8%83%BD%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-text">排定功能优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9F%E6%8B%85"><span class="nav-text">负担</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%B3%E7%AD%96"><span class="nav-text">决策</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%AA%E6%98%8E%E7%9A%84%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="nav-text">聪明的默认值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9%E5%92%8C%E9%A6%96%E9%80%89%E9%A1%B9"><span class="nav-text">选项和首选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%80%E4%B8%AA%E9%80%89%E9%A1%B9%E8%BF%98%E5%AB%8C%E5%A4%9A"><span class="nav-text">如果一个选项还嫌多</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E8%A7%89%E6%B7%B7%E4%B9%B1"><span class="nav-text">视觉混乱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E5%87%8F%E6%96%87%E5%AD%97"><span class="nav-text">删减文字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B2%BE%E7%AE%80%E5%8F%A5%E5%AD%90"><span class="nav-text">精简句子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E5%87%8F%E8%BF%87%E5%A4%9A"><span class="nav-text">删减过多</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E7%BB%84%E7%BB%87"><span class="nav-text">第5章 组织</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%9D%97"><span class="nav-text">分块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF-1"><span class="nav-text">错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="nav-text">划线评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">308</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

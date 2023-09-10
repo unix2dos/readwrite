@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1. 通胀指标经济学上有两种通胀指标，分别是消费者物价指数 (CPI) 和生产者物价指数 (PPI)。CPI 衡量消费者在特定期间购买的商品和服务的总价值，而 PPI 从生产者的角度衡量通胀情况。 1.1 CPI （Consumer Price Index）居民消费价格指数中国大陆的 CPI 的构成包含食品、烟酒及用品、衣着、家庭设备、医疗保健、交通通信、娱乐教育文化、居住八大类产品价格，在八大类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金融数据指标">
+<meta property="og:url" content="https://www.readwrite.fun/post/f1912b19.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="1. 通胀指标经济学上有两种通胀指标，分别是消费者物价指数 (CPI) 和生产者物价指数 (PPI)。CPI 衡量消费者在特定期间购买的商品和服务的总价值，而 PPI 从生产者的角度衡量通胀情况。 1.1 CPI （Consumer Price Index）居民消费价格指数中国大陆的 CPI 的构成包含食品、烟酒及用品、衣着、家庭设备、医疗保健、交通通信、娱乐教育文化、居住八大类产品价格，在八大类">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-11T00:00:01.000Z">
+<meta property="article:modified_time" content="2023-09-10T03:50:00.506Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.readwrite.fun/post/f1912b19.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>金融数据指标 | 趣读写</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+        <li class="menu-item menu-item-booking">
+
+    <a href="/categories/4-booking/" rel="section"><i class="fas fa-book-reader fa-fw"></i>Booking</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.readwrite.fun/post/f1912b19.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="levon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="趣读写">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          金融数据指标
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-07-11 00:00:01" itemprop="dateCreated datePublished" datetime="2023-07-11T00:00:01+00:00">2023-07-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-10 03:50:00" itemprop="dateModified" datetime="2023-09-10T03:50:00+00:00">2023-09-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2-study/" itemprop="url" rel="index"><span itemprop="name">2_study</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2-study/5%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">5知识</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/post/f1912b19.html" class="post-meta-item leancloud_visitors" data-flag-title="金融数据指标" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/f1912b19.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/f1912b19.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="1-通胀指标"><a href="#1-通胀指标" class="headerlink" title="1. 通胀指标"></a>1. 通胀指标</h1><p>经济学上有两种通胀指标，分别是消费者物价指数 (CPI) 和生产者物价指数 (PPI)。CPI 衡量消费者在特定期间购买的商品和服务的总价值，而 PPI 从生产者的角度衡量通胀情况。</p>
+<h3 id="1-1-CPI-（Consumer-Price-Index）居民消费价格指数"><a href="#1-1-CPI-（Consumer-Price-Index）居民消费价格指数" class="headerlink" title="1.1 CPI （Consumer Price Index）居民消费价格指数"></a>1.1 CPI （Consumer Price Index）居民消费价格指数</h3><p>中国大陆的 CPI 的构成包含食品、烟酒及用品、衣着、家庭设备、医疗保健、交通通信、娱乐教育文化、居住八大类产品价格，在八大类产品中 CPI 权重最高的是食品，其权重为 32.7%，因此食品价格上涨将推动整个 CPI 上涨。</p>
+<p>CPI 反映的是居民购买并用于消费的商品而不是投资品的价格变化，不包括房价和农业生产资料。另外，CPI 中也不包括乱收费和一些没有明码标价的隐性收费项目。</p>
+<p>CPI 太高说明可能有通货膨胀的风险，但是太低也并非好事。较低的 CPI 并不利于经济的增长。这是因为如果商品、服务价格不断走低，可能使企业效益下降、市场消费不足等一系列问题，整个国民经济体系将陷入一种互相牵制的非良性循环中。</p>
+<p>一般定义超过 3％为通货膨胀，超过 5％就是比较严重的通货膨胀。</p>
+<h3 id="1-2-PPI-（Producer-Price-Index）产品价格指数"><a href="#1-2-PPI-（Producer-Price-Index）产品价格指数" class="headerlink" title="1.2 PPI （Producer Price Index）产品价格指数"></a>1.2 PPI （Producer Price Index）产品价格指数</h3><p>PPI 指数调查的产品包括燃料动力类、有色金属类、化工原料类、农副产品类等 8 大类商品。</p>
+<p>PPI 指数越高，说明上游通货膨胀就越严重，厂家就会涨价，也就导致我们买东西时钱就越不值钱，也就是东西会越来越贵，物价上涨。</p>
+<p>但是 PPI 指数过低，也不好，这样厂家不愿意生产。因为原材料跌价过于猛烈，刚刚买到手的原材料马上就贬值了，如果急着生产，就拼不过那些等一段时间以后原材料成本大大降价然后再买入和生产的竞争对手。</p>
+<p>总体来说，PPI 指数应该维持在 0% 附近 (也就是价格不涨不跌) 平稳最好。</p>
+<h3 id="1-3-关系"><a href="#1-3-关系" class="headerlink" title="1.3 关系"></a>1.3 关系</h3><p>CPI 上涨和 PPI 上涨，意味着通货膨胀上升，经济增速加快，如果上涨幅度过大，会导致高通胀，进而使得经济衰退。<br>CPI 下跌和 PPI 下跌，意味着经济发展放缓，如果下跌幅度过大，会导致通货紧缩，经济陷入衰退。<br>CPI 上涨和 PPI 下跌，意味着企业利润增大，经济将进入一个扩张期。<br>CPI 下跌和 PPI 上涨，意味着企业利润减少，经济有衰退的危险。</p>
+<h1 id="2-货币供应量"><a href="#2-货币供应量" class="headerlink" title="2 货币供应量"></a>2 货币供应量</h1><p>M0 &#x3D; 流通中的现金<br>M1 &#x3D; M0 + 商业银行活期存款，称为狭义货币供应量，又称狭义货币。<br>M2 &#x3D; M1 + 商业银行定期存款，称为广义货币供应量，又称广义货币。</p>
+<p>中国大陆<br>M0 流通中的现金 &#x3D; 流通中现金<br>M1 货币 &#x3D; M0＋单位活期存款<br>M2 货币和准货币 &#x3D; M1＋居民储蓄存款＋单位定期存款＋单位其他存款＋证券公司客户保证金</p>
+<h3 id="2-1-M0"><a href="#2-1-M0" class="headerlink" title="2.1 M0"></a>2.1 M0</h3><p>在日常生活中，M0 数值高证明老百姓手头宽裕、富足。衣食无忧的情况下这种可能性更高。</p>
+<h3 id="2-2-M1"><a href="#2-2-M1" class="headerlink" title="2.2 M1"></a>2.2 M1</h3><p>M1 反映着经济中的现实购买力，代表着居民和企业资金松紧变化，是经济周期波动的先行指标，流动性仅次于 M0。</p>
+<h3 id="2-2-M2"><a href="#2-2-M2" class="headerlink" title="2.2 M2"></a>2.2 M2</h3><p>M2 不仅反映现实的购买力，还反映潜在的购买力。流动性偏弱，但反映的是社会总需求的变化和未来通货膨胀的压力状况。</p>
+<h3 id="2-4-关系"><a href="#2-4-关系" class="headerlink" title="2.4 关系"></a>2.4 关系</h3><p>如果 M1 过高、M2 过低，说明企业活期存款多、投资意愿强、经济扩张较快。企业随时可以用的钱多了，也可能多投资，因此商品和劳务市场的价格通常就会上涨，通胀压力可能就在不远处，此时央行可能需要通过提升存款息等措施来刺激大家多存款，从而用来收紧流动性，抑制通胀压力。</p>
+<p>如果 M2 过高、但 M1 过低，则说明大家把大部分的钱放在了银行定期存款中，不愿意拿出来消费或者投资。此时央行可能就需要通过降息降准等方式来刺激大家减少定期存款，释放流动性，可能还会通过其它刺激消费、刺激投资的政策，来鼓励大家将定期中的钱拿出来投资和消费。</p>
+<p>所以，M1 和 M2 需要均衡发展，这也是央行在制定货币政策时需要重点考虑的因素。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>读完了，打赏休息一下吧。</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="levon WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="levon Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/5c4ad083.html" rel="prev" title="《日本新中产阶级》5星">
+      <i class="fa fa-chevron-left"></i> 《日本新中产阶级》5星
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/5455b059.html" rel="next" title="《芒格之道——查理·芒格股东会讲话1987-2022》">
+      《芒格之道——查理·芒格股东会讲话1987-2022》 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E9%80%9A%E8%83%80%E6%8C%87%E6%A0%87"><span class="nav-text">1. 通胀指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-CPI-%EF%BC%88Consumer-Price-Index%EF%BC%89%E5%B1%85%E6%B0%91%E6%B6%88%E8%B4%B9%E4%BB%B7%E6%A0%BC%E6%8C%87%E6%95%B0"><span class="nav-text">1.1 CPI （Consumer Price Index）居民消费价格指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-PPI-%EF%BC%88Producer-Price-Index%EF%BC%89%E4%BA%A7%E5%93%81%E4%BB%B7%E6%A0%BC%E6%8C%87%E6%95%B0"><span class="nav-text">1.2 PPI （Producer Price Index）产品价格指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E5%85%B3%E7%B3%BB"><span class="nav-text">1.3 关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E8%B4%A7%E5%B8%81%E4%BE%9B%E5%BA%94%E9%87%8F"><span class="nav-text">2 货币供应量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-M0"><span class="nav-text">2.1 M0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-M1"><span class="nav-text">2.2 M1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-M2"><span class="nav-text">2.2 M2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E5%85%B3%E7%B3%BB"><span class="nav-text">2.4 关系</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">308</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
