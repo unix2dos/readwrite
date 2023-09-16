@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "3300044310"
+bookId: '3300044310'
 author: 格温·沙皮拉 托德·帕利诺 拉吉尼·西瓦拉姆 克里特·佩蒂
-cover: https://cdn.weread.qq.com/weread/cover/67/cpPlatform_cwu15DVxapa4MNDc5T5T1h/t7_cpPlatform_cwu15DVxapa4MNDc5T5T1h.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/67/cpPlatform_cwu15DVxapa4MNDc5T5T1h/t7_cpPlatform_cwu15DVxapa4MNDc5T5T1h.jpg
 reviewCount: 1
 noteCount: 56
 title: 《Kafka权威指南（第2版）》
-date: 2023-09-16
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: aae56036
+date: 2023-09-16 00:00:00
 ---
 
 

@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "3300028184"
+bookId: '3300028184'
 author: 杜宽
-cover: https://cdn.weread.qq.com/weread/cover/87/cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS/t7_cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/87/cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS/t7_cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS.jpg
 reviewCount: 0
 noteCount: 12
 title: 《云原生Kubernetes全栈架构师实战》
-date: 2023-09-11
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 9a09f49
+date: 2023-09-11 00:00:00
 ---
 
 

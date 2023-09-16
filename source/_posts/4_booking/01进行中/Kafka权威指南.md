@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "27337544"
+bookId: '27337544'
 author: 妮哈·纳克海德 格温·沙皮拉 托德·帕利诺
-cover: https://cdn.weread.qq.com/weread/cover/59/YueWen_27337544/t7_YueWen_27337544.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/59/YueWen_27337544/t7_YueWen_27337544.jpg
 reviewCount: 1
 noteCount: 17
 title: 《Kafka权威指南》
-date: 2023-09-16
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 813815fa
+date: 2023-09-16 00:00:00
 ---
 
 

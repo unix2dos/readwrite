@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "30179235"
+bookId: '30179235'
 author: 柴树杉 曹春晖
-cover: https://wfqqreader-1252317822.image.myqcloud.com/cover/235/30179235/t7_30179235.jpg
+cover: >-
+  https://wfqqreader-1252317822.image.myqcloud.com/cover/235/30179235/t7_30179235.jpg
 reviewCount: 0
 noteCount: 16
 title: 《Go语言高级编程》
-date: 2023-09-05
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: f7a9a4c0
+date: 2023-09-05 00:00:00
 ---
 
 
