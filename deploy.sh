@@ -1,12 +1,5 @@
 #!/bin/sh
 
-
-###### 微信读书 ########
-#./book.sh
-
-
-
-
 #######  博客 ######
 git pull
 hexo clean --config source/_data/next.yml && hexo g --config source/_data/next.yml && hexo g -d --config source/_data/next.yml 
