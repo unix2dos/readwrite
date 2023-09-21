@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "42557147"
+bookId: '42557147'
 author: 白明
-cover: https://cdn.weread.qq.com/weread/cover/55/YueWen_42557147/t7_YueWen_42557147.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/55/YueWen_42557147/t7_YueWen_42557147.jpg
 reviewCount: 0
 noteCount: 1
 title: 《Go语言精进之路：从新手到高手的编程思想、方法和技巧2》
-date: 2023-08-29
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 50a0316f
+date: 2023-08-29 00:00:00
 ---
 
 

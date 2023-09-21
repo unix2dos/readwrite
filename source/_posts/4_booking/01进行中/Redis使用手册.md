@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "26562837"
+bookId: '26562837'
 author: 黄健宏
-cover: https://cdn.weread.qq.com/weread/cover/59/YueWen_26562837/t7_YueWen_26562837.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/59/YueWen_26562837/t7_YueWen_26562837.jpg
 reviewCount: 1
 noteCount: 16
 title: 《Redis使用手册》
-date: 2023-09-06
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 3aefc92c
+date: 2023-09-06 00:00:00
 ---
 
 
