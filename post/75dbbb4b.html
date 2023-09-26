@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="序 📌 我们不想只是开发一个能够存储数据的系统，比如传统的关系型数据库、键值存储引擎、搜索引擎或缓存系统，我们希望能够把数据看成是持续变化和不断增长的流，并基于这样的想法构建出一个数据系统；事实上，是一个数据架构。   ⏱ 2023-09-16 11:44:47   📌 作为一个现代的分布式系统，Kafka以集群的方式运行，可以自由伸缩，处理公司的所有应用程序。Kafka集群并不是一组独立运行">
+  <meta name="description" content="5.2 哈希表的设计 📌 哈希表最重要的特点就是高效，只需要O（1）的时间就可以把一个元素存入或读出。在常用的基础数据结构中，数组满足这个要求。只要知道数组中的下标，就可以用O（1）的时间存入或读出一个元素。因此，可以考虑基于数组实现哈希表。   ⏱ 2023-09-18 21:43:46   📌 把哈希值转换成数组下标可以采用的方法是对数组的长度求余数。   ⏱ 2023-09-18 21:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Kafka权威指南》">
-<meta property="og:url" content="https://www.readwrite.fun/post/813815fa.html">
+<meta property="og:title" content="《剑指Offer（专项突破版）：数据结构与算法名企面试题精讲》">
+<meta property="og:url" content="https://www.readwrite.fun/post/75dbbb4b.html">
 <meta property="og:site_name" content="趣读写">
-<meta property="og:description" content="序 📌 我们不想只是开发一个能够存储数据的系统，比如传统的关系型数据库、键值存储引擎、搜索引擎或缓存系统，我们希望能够把数据看成是持续变化和不断增长的流，并基于这样的想法构建出一个数据系统；事实上，是一个数据架构。   ⏱ 2023-09-16 11:44:47   📌 作为一个现代的分布式系统，Kafka以集群的方式运行，可以自由伸缩，处理公司的所有应用程序。Kafka集群并不是一组独立运行">
+<meta property="og:description" content="5.2 哈希表的设计 📌 哈希表最重要的特点就是高效，只需要O（1）的时间就可以把一个元素存入或读出。在常用的基础数据结构中，数组满足这个要求。只要知道数组中的下标，就可以用O（1）的时间存入或读出一个元素。因此，可以考虑基于数组实现哈希表。   ⏱ 2023-09-18 21:43:46   📌 把哈希值转换成数组下标可以采用的方法是对数组的长度求余数。   ⏱ 2023-09-18 21:">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-16T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-09-16T09:57:17.820Z">
+<meta property="article:published_time" content="2023-09-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-26T14:36:00.020Z">
 <meta property="article:author" content="levon">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.readwrite.fun/post/813815fa.html">
+<link rel="canonical" href="https://www.readwrite.fun/post/75dbbb4b.html">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>《Kafka权威指南》 | 趣读写</title>
+  <title>《剑指Offer（专项突破版）：数据结构与算法名企面试题精讲》 | 趣读写</title>
   
 
 
@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://www.readwrite.fun/post/813815fa.html">
+    <link itemprop="mainEntityOfPage" href="https://www.readwrite.fun/post/75dbbb4b.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          《Kafka权威指南》
+          《剑指Offer（专项突破版）：数据结构与算法名企面试题精讲》
         </h1>
 
         <div class="post-meta">
@@ -218,10 +218,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-09-16 00:00:00 / Modified: 09:57:17" itemprop="dateCreated datePublished" datetime="2023-09-16T00:00:00+00:00">2023-09-16</time>
+              <time title="Created: 2023-09-18 00:00:00" itemprop="dateCreated datePublished" datetime="2023-09-18T00:00:00+00:00">2023-09-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-26 14:36:00" itemprop="dateModified" datetime="2023-09-26T14:36:00+00:00">2023-09-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -237,7 +243,7 @@
             </span>
 
           
-            <span id="/post/813815fa.html" class="post-meta-item leancloud_visitors" data-flag-title="《Kafka权威指南》" title="Views">
+            <span id="/post/75dbbb4b.html" class="post-meta-item leancloud_visitors" data-flag-title="《剑指Offer（专项突破版）：数据结构与算法名企面试题精讲》" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -252,8 +258,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/post/813815fa.html#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/post/813815fa.html" itemprop="commentCount"></span>
+    <a title="valine" href="/post/75dbbb4b.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/75dbbb4b.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -268,101 +274,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><ul>
-<li><p>📌 我们不想只是开发一个能够存储数据的系统，比如传统的关系型数据库、键值存储引擎、搜索引擎或缓存系统，我们希望能够把数据看成是持续变化和不断增长的流，并基于这样的想法构建出一个数据系统；事实上，是一个数据架构。 </p>
+        <h2 id="5-2-哈希表的设计"><a href="#5-2-哈希表的设计" class="headerlink" title="5.2 哈希表的设计"></a>5.2 哈希表的设计</h2><ul>
+<li><p>📌 哈希表最重要的特点就是高效，只需要O（1）的时间就可以把一个元素存入或读出。在常用的基础数据结构中，数组满足这个要求。只要知道数组中的下标，就可以用O（1）的时间存入或读出一个元素。因此，可以考虑基于数组实现哈希表。 </p>
 <ul>
-<li>⏱ 2023-09-16 11:44:47</li>
+<li>⏱ 2023-09-18 21:43:46</li>
 </ul>
 </li>
-<li><p>📌 作为一个现代的分布式系统，Kafka以集群的方式运行，可以自由伸缩，处理公司的所有应用程序。Kafka集群并不是一组独立运行的broker，而是一个可以灵活伸缩的中心平台，可以处理整个公司所有的数据流。其次，Kafka可以按照你的要求存储数据，保存多久都可以。 </p>
+<li><p>📌 把哈希值转换成数组下标可以采用的方法是对数组的长度求余数。 </p>
 <ul>
-<li>⏱ 2023-09-16 11:45:38</li>
+<li>⏱ 2023-09-18 21:43:56</li>
 </ul>
 </li>
-<li><p>📌 消息系统只会传递消息，而Kafka的流式处理能力让你只用很少的代码就能够动态地处理派生流和数据集。Kafka的这些独到之处足以让你刮目相看，它不只是“另一个消息队列” </p>
+<li><p>📌 再在哈希表中存入一个哈希值为7的元素。由于7除以4的余数为3，因此它存入的位置应该是3。下标为3的位置之前已经被下标为3的元素占用。如果将两个哈希值不同的元素存入数组中的同一位置，就会引起冲突。为了解决这种冲突，可以把存入数组中同一位置的多个元素用链表存储。也就是说，数组中每个位置对应的不是一个元素，而是一个链表 </p>
 <ul>
-<li>⏱ 2023-09-16 11:45:57</li>
+<li>⏱ 2023-09-18 21:44:18</li>
 </ul>
 </li>
-</ul>
-<h2 id="1-2-Kafka登场"><a href="#1-2-Kafka登场" class="headerlink" title="1.2 Kafka登场"></a>1.2 Kafka登场</h2><ul>
-<li><p>📌 当消息以一种可控的方式写入不同的分区时，会用到键。最简单的例子就是为键生成一个一致性散列值，然后使用散列值对主题分区数进行取模，为消息选取分区。这样可以保证具有相同键的消息总是被写到相同的分区上 </p>
+<li><p>📌 在链表中做顺序扫描的时间复杂度为O（n），链表越长查找需要的时间就越长。这就违背了设计哈希表最重要的一个初衷：存入和读取一个元素的时间复杂度为O（1）。因此，必须确保链表不能太长。 </p>
 <ul>
-<li>⏱ 2023-09-16 11:48:01</li>
+<li>⏱ 2023-09-18 21:45:31</li>
 </ul>
 </li>
-<li><p>📌 Kafka的消息通过主题进行分类。主题就好比数据库的表，或者文件系统里的文件夹。主题可以被分为若干个分区，一个分区就是一个提交日志。消息以追加的方式写入分区，然后以先入先出的顺序读取。要注意，由于一个主题一般包含几个分区，因此无法在整个主题范围内保证消息的顺序，但可以保证消息在单个分区内的顺序 </p>
+<li><p>📌 当哈希表中元素的数目与数组长度的比值超过某一阈值时，就对数组进行扩容（通常让数组的长度翻倍），然后把哈希表中的每个元素根据新的数组大小求余数并存入合适的位置。 </p>
 <ul>
-<li>⏱ 2023-09-16 11:49:14</li>
+<li>⏱ 2023-09-18 21:45:49</li>
 </ul>
 </li>
-<li><p>📌 Kafka通过分区来实现数据冗余和伸缩性。分区可以分布在不同的服务器上，也就是说，一个主题可以横跨多个服务器，以此来提供比单个服务器更强大的性能 </p>
+<li><p>📌 通过对数组进行扩容，原本存入同一链表的不同元素就可能会被分散到不同的位置，从而减少链表的长度。当再在哈希表中添加新的元素时，元素的数目与数组长度的比值可能会再次超过阈值，于是需要再次对数组进行扩容。只要阈值设置得合理，哈希表中的链表就不会太长，仍然可以认为存入和读取的时间复杂度都是O（1）。 </p>
 <ul>
-<li>⏱ 2023-09-16 11:49:30</li>
+<li>⏱ 2023-09-18 21:46:33</li>
 </ul>
 </li>
-<li><p>📌 人们把一个主题的数据看成一个流，不管它有多少个分区。 </p>
+<li><p>📌 由此可知，设计哈希表有3个要点。为了快速确定一个元素在哈希表中的位置，可以使用一个数组，元素的位置为它的哈希值除以数组长度的余数。由于多个哈希值不同的元素可能会被存入同一位置，数组的每个位置都对应一个链表，因此存入同一位置的多个元素都被添加到同一链表中。为了确保链表不会太长，就需要计算哈希表中元素的数目与数组长度的比值。当这个比值超过某个阈值时，就对数组进行扩容并把哈希表中的所有元素重新分配位置。 </p>
 <ul>
-<li>⏱ 2023-09-16 11:49:56</li>
-</ul>
-</li>
-<li><p>📌 一般情况下，一个消息会被发布到一个特定的主题上。生产者在默认情况下把消息均衡地分布到主题的所有分区上，而并不关心特定消息会被写到哪个分区。不过，在某些情况下，生产者会把消息直接写到指定的分区。这通常是通过消息键和分区器来实现的，分区器为键生成一个散列值，并将其映射到指定的分区上。这样可以保证包含同一个键的消息会被写到同一个分区上。 </p>
-<ul>
-<li>⏱ 2023-09-16 11:51:02</li>
-</ul>
-</li>
-<li><p>📌 消费者订阅一个或多个主题，并按照消息生成的顺序读取它们。消费者通过检查消息的偏移量来区分已经读取过的消息。偏移量是另一种元数据，它是一个不断递增的整数值，在创建消息时，Kafka会把它添加到消息里。在给定的分区里，每个消息的偏移量都是唯一的。消费者把每个分区最后读取的消息偏移量保存在Zookeeper或Kafka上，如果消费者关闭或重启，它的读取状态不会丢失。 </p>
-<ul>
-<li>⏱ 2023-09-16 11:51:33</li>
-</ul>
-</li>
-<li><p>📌 一个独立的Kafka服务器被称为broker。broker接收来自生产者的消息，为消息设置偏移量，并提交消息到磁盘保存。broker为消费者提供服务，对读取分区的请求作出响应，返回已经提交到磁盘上的消息。根据特定的硬件及其性能特征，单个broker可以轻松处理数千个分区以及每秒百万级的消息量。 </p>
-<ul>
-<li>⏱ 2023-09-16 12:00:20</li>
-</ul>
-</li>
-<li><p>📌 在集群中，一个分区从属于一个broker，该broker被称为分区的首领。一个分区可以分配给多个broker，这个时候会发生分区复制（见图1-7）。这种复制机制为分区提供了消息冗余，如果有一个broker失效，其他broker可以接管领导权。 </p>
-<ul>
-<li>⏱ 2023-09-16 12:01:55</li>
-</ul>
-</li>
-<li><p>📌 保留消息（在一定期限内）是Kafka的一个重要特性。Kafka broker默认的消息保留策略是这样的：要么保留一段时间（比如7天），要么保留到消息达到一定大小的字节数（比如1GB）。当消息数量达到这些上限时，旧消息就会过期并被删除，所以在任何时刻，可用消息的总量都不会超过配置参数所指定的大小。 </p>
-<ul>
-<li>⏱ 2023-09-16 12:02:12</li>
+<li>⏱ 2023-09-18 21:47:59</li>
 </ul>
 </li>
 </ul>
-<h2 id="1-3-为什么选择Kafka"><a href="#1-3-为什么选择Kafka" class="headerlink" title="1.3 为什么选择Kafka"></a>1.3 为什么选择Kafka</h2><ul>
-<li><p>📌 Kafka也支持多个消费者从一个单独的消息流上读取数据，而且消费者之间互不影响。这与其他队列系统不同，其他队列系统的消息一旦被一个客户端读取，其他客户端就无法再读取它。另外，多个消费者可以组成一个群组，它们共享一个消息流，并保证整个群组对每个给定的消息只处理一次。 </p>
-<ul>
-<li>⏱ 2023-09-16 12:05:15</li>
-</ul>
-</li>
-<li><p>📌 每个主题可以设置单独的保留规则，以便满足不同消费者的需求，各个主题可以保留不同数量的消息。消费者可能会因为处理速度慢或突发的流量高峰导致无法及时读取消息，而持久化数据可以保证数据不会丢失。消费者可以在进行应用程序维护时离线一小段时间，而无需担心消息丢失或堵塞在生产者端。消费者可以被关闭，但消息会继续保留在Kafka里。消费者可以从上次中断的地方继续处理消息。 </p>
-<ul>
-<li>⏱ 2023-09-16 12:05:46</li>
-</ul>
-</li>
-<li><p>📌 用户在开发阶段可以先使用单个broker，再扩展到包含3个broker的小型开发集群，然后随着数据量不断增长，部署到生产环境的集群可能包含上百个broker。对在线集群进行扩展丝毫不影响整体系统的可用性。也就是说，一个包含多个broker的集群，即使个别broker失效，仍然可以持续地为客户提供服务。要提高集群的容错能力，需要配置较高的复制系数。 </p>
-<ul>
-<li>⏱ 2023-09-16 12:06:15</li>
-</ul>
-</li>
-</ul>
-<h2 id="1-5-起源故事"><a href="#1-5-起源故事" class="headerlink" title="1.5 起源故事"></a>1.5 起源故事</h2><ul>
-<li>📌 他们的主要目标如下：· 使用推送和拉取模型解耦生产者和消费者；· 为消息传递系统中的消息提供数据持久化，以便支持多个消费者；· 通过系统优化实现高吞吐量；· 系统可以随着数据流的增长进行横向扩展。 <ul>
-<li>⏱ 2023-09-16 12:10:24</li>
-</ul>
-</li>
-</ul>
-<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="1-2-Kafka登场-1"><a href="#1-2-Kafka登场-1" class="headerlink" title="1.2 Kafka登场"></a>1.2 Kafka登场</h2><h3 id="划线评论"><a href="#划线评论" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
-<li>📌 消费者是消费者群组的一部分，也就是说，会有一个或多个消费者共同读取一个主题。群组保证每个分区只能被一个消费者使用。图1-6所示的群组中，有3个消费者同时读取一个主题。其中的两个消费者各自读取一个分区，另外一个消费者读取其他两个分区。消费者与分区之间的映射通常被称为消费者对分区的所有权关系  ^225207353-7LgydHzNb<ul>
-<li>💭 一个主题的分区，只能被消费组内一个消费者消费。</li>
-<li>⏱ 2023-09-16 11:59:40</li>
-</ul>
-</li>
-</ul>
-<h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
     </div>
 
     
@@ -397,10 +346,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/aae56036.html" rel="prev" title="《Kafka权威指南（第2版）》">
-      <i class="fa fa-chevron-left"></i> 《Kafka权威指南（第2版）》
+    <a href="/post/3c471d5b.html" rel="prev" title="《深入理解Kafka：核心设计与实践原理》">
+      <i class="fa fa-chevron-left"></i> 《深入理解Kafka：核心设计与实践原理》
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/post/3f3e3def.html" rel="next" title="《etcd技术内幕》">
+      《etcd技术内幕》 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -460,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F"><span class="nav-text">序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Kafka%E7%99%BB%E5%9C%BA"><span class="nav-text">1.2 Kafka登场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9Kafka"><span class="nav-text">1.3 为什么选择Kafka</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E8%B5%B7%E6%BA%90%E6%95%85%E4%BA%8B"><span class="nav-text">1.5 起源故事</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Kafka%E7%99%BB%E5%9C%BA-1"><span class="nav-text">1.2 Kafka登场</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="nav-text">划线评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-text">5.2 哈希表的设计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -474,7 +426,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">325</span>
+          <span class="site-state-item-count">332</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

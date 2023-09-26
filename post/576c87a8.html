@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第1版前言 📌 也许我可以给你演绎一个玄幻故事，说说我是如何开始写这本书的。我可以跟你说，当我在沙漠中打坐的时候，一只老鹰飞了下来，落在我的肩上，小声在我耳旁说：“你必须为软件开发人员写一本关于软技能的书。”我还可以告诉你，这本书是在梦中来到我身旁的——夜半时分，我被这本书的构思惊醒，于是开始奋笔疾书，写下每一章，试图捕捉我在梦中看到的一切。但是，真相其实就是——我写这本书，是因为我觉得我必须写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《软技能：代码之外的生存指南》5星">
+<meta property="og:url" content="https://www.readwrite.fun/post/576c87a8.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="第1版前言 📌 也许我可以给你演绎一个玄幻故事，说说我是如何开始写这本书的。我可以跟你说，当我在沙漠中打坐的时候，一只老鹰飞了下来，落在我的肩上，小声在我耳旁说：“你必须为软件开发人员写一本关于软技能的书。”我还可以告诉你，这本书是在梦中来到我身旁的——夜半时分，我被这本书的构思惊醒，于是开始奋笔疾书，写下每一章，试图捕捉我在梦中看到的一切。但是，真相其实就是——我写这本书，是因为我觉得我必须写">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-09-26T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-26T14:36:00.020Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.readwrite.fun/post/576c87a8.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《软技能：代码之外的生存指南》5星 | 趣读写</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+        <li class="menu-item menu-item-booking">
+
+    <a href="/categories/4-booking/" rel="section"><i class="fas fa-book-reader fa-fw"></i>Booking</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://www.readwrite.fun/post/576c87a8.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="levon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="趣读写">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《软技能：代码之外的生存指南》5星
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-26 00:00:00 / Modified: 14:36:00" itemprop="dateCreated datePublished" datetime="2023-09-26T00:00:00+00:00">2023-09-26</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3-book/" itemprop="url" rel="index"><span itemprop="name">3_book</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3-book/13%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">13技术</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/post/576c87a8.html" class="post-meta-item leancloud_visitors" data-flag-title="《软技能：代码之外的生存指南》5星" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/576c87a8.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/576c87a8.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="第1版前言"><a href="#第1版前言" class="headerlink" title="第1版前言"></a>第1版前言</h2><ul>
+<li>📌 也许我可以给你演绎一个玄幻故事，说说我是如何开始写这本书的。我可以跟你说，当我在沙漠中打坐的时候，一只老鹰飞了下来，落在我的肩上，小声在我耳旁说：“你必须为软件开发人员写一本关于软技能的书。”我还可以告诉你，这本书是在梦中来到我身旁的——夜半时分，我被这本书的构思惊醒，于是开始奋笔疾书，写下每一章，试图捕捉我在梦中看到的一切。但是，真相其实就是——我写这本书，是因为我觉得我必须写这本书。 <ul>
+<li>⏱ 2023-09-24 20:59:54</li>
+</ul>
+</li>
+</ul>
+<h2 id="第一篇-职业"><a href="#第一篇-职业" class="headerlink" title="第一篇 职业"></a>第一篇 职业</h2><ul>
+<li>📌 记住：工作是属于公司的，而职业生涯却是属于你自己的。 <ul>
+<li>⏱ 2023-09-24 21:00:49</li>
+</ul>
+</li>
+</ul>
+<h2 id="第5章-创建一份屡试屡验的简历"><a href="#第5章-创建一份屡试屡验的简历" class="headerlink" title="第5章 创建一份屡试屡验的简历"></a>第5章 创建一份屡试屡验的简历</h2><ul>
+<li>📌 使用“行动-结果”的描述。你的简历应该展现你都做了哪些工作及相应的结果。这样你的潜在雇主既能了解你会干什么，还能了解你能取得的成果，以及雇用你会给他们带来的收益。 <ul>
+<li>⏱ 2023-09-24 21:02:34</li>
+</ul>
+</li>
+</ul>
+<h2 id="第6章-破解面试之道"><a href="#第6章-破解面试之道" class="headerlink" title="第6章 破解面试之道"></a>第6章 破解面试之道</h2><ul>
+<li><p>📌 关键点在于：与主流观念相反，大多数面试官决定雇用某个人其实是基于各种各样的非技术因素。（在第二篇中我会告诉你如何拥有一个受人追捧的博客，我还会告诉你如何推销自己。但是现在，这些不是重点。） </p>
+<ul>
+<li>⏱ 2023-09-24 21:03:23</li>
+</ul>
+</li>
+<li><p>📌 千万别误会，我可不是说通过展示自己不具有的技能，声名远播、为人友善就能获得录用。我的意思是，当许多技术过硬的开发人员一同竞争某个工作岗位时，决定胜负天平的砝码已经不再是技术能力了。简而言之，通过面试的最快捷的方式是让面试官对你怀有好感。达成该目标有很多方法，其中大多数可以在面试之前完成。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:03:40</li>
+</ul>
+</li>
+<li><p>📌 你有两把刷子，那就说出来。所以，接下来要关注的事情就是自信地展示自己的能力——知道要获得这份工作需要做什么，做就是了。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:05:09</li>
+</ul>
+</li>
+<li><p>📌 ，我宁愿雇用这样的开发人员：知道的东西可以少一点，但是明确知道要做什么，以及怎样去做。从某种程度上讲，在你可控的范围之内，面试的时候你要集中精力证明自己就是无须督促也能自动自发做好事情的员工。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:05:22</li>
+</ul>
+</li>
+<li><p>📌 我喜欢与接受我指导的开发人员分享这样一句话：“我是那种能够自觉主动找到自己需要做什么，也能自觉主动弄清楚该怎么做的人。”这是任何一位管理者在找寻雇员时都喜欢听到的一个神奇语句， </p>
+<ul>
+<li>⏱ 2023-09-24 21:05:58</li>
+</ul>
+</li>
+</ul>
+<h2 id="第8章-为什么你需要走专业化道路"><a href="#第8章-为什么你需要走专业化道路" class="headerlink" title="第8章 为什么你需要走专业化道路"></a>第8章 为什么你需要走专业化道路</h2><ul>
+<li>📌 有大量的软件开发人员并没有具体的专业方向。事实上，大部分软件开发人员完全以自己使用的编程语言来定义自己的专业属性。你经常会听到有人说“我是C#开发人员”，或者“我是Java开发人员”，等等。这种专业分工太宽泛了，并不足以说明你能胜任哪种类型的软件开发工作。一门编程语言并不能让我了解你是哪类软件开发人员，也不能告诉我你真正能做什么。它只是让我知道你在工作中使用哪一种工具。 <ul>
+<li>⏱ 2023-09-24 21:07:49</li>
+</ul>
+</li>
+</ul>
+<h2 id="第12章-与老板和同事的相处之道"><a href="#第12章-与老板和同事的相处之道" class="headerlink" title="第12章 与老板和同事的相处之道"></a>第12章 与老板和同事的相处之道</h2><ul>
+<li>📌 我知道这没什么大不了的，但确实是头等重要的大事。工作中有大量的冲突都是由于不服从上级造成的。如果你能学会一边表达自己的观点，一边坦然接受最终的决定，你在职业生涯中就可以避免很多不必要的压力和焦虑。 <ul>
+<li>⏱ 2023-09-24 21:09:41</li>
+</ul>
+</li>
+</ul>
+<h2 id="第21章-如何创建大获成功的博客"><a href="#第21章-如何创建大获成功的博客" class="headerlink" title="第21章 如何创建大获成功的博客"></a>第21章 如何创建大获成功的博客</h2><ul>
+<li><p>📌 作为一名软件开发人员，可以用来推销自己的最佳媒介之一就是博客。我坚信每一个在乎自己职业生涯的软件开发人员都应该投资创建一个博客。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:11:12</li>
+</ul>
+</li>
+<li><p>📌 博客是推销自己的一种既廉价又简单的方式，对于让自己声名鹊起极具价值。成功的博客每天能够吸引数百甚至数千的访客，这可以给你带来很多机会，从工作岗位到咨询项目，甚至是产品销售的目标客户。坦白地讲，我职业生涯的大部分成功要归功于我的博客。如果我没有创建一个博客并且使它成功，你也不可能读到这本书。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:11:24</li>
+</ul>
+</li>
+<li><p>📌 我敢肯定，如果你每天写一篇博客且坚持好几年，想不成功都难。尽管如此，只是持之以恒还不足以使你的博客大获成功，你还应该确保你写的都是高质量内容。为什么要重视博客内容的品质？原因有两个。第一个也许也是最重要的一个原因是，博客内容的质量越高，越能吸引人持续浏览你的博客，或者通过RSS和电子邮件订阅阅读。在你给读者提供更多有价值的信息的同时，你也就成功积累了自己的目标客户。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:12:08</li>
+</ul>
+</li>
+</ul>
+<h2 id="第23章-为何为他人增加价值非常重要"><a href="#第23章-为何为他人增加价值非常重要" class="headerlink" title="第23章 为何为他人增加价值非常重要"></a>第23章 为何为他人增加价值非常重要</h2><ul>
+<li><p>📌 要想给人们想要的东西，要先知道他们想要什么。但是这并非易事，因为如果你问他们，他们可能会撒谎。他们并非故意撒谎，而是他们也只有一个模糊的概念，并不确切地知道自己想要什么。就像新娘在找心目中的完美婚纱时，只有切实看到了才会知道“这就是我想要的”。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:13:17</li>
+</ul>
+</li>
+<li><p>📌 免费内容比付费内容更容易被分享。你撰写博客、制作视频或者播客，然后将这些内容免费提供，与收费内容相比，人们更可能会分享和传播这些免费的内容。分享免费内容就跟在Twitter上发链接或发邮件一样简单。与付费内容相比，免费内容能让你触及更多的目标受众。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:13:36</li>
+</ul>
+</li>
+</ul>
+<h2 id="第37章-我的私房“生产力提升计划”"><a href="#第37章-我的私房“生产力提升计划”" class="headerlink" title="第37章 我的私房“生产力提升计划”"></a>第37章 我的私房“生产力提升计划”</h2><ul>
+<li>📌 每天开始工作的时候我都要浏览一下本周需要做的事情的清单。我在Evernote（印象笔记）上创建了一份检查表，列出我每周必须要完成的所有工作，包括：● 写一篇博客文章；● 制作一个YouTube视频；● 为该视频撰写一篇博客文章；● 录制两个播客；● 为该播客撰写一篇博客文章；● 转录和编辑我的播客；● 写一份电子邮件简讯；● 安排好我本周内要在社交媒体上发表的内容。我通过在Trello或Kanbanflow上创建卡片来安排上述所有任务。对于每张卡片，我要估算一下要花多长时间（以番茄钟为单位——专注工作25分钟）。我假设自己每天可以使用约10个番茄钟。我会确保先将上述这些任务加进计划中，因为我知道这些是每周必须要完成的。一旦完成一周内的强制性任务，我会浏览一下我的日历，看看是否有任何固定的约会需要占用当天的时间。对于这些日子，如果这些约会与工作相关，我会为它们创建卡片，否则我就减少当天期望完成的番茄钟总数。 <ul>
+<li>⏱ 2023-09-24 21:32:47</li>
+</ul>
+</li>
+</ul>
+<h2 id="第42章-如何应对职业倦怠"><a href="#第42章-如何应对职业倦怠" class="headerlink" title="第42章 如何应对职业倦怠"></a>第42章 如何应对职业倦怠</h2><ul>
+<li>📌 不过也有好消息。还记得，我答应过你，我一定会分享治愈倦怠的方法？好了，它就在这里，非常简单。你准备好了吗？穿过那堵墙！是的，非常简单。我是认真的。回顾一下刚才的那张兴趣、动机、结果和墙的图。看一下，当你打通那堵墙的时候，墙的另一侧是什么？突然间，成果会急速增加。动机和兴趣也会被大幅拉升。 <ul>
+<li>⏱ 2023-09-24 21:34:14</li>
+</ul>
+</li>
+</ul>
+<h2 id="第43章-你是怎样浪费掉时间的"><a href="#第43章-你是怎样浪费掉时间的" class="headerlink" title="第43章 你是怎样浪费掉时间的"></a>第43章 你是怎样浪费掉时间的</h2><ul>
+<li>📌 最大的时间杀手还是让我直截了当地说出来吧——停止看电视！我是认真的，必须立刻停止看电视。放下遥控器，关掉电视机，找些其他事做做，除了看电视，什么事都行。（顺便说一句，为了不至于让你钻空子，接下来每一处我所说的“电视”都包括YouTube和Netflix。） <ul>
+<li>⏱ 2023-09-24 21:15:23</li>
+</ul>
+</li>
+</ul>
+<h2 id="第44章-形成惯例的重要性"><a href="#第44章-形成惯例的重要性" class="headerlink" title="第44章 形成惯例的重要性"></a>第44章 形成惯例的重要性</h2><ul>
+<li>📌 生产力的真正秘诀在于：长期坚持做一些小事。例如，每天写1000字，那么一年就能写4本小说。（一本小说平均为6万～8万字。） <ul>
+<li>⏱ 2023-09-24 21:15:39</li>
+</ul>
+</li>
+</ul>
+<h2 id="第48章-任何行动都比不采取行动好"><a href="#第48章-任何行动都比不采取行动好" class="headerlink" title="第48章 任何行动都比不采取行动好"></a>第48章 任何行动都比不采取行动好</h2><ul>
+<li>📌 有时候，当你完全不确定要做什么的时候，最好的行动就是做一些事情，然后在前进途中再调整方向。有时候，这是前进的唯一方法。如果你一直停在原地，你就会因为从没见过而不知道需要在哪里左转。只有开始做一些事情的时候，你才能预测自己将来要采取的一切行动，评估哪些可能是错的。 <ul>
+<li>⏱ 2023-09-26 19:24:12</li>
+</ul>
+</li>
+</ul>
+<h2 id="第50章-怎样进行薪酬谈判"><a href="#第50章-怎样进行薪酬谈判" class="headerlink" title="第50章 怎样进行薪酬谈判"></a>第50章 怎样进行薪酬谈判</h2><ul>
+<li><p>📌 为了做到这一点，基本策略就是尽可能让自己的名字出现在各种媒体上。写博客、做播客、写书或文章、在大会或用户组中发表演讲、制作视频教程、为开源项目贡献代码等，尽一切可能让自己的名字出现在各种场合。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:16:24</li>
+</ul>
+</li>
+<li><p>📌 只要记住：自我营销做得越好，声望越高，薪酬谈判就越容易。这一点甚至有可能是最重要的因素。曾经和我一起工作过的一些软件开发人员，他们仅凭自己打造的个人品牌和网络声望就已经能让自己薪水翻一番。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:16:32</li>
+</ul>
+</li>
+</ul>
+<h2 id="第69章-爱情与恋爱"><a href="#第69章-爱情与恋爱" class="headerlink" title="第69章 爱情与恋爱"></a>第69章 爱情与恋爱</h2><ul>
+<li>📌 我不需要是心理学家就能告诉你：总的来说，我们总想得到自己得不到的东西，我们总想得到别人也想得到的东西。所以，希望越大，失望越大，你就越不可能得到。我敢肯定，你在学校的操场上玩的时候就已经有过这样的体验了。你有没有追着其他小孩想要他们跟你一起玩？生活就是一个大操场。如果你想让别人逃走就去拼命追他们吧。 <ul>
+<li>⏱ 2023-09-24 21:20:48</li>
+</ul>
+</li>
+</ul>
+<h2 id="第71章-不要害怕失败"><a href="#第71章-不要害怕失败" class="headerlink" title="第71章 不要害怕失败"></a>第71章 不要害怕失败</h2><ul>
+<li>📌 如果非要我猜猜为什么大多数人如此害怕失败，我不得不说这可能是基于保护脆弱的自尊的想法。或许我们害怕失败就是因为我们太过将失败归咎于个人，我们认为在特定领域下的失败是个人价值的流失。 <ul>
+<li>⏱ 2023-09-24 21:26:06</li>
+</ul>
+</li>
+</ul>
+<h2 id="第72章-走出舒适区"><a href="#第72章-走出舒适区" class="headerlink" title="第72章 走出舒适区"></a>第72章 走出舒适区</h2><ul>
+<li><p>📌 登上讲台在众人面前侃侃而谈，并非易事。写博客被整个互联网都看到并且被人评头论足，也并非易事。在播客里听到自己的声音，在视频里看到自己，可能都会让你感到难为情。从某种程度上说，就连写书也需要一定的勇气——特别是如果你想把自己已知的一切都放进书里的时候。但是，如果想通过自己的努力获得成功，你就必须学会不在乎别人怎么想。你必须学会如何无惧自己被别人看作傻瓜。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:23:51</li>
+</ul>
+</li>
+<li><p>📌 当我第一次走上讲台面对众人演讲的时候，我紧张得汗流浃背。我试图让自己的声音保持平稳，但是我的声音却一直在颤抖。我本想点开一张幻灯片，可我的手不听使唤滑过了两张。你们知道后来怎么样吗？我总算挺了过来。虽然我没能做到最好，虽然我没能用我的魅力打动观众，但是我总算是把这段时间撑过去了，演讲最终结束了。第二次登台，我仍然是一塌糊涂，但是我不那么紧张了。我的手不再抖得那么厉害，我的衬衫也没有被汗水浸透。接下来，每一次我都越来越放松。现在当我站上讲台上时，我会手拿麦克风，在整个房间里从容信步；我的激情感染了整个大厅，我自己也是活力四射。这要是搁到从前，我根本无法想到自己能做到这样。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:24:13</li>
+</ul>
+</li>
+<li><p>📌 或许你现在已经相信我说的，随着时间流逝，一切都会更容易。如果你忍住坚持下去，如果你坚持写博客，如果你坚持上台演讲或者制作YouTube视频，最终你不会再感到“这不舒服”，甚至会觉得“这很自然”。可是，当你的手还不受控制地颤抖，几乎无法握住麦克风的时候，你该如何做到这一点呢？很简单，别太在意。别在意自己站在大庭广众之下可能会哑口无言，别在意别人看了你的博客后会觉得你的文章漏洞百出、你自己愚蠢至极，别在意别人会嘲笑你，因为你已经准备好和他们一起嘲笑自己。同样地，我知道这事说起来很容易，但是我们还是要剖析一下。首先，如果你看起来像个傻瓜，那最糟糕的情形会是什么？你不会因为让自己出丑而受到身体上的伤害。无论你在讲台上演讲得多糟糕，也没有人真的在乎。诚然，站在讲台上抖抖索索、汗如雨下可能会让你看起来很可笑，而当这一切都结束的时候，没人会记住这些。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:27:11</li>
+</ul>
+</li>
+<li><p>📌 想想看，上一次你看到别人在拳击台上被击倒是什么时候？你还记得他是谁吗？当他下台时你有起哄吗？你有给他发邮件或者打电话让他知道他表现得太糟糕，浪费了你宝贵的时间吗？当然没有。那你还有什么可担心的？如果你想成功，你必须要学会收起自己脆弱的自尊心，勇敢走出去，别害怕让自己出丑。每一位著名的演员、音乐家、专业运动员和公共演说家都曾有过表现不佳的时候，他们自觉地选择了走出困境，尽力而为。成功终将会来。你不可能专注做某件事而毫无长进，你只要坚持足够长的时间就会有收获。你的生存之道就是不必太在意。别害怕被人看作傻瓜。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:27:25</li>
+</ul>
+</li>
+</ul>
+<h2 id="第73章-斯多葛哲学，以及它如何改变你的生活"><a href="#第73章-斯多葛哲学，以及它如何改变你的生活" class="headerlink" title="第73章 斯多葛哲学，以及它如何改变你的生活"></a>第73章 斯多葛哲学，以及它如何改变你的生活</h2><ul>
+<li><p>📌 什么是斯多葛主义这正是我觉得惴惴不安的地方。什么是斯多葛主义，以及如何实践斯多葛主义？就这一专题即使写上一本皇皇巨著依然无法宣称自己已经窥其精要。斯多葛学派并没有其官方的纲领，也没有自己的圣歌，没有宣言，甚至没有指南。能够让我们对斯多葛哲学一窥究竟的只有古代斯多葛学派的著作，其中最著名的来自塞涅卡￼、伊壁鸠鲁￼和马可·奥勒留￼这三位大贤。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:28:59</li>
+</ul>
+</li>
+<li><p>📌 斯多葛主义拒绝命运的摆布，它认为在生活中你所拥有的一切都不是你自己的财产，而是借来的东西，未来某个时间点必须还要归还。下面这段塞涅卡的名言完整地阐释了这个理念：请记住，我们所拥有的只是“借来的”财富，它可以在没有我们许可的情况下，甚至不提前通知我们的情况下，悄然离去。因此，我们应该爱我们所有的亲人，但始终要牢记，我们没有承诺永远守着他们—是的，我们甚至无法承诺可以长期守护他们。——塞涅卡 </p>
+<ul>
+<li>⏱ 2023-09-24 21:29:27</li>
+</ul>
+</li>
+<li><p>📌 斯多葛主义的核心思想是超脱。如果你熟悉佛教，你会发现佛教里也有非常类似的理念。斯多葛哲学认为，我们应该超然于这个世界，果断放手一切不在我们掌控之下的事物，我们不要对事物的结果患得患失，我们只需关注自己能够掌控的过程。一个著名的例子就是射手瞄准目标射箭，一旦箭离弦而去飞向靶标，射手就再也无法控制结果。射手可以勤学苦练如何尽善尽美地射出一箭，但一旦箭射出去了，就脱离了射手的控制。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:29:44</li>
+</ul>
+</li>
+<li><p>📌 许多人认为斯多葛主义就是对痛苦或快乐无动于衷，其实这与它的真谛相差甚远。斯多葛哲学教导我们不要让痛苦或快乐影响我们的行为，我们应当摒弃这些情绪的影响，做出正确的行为。斯多葛哲学的信条是：感受你的情绪，但不要被它左右和羁绊。我个人喜欢用“感受痛苦，砥砺前行”这句话来阐释这一信条。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:29:56</li>
+</ul>
+</li>
+<li><p>📌 斯多葛主义能带来的最大好处莫过于你对所谓“命运”的态度从此变得超凡脱俗。当你全神贯注做最好的自己而不担心事情的结果时，当你坦然接受命运带给你的一切并学会热爱命运时（也就是尼采￼的那句格言Amor fati￼），从此你就没什么好担心的。无论发生什么事，你都可以置之不理，你会想尽办法充分利用好它。这并不意味着你永远不会感到沮丧或哀伤，只是你会拥有一定程度的情绪掌控能力，可以帮你缓解来自负面情绪的冲击。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:30:13</li>
+</ul>
+</li>
+<li><p>📌 斯多葛哲学会让你变得无比坚强。斯多葛主义的信条之一就是你应该将自己置于一贫如洗的窘境之中。斯多葛主义者相信，你不应该让自己太过舒适，这样才能让自己为了变得更强大，为可能发生的事情做好准备。类似“平时多流汗，战时少流血”这样的想法恰恰就是一个非常斯多葛主义的概念。本书的前面我谈到过，我坚持跑马拉松，并且每天都会禁食，我将这两项成就归功于我从斯多葛主义中获得的内在力量和坚忍精神。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:30:27</li>
+</ul>
+</li>
+<li><p>📌 最终，斯多葛主义会让你达成内心的平静。当你把自己从结果中分离出来，当你愿意对那些无法掌控的事情坦然放手，当你不再依赖命运，当你学会接受现实而不是与生活和现实奋起抗争的时候，你会感受到一种莫可名状的内心平静。这就像生活在一个平行宇宙中。 </p>
+<ul>
+<li>⏱ 2023-09-24 21:30:37</li>
+</ul>
+</li>
+</ul>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>读完了，打赏休息一下吧。</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="levon WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="levon Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/2c05d391.html" rel="prev" title="《群体的疯狂》">
+      <i class="fa fa-chevron-left"></i> 《群体的疯狂》
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/58b5993c.html" rel="next" title="《人地之间：中国增长模式下的城乡土地改革》4星">
+      《人地之间：中国增长模式下的城乡土地改革》4星 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%89%88%E5%89%8D%E8%A8%80"><span class="nav-text">第1版前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AF%87-%E8%81%8C%E4%B8%9A"><span class="nav-text">第一篇 职业</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%BB%BD%E5%B1%A1%E8%AF%95%E5%B1%A1%E9%AA%8C%E7%9A%84%E7%AE%80%E5%8E%86"><span class="nav-text">第5章 创建一份屡试屡验的简历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E7%A0%B4%E8%A7%A3%E9%9D%A2%E8%AF%95%E4%B9%8B%E9%81%93"><span class="nav-text">第6章 破解面试之道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0-%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%A0%E9%9C%80%E8%A6%81%E8%B5%B0%E4%B8%93%E4%B8%9A%E5%8C%96%E9%81%93%E8%B7%AF"><span class="nav-text">第8章 为什么你需要走专业化道路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC12%E7%AB%A0-%E4%B8%8E%E8%80%81%E6%9D%BF%E5%92%8C%E5%90%8C%E4%BA%8B%E7%9A%84%E7%9B%B8%E5%A4%84%E4%B9%8B%E9%81%93"><span class="nav-text">第12章 与老板和同事的相处之道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC21%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%A4%A7%E8%8E%B7%E6%88%90%E5%8A%9F%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="nav-text">第21章 如何创建大获成功的博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC23%E7%AB%A0-%E4%B8%BA%E4%BD%95%E4%B8%BA%E4%BB%96%E4%BA%BA%E5%A2%9E%E5%8A%A0%E4%BB%B7%E5%80%BC%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81"><span class="nav-text">第23章 为何为他人增加价值非常重要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC37%E7%AB%A0-%E6%88%91%E7%9A%84%E7%A7%81%E6%88%BF%E2%80%9C%E7%94%9F%E4%BA%A7%E5%8A%9B%E6%8F%90%E5%8D%87%E8%AE%A1%E5%88%92%E2%80%9D"><span class="nav-text">第37章 我的私房“生产力提升计划”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC42%E7%AB%A0-%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E8%81%8C%E4%B8%9A%E5%80%A6%E6%80%A0"><span class="nav-text">第42章 如何应对职业倦怠</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC43%E7%AB%A0-%E4%BD%A0%E6%98%AF%E6%80%8E%E6%A0%B7%E6%B5%AA%E8%B4%B9%E6%8E%89%E6%97%B6%E9%97%B4%E7%9A%84"><span class="nav-text">第43章 你是怎样浪费掉时间的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC44%E7%AB%A0-%E5%BD%A2%E6%88%90%E6%83%AF%E4%BE%8B%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-text">第44章 形成惯例的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC48%E7%AB%A0-%E4%BB%BB%E4%BD%95%E8%A1%8C%E5%8A%A8%E9%83%BD%E6%AF%94%E4%B8%8D%E9%87%87%E5%8F%96%E8%A1%8C%E5%8A%A8%E5%A5%BD"><span class="nav-text">第48章 任何行动都比不采取行动好</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC50%E7%AB%A0-%E6%80%8E%E6%A0%B7%E8%BF%9B%E8%A1%8C%E8%96%AA%E9%85%AC%E8%B0%88%E5%88%A4"><span class="nav-text">第50章 怎样进行薪酬谈判</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC69%E7%AB%A0-%E7%88%B1%E6%83%85%E4%B8%8E%E6%81%8B%E7%88%B1"><span class="nav-text">第69章 爱情与恋爱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC71%E7%AB%A0-%E4%B8%8D%E8%A6%81%E5%AE%B3%E6%80%95%E5%A4%B1%E8%B4%A5"><span class="nav-text">第71章 不要害怕失败</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC72%E7%AB%A0-%E8%B5%B0%E5%87%BA%E8%88%92%E9%80%82%E5%8C%BA"><span class="nav-text">第72章 走出舒适区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC73%E7%AB%A0-%E6%96%AF%E5%A4%9A%E8%91%9B%E5%93%B2%E5%AD%A6%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%AE%83%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB"><span class="nav-text">第73章 斯多葛哲学，以及它如何改变你的生活</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">332</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
