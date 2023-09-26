@@ -2,15 +2,11 @@
 doc_type: weread-highlights-reviews
 bookId: CB_3GS3Oi3PzCth6hh6gbEmj3qo
 author: 姜承尧
-cover: 'https://res.weread.qq.com/wrepub/CB_3GS3Oi3PzCth6hh6gbEmj3qo_parsecover'
+cover: https://res.weread.qq.com/wrepub/CB_3GS3Oi3PzCth6hh6gbEmj3qo_parsecover
 reviewCount: 6
 noteCount: 28
 title: 《MySQL技术内幕：InnoDB存储引擎 第2版》
-categories:
-  - 4_booking
-  - 01进行中
-abbrlink: 53dba8d
-date: 2023-07-12 00:00:00
+date: 2023-07-12
 ---
 
 
