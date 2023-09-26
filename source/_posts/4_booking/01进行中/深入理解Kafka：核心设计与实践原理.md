@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "25462424"
+bookId: '25462424'
 author: 朱忠华
-cover: https://cdn.weread.qq.com/weread/cover/5/YueWen_25462424/t7_YueWen_25462424.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/5/YueWen_25462424/t7_YueWen_25462424.jpg
 reviewCount: 0
 noteCount: 7
 title: 《深入理解Kafka：核心设计与实践原理》
-date: 2023-09-17
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 3c471d5b
+date: 2023-09-17 00:00:00
 ---
 
 
