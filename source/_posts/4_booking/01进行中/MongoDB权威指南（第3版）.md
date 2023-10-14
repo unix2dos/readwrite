@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "41779824"
+bookId: '41779824'
 author: 香农·布拉德肖 克里斯蒂娜·霍多罗夫 约恩·布拉齐尔
-cover: https://wfqqreader-1252317822.image.myqcloud.com/cover/824/41779824/t7_41779824.jpg
+cover: >-
+  https://wfqqreader-1252317822.image.myqcloud.com/cover/824/41779824/t7_41779824.jpg
 reviewCount: 0
 noteCount: 2
 title: 《MongoDB权威指南（第3版）》
-date: 2023-10-14
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 7882c412
+date: 2023-10-14 00:00:00
 ---
 
 

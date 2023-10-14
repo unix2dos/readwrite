@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "40107878"
+bookId: '40107878'
 author: 何海涛
-cover: https://cdn.weread.qq.com/weread/cover/45/YueWen_40107878/t7_YueWen_40107878.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/45/YueWen_40107878/t7_YueWen_40107878.jpg
 reviewCount: 0
 noteCount: 7
 title: 《剑指Offer（专项突破版）：数据结构与算法名企面试题精讲》
-date: 2023-09-18
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 75dbbb4b
+date: 2023-09-18 00:00:00
 ---
 
 
