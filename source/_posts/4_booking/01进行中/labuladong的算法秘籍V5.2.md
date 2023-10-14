@@ -1,16 +1,12 @@
 ---
 doc_type: weread-highlights-reviews
 bookId: CB_61D6Lr6LD8aK6ii6gbCeu6JV
-author: ''
-cover: 'https://res.weread.qq.com/wrepub/CB_0NK0m60kC4WM6ic6gd4Mj698_parsecover'
+author: ""
+cover: https://res.weread.qq.com/wrepub/CB_0NK0m60kC4WM6ic6gd4Mj698_parsecover
 reviewCount: 0
 noteCount: 14
 title: 《labuladong的算法秘籍V5.2》
-categories:
-  - 4_booking
-  - 01进行中
-abbrlink: 862c0af5
-date: 2023-09-09 00:00:00
+date: 2023-09-09
 ---
 
 
