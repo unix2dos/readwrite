@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="03第三部分 多机功能 📌 虽然一个主服务器可以拥有多个从服务器，但一个从服务器只能拥有一个主服务器。换句话说，Redis提供的是单主复制功能，而不是多主复制功能。   ⏱ 2023-09-06 09:26:12   📌 在默认情况下，处于复制模式的主服务器既可以执行写操作也可以执行读操作，而从服务器则只能执行读操作，   ⏱ 2023-09-06 09:26:22   📌 通过同时使用Re">
+  <meta name="description" content="03第三部分 多机功能 📌 虽然一个主服务器可以拥有多个从服务器，但一个从服务器只能拥有一个主服务器。换句话说，Redis提供的是单主复制功能，而不是多主复制功能。   ⏱ 2023-09-06 09:26:12   📌 在默认情况下，处于复制模式的主服务器既可以执行写操作也可以执行读操作，而从服务器则只能执行读操作，   ⏱ 2023-09-06 09:26:22   📌 通过同时使用R">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Redis使用手册》">
 <meta property="og:url" content="https://www.readwrite.fun/post/3aefc92c.html">
 <meta property="og:site_name" content="趣读写">
-<meta property="og:description" content="03第三部分 多机功能 📌 虽然一个主服务器可以拥有多个从服务器，但一个从服务器只能拥有一个主服务器。换句话说，Redis提供的是单主复制功能，而不是多主复制功能。   ⏱ 2023-09-06 09:26:12   📌 在默认情况下，处于复制模式的主服务器既可以执行写操作也可以执行读操作，而从服务器则只能执行读操作，   ⏱ 2023-09-06 09:26:22   📌 通过同时使用Re">
+<meta property="og:description" content="03第三部分 多机功能 📌 虽然一个主服务器可以拥有多个从服务器，但一个从服务器只能拥有一个主服务器。换句话说，Redis提供的是单主复制功能，而不是多主复制功能。   ⏱ 2023-09-06 09:26:12   📌 在默认情况下，处于复制模式的主服务器既可以执行写操作也可以执行读操作，而从服务器则只能执行读操作，   ⏱ 2023-09-06 09:26:22   📌 通过同时使用R">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-09-06T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-14T14:38:13.990Z">
+<meta property="article:modified_time" content="2023-10-25T12:22:01.078Z">
 <meta property="article:author" content="levon">
 <meta name="twitter:card" content="summary">
 
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-10-14 14:38:13" itemprop="dateModified" datetime="2023-10-14T14:38:13+00:00">2023-10-14</time>
+                <time title="Modified: 2023-10-25 12:22:01" itemprop="dateModified" datetime="2023-10-25T12:22:01+00:00">2023-10-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +274,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="03第三部分-多机功能"><a href="#03第三部分-多机功能" class="headerlink" title="03第三部分 多机功能"></a>03第三部分 多机功能</h2><ul>
+        <hr>
+<h2 id="03第三部分-多机功能"><a href="#03第三部分-多机功能" class="headerlink" title="03第三部分 多机功能"></a>03第三部分 多机功能</h2><ul>
 <li><p>📌 虽然一个主服务器可以拥有多个从服务器，但一个从服务器只能拥有一个主服务器。换句话说，Redis提供的是单主复制功能，而不是多主复制功能。 </p>
 <ul>
 <li>⏱ 2023-09-06 09:26:12</li>
@@ -489,7 +490,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">342</span>
+          <span class="site-state-item-count">349</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
