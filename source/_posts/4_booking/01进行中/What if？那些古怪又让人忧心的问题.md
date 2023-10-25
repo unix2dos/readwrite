@@ -1,17 +1,14 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: '917441'
+bookId: "917441"
 author: 兰道尔·门罗
-cover: >-
-  https://cdn.weread.qq.com/weread/cover/54/yuewen_917441/t7_yuewen_9174411685965449.jpg
+cover: https://cdn.weread.qq.com/weread/cover/54/yuewen_917441/t7_yuewen_9174411685965449.jpg
 reviewCount: 0
 noteCount: 1
 title: 《What if？那些古怪又让人忧心的问题》
-categories:
-  - 4_booking
-  - 01进行中
-abbrlink: c2d4c58f
-date: 2023-08-01 00:00:00
+date: 2023-08-01
+---
+
 ---
 
 
