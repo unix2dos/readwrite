@@ -12,6 +12,6 @@ https://realfavicongenerator.net
 
 
 
-# 2. Menu icon
+# 2. Menu icon（小icon）
 
 https://fontawesome.com/v5/search?o=r&m=free
