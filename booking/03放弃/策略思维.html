@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="版权页 📌 以色列要求巴勒斯坦首先宣布放弃恐怖活动，然后它们才交还占领的巴勒斯坦领土。双方都不愿意首先改变自己的策略。因为如果巴勒斯坦宣布放弃恐怖活动，以色列也可以不交还被占领土，巴勒斯坦就惨了。同样，如果以色列交还了占领的巴勒斯坦领土，巴勒斯坦也可以不宣布放弃恐怖活动，以色列也会吃大亏的。因此，双方都不会首先改变自己目前的策略，这就是博弈论里的纳什均衡。既然是纳什均衡，就是一种难以改变的胶着状">
+<meta property="og:type" content="website">
+<meta property="og:title" content="《策略思维——商界、政界及日常生活中的策略竞争（大师细说博弈论）》">
+<meta property="og:url" content="https://www.readwrite.fun/booking/03%E6%94%BE%E5%BC%83/%E7%AD%96%E7%95%A5%E6%80%9D%E7%BB%B4.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="版权页 📌 以色列要求巴勒斯坦首先宣布放弃恐怖活动，然后它们才交还占领的巴勒斯坦领土。双方都不愿意首先改变自己的策略。因为如果巴勒斯坦宣布放弃恐怖活动，以色列也可以不交还被占领土，巴勒斯坦就惨了。同样，如果以色列交还了占领的巴勒斯坦领土，巴勒斯坦也可以不宣布放弃恐怖活动，以色列也会吃大亏的。因此，双方都不会首先改变自己目前的策略，这就是博弈论里的纳什均衡。既然是纳什均衡，就是一种难以改变的胶着状">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-02T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-26T11:33:43.935Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.readwrite.fun/booking/03%E6%94%BE%E5%BC%83/%E7%AD%96%E7%95%A5%E6%80%9D%E7%BB%B4.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《策略思维——商界、政界及日常生活中的策略竞争（大师细说博弈论）》 | 趣读写
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">《策略思维——商界、政界及日常生活中的策略竞争（大师细说博弈论）》
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/03%E6%94%BE%E5%BC%83/">03放弃</a></li>
+            <li>策略思维</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <h2 id="版权页"><a href="#版权页" class="headerlink" title="版权页"></a>版权页</h2><ul>
+<li><p>📌 以色列要求巴勒斯坦首先宣布放弃恐怖活动，然后它们才交还占领的巴勒斯坦领土。双方都不愿意首先改变自己的策略。因为如果巴勒斯坦宣布放弃恐怖活动，以色列也可以不交还被占领土，巴勒斯坦就惨了。同样，如果以色列交还了占领的巴勒斯坦领土，巴勒斯坦也可以不宣布放弃恐怖活动，以色列也会吃大亏的。因此，双方都不会首先改变自己目前的策略，这就是博弈论里的纳什均衡。既然是纳什均衡，就是一种难以改变的胶着状态 </p>
+<ul>
+<li>⏱ 2023-03-19 22:39:04</li>
+</ul>
+</li>
+<li><p>📌 专制社会缺乏对于官员的监督，而是因为在专制社会里，官员向其上司表忠诚，可以通过自己贪污腐败来发送忠诚的信号，以利于保护自己。在专制社会，官员的全部命运基本上都掌握在他上司手里。上司可以决定他们的升迁，甚至掌控着他们的身家性命！官员为了保护自己，让上司找不到任何可以灭掉自己的口实，或者让上司相信自己不会谋反，自己是完全忠诚于上司的，就需要发送这样的信号给上司——我是忠诚于您的！但是，发送的信号必须要满足“可置信”的条件。上司怎么才会相信你的表白呢？如果你非常清廉，这样就会有好的声誉。一旦你谋反成功，譬如谋朝篡位，你的好声望就会让人民接受你，而让想攻击你的潜在敌人感到要击败你是比较困难的。正是你的好声誉会助你谋反成功。但是，如果你的声誉很糟糕，即使你谋反成功，人民也不会接受你，你的敌人也会利用这一点对你发起攻击，并且会得到人民的响应，你会落败的 </p>
+<ul>
+<li>⏱ 2023-03-19 22:41:38</li>
+</ul>
+</li>
+<li><p>📌 博弈论看起来深刻奥妙，有一些玄乎。其实，博弈论就在我们身边，每时每刻，无所不在。2013年春，朝鲜三次核爆，单方面宣布《朝鲜停战协定》无效，大肆反美，令全世界都为朝鲜捏了一把汗。其实，如果从博弈策略的角度分析，朝鲜是有充分的自信的。朝鲜知道，美国其实是不会打击朝鲜的。如果美国对朝鲜进行核打击，则东北亚会出现核污染，会伤及驻日本和韩国的美军。美国政府在选民的压力下不得不从东北亚撤出。这样，美国在东北亚核战争中不仅一无所得，而且还会遭到全世界的责骂，并且灰溜溜地从长期盘踞的东北亚撤出。如果美国用高科技常规武器打击朝鲜，朝鲜会用核武器反击，美军大败，加上东北亚的核污染，导致美国同样会从东北亚撤出，朝鲜会崛起，统一半岛 </p>
+<ul>
+<li>⏱ 2023-03-19 22:42:57</li>
+</ul>
+</li>
+<li><p>📌 囚徒困境的故事还体现了一个普遍的现象：大多数经济的、政治的或社会的博弈游戏都跟类似橄榄球或扑克这样的博弈游戏不同。橄榄球和扑克是零和博弈：一个人的得就是另一个人的失。但在囚徒困境里，有可能出现共同利益，也有可能出现利益冲突；不招供的结果对两个囚徒都是有利的，而不是相反。与此相仿，在劳资双方的讨价还价中，虽然存在利益冲突，一方希望降低工资，而另一方要求提高工资，不过，大家都知道，假如谈判破裂而导致罢工，双方都将遭受更大的损失。 </p>
+<ul>
+<li>⏱ 2023-03-19 22:53:06</li>
+</ul>
+</li>
+<li><p>📌 在苏共第二十次代表大会上，赫鲁晓夫首次谴责斯大林的大清洗运动。他那充满戏剧性的讲话刚刚结束，听众里就有人大叫起来，质问赫鲁晓夫自己那个时候又在做什么。赫鲁晓夫的反应是请提问者站起来，报出自己的姓名。听众一片沉默。赫鲁晓夫答道：“当时我也是这么做的。”从某种意义上讲，我们以前都见过这样的例子。这只不过是涉及超过两个人的囚徒困境；你也可以把它称为“人质困境”。现在我们要用这个困境阐述一个不同的观点，确切地说，就是惩罚经常压倒回报而处于上风。 </p>
+<ul>
+<li>⏱ 2023-05-02 22:43:29</li>
+</ul>
+</li>
+</ul>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/03%E6%94%BE%E5%BC%83/">03放弃</a></li>
+            <li>策略思维</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E9%A1%B5"><span class="nav-text">版权页</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">244</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

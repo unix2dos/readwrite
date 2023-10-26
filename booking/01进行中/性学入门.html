@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1.1 源与流 📌 性学是一个跨学科的研究领域，所涉及的研究领域包括：身体形态学、心理学、文化人类学、心理生理学、性格形成学、心理病理学、功能理论、社会学、政治学，乃至哲学  ⏱ 2023-07-02 14:10:43    1.2 学者与著作 📌 就像研究阶级问题不能摆脱马克思一样，研究性学的人无一能够摆脱弗洛伊德的影响。然而，对弗洛伊德的批评也很多，择其要：第一，他的理论带有本质主义和生">
+<meta property="og:type" content="website">
+<meta property="og:title" content="《性学入门》">
+<meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E6%80%A7%E5%AD%A6%E5%85%A5%E9%97%A8.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="1.1 源与流 📌 性学是一个跨学科的研究领域，所涉及的研究领域包括：身体形态学、心理学、文化人类学、心理生理学、性格形成学、心理病理学、功能理论、社会学、政治学，乃至哲学  ⏱ 2023-07-02 14:10:43    1.2 学者与著作 📌 就像研究阶级问题不能摆脱马克思一样，研究性学的人无一能够摆脱弗洛伊德的影响。然而，对弗洛伊德的批评也很多，择其要：第一，他的理论带有本质主义和生">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-16T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-26T11:33:43.919Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E6%80%A7%E5%AD%A6%E5%85%A5%E9%97%A8.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《性学入门》 | 趣读写
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">《性学入门》
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>性学入门</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <hr>
+<h2 id="1-1-源与流"><a href="#1-1-源与流" class="headerlink" title="1.1 源与流"></a>1.1 源与流</h2><ul>
+<li>📌 性学是一个跨学科的研究领域，所涉及的研究领域包括：身体形态学、心理学、文化人类学、心理生理学、性格形成学、心理病理学、功能理论、社会学、政治学，乃至哲学 <ul>
+<li>⏱ 2023-07-02 14:10:43</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-学者与著作"><a href="#1-2-学者与著作" class="headerlink" title="1.2 学者与著作"></a>1.2 学者与著作</h2><ul>
+<li>📌 就像研究阶级问题不能摆脱马克思一样，研究性学的人无一能够摆脱弗洛伊德的影响。然而，对弗洛伊德的批评也很多，择其要：第一，他的理论带有本质主义和生理决定论的色彩。第二，他的理论倾向普适性太强，忽略了文化和历史的差异。第三，他对人类幼年期性活动的影响过分强调，忽视了性的可变性。例如有37%的男性有过同性性行为，而终身的绝对同性恋者在人口中只占4%。第四，他认为女性性欲的成熟标志是从阴蒂快感到阴道快感，前者是不成熟的表现，这个命题是错误的。第五，他有男权制的思维方式，例如认为攻击性是男性特征，如果同样的心理特征发生在女性身上就是神经症的表现。第六，他使用的方法不能证实他的假设。少量的门诊病历不可以成为关于无意识的普适性理论的依据。(Walby,109—127)尽管如此，作为性学的一代宗师，弗洛伊德所做的开创性工作是应当受到赞誉的，其理论的影响力是深远的、持久不衰的。 <ul>
+<li>⏱ 2023-07-02 14:12:17</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-性欲望"><a href="#2-1-性欲望" class="headerlink" title="2.1 性欲望"></a>2.1 性欲望</h2><ul>
+<li><p>📌 人类性欲的载体是身体的多种器官，而不仅集中于生殖器官。人类身体上对于性的刺激富有敏感性的部位被称为性感带。性感带除了生殖器官外，还可以包括口、舌、乳头、耳、颈、腋、手指、肛门、大腿等。人类的性快乐也可以被分为两类：一类是刺激性器官和性感带所带来的快乐；另一类是性交的快乐。将性快乐仅仅视为性交的快乐是不确切、不全面的。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:14:39</li>
+</ul>
+</li>
+<li><p>📌 肉体的性刺激中，最能激发性欲的是触觉。触觉是脱离高级神经中枢而能引起机体反射性性反应的唯一感觉方式 </p>
+<ul>
+<li>⏱ 2023-07-02 14:14:48</li>
+</ul>
+</li>
+<li><p>📌 弗洛伊德将幼儿性欲的发展概括为三个阶段：口唇期、肛门期和生殖器期。性心理发育与这三个阶段相应：在口腔阶段，人获得满足的方式是通过吸吮和吞咽；在肛门阶段，人获得满足的方式是储便和排便；在生殖器阶段，其主要表现是“俄狄浦斯情结”的产生和发展——孩子形成了一种对异性父母的情爱依恋，或是对同性父母的敌对，而俄狄浦斯情结的瓦解标志着生殖器阶段的终结。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:15:59</li>
+</ul>
+</li>
+<li><p>📌 现代性学大多只是称其为“非典型性性行为”或“非典型性性倾向”。概括地说，被认为偏离了异性恋“正轨”的性倾向包括恋童、恋兽、恋物、易装、恋尸、窥阴、露阴、秽语、施虐、受虐等。这些性倾向的一个最显著的特点是：通过异于常态的幻想和行为来获得性刺激。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:17:38</li>
+</ul>
+</li>
+<li><p>📌 恋兽倾向与恋物倾向有相似之处，区别在于恋物的对象与人无关，而有恋皮毛与恋动物倾向的人却会由动物联想到人，动物的活动尤其是交尾行为使人联想到人的交合，动物成为人的象征和替代品。恋兽倾向的表现包括：观看动物交尾以感受到性的快感；通过在动物身上摩挲唤起性的兴奋或性的满足；喜欢假装和动物性交，甚至真的和动物发生交合行为。值得一提的是，许多神话中都有人兽交合的情形，这是耐人寻味的。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:19:44</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-性行为"><a href="#2-2-性行为" class="headerlink" title="2.2 性行为"></a>2.2 性行为</h2><ul>
+<li><p>📌 女性性高潮可以从其身体器官如骨盆、阴道、子宫等的反应得到明确的界定，但对于不同的女性来说，性高潮的体验千差万别。而男性高潮期的终点主要表现为射精。高潮期过后，受刺激者进入消退期。消退期是一个非性刺激状态。如果女性重新受到有效的性刺激，有可能再次进入性高潮。而男性则进入了一个较为漫长的不应期，虽然有可能重新对性刺激做出积极反应，但其所需时间比女性长得多。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:21:11</li>
+</ul>
+</li>
+<li><p>📌 在异性性爱中乳房和乳头很少作为性刺激部位，而在同性性爱中，这却是常见的现象。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:23:47</li>
+</ul>
+</li>
+<li><p>📌 第二阶段阴茎最终回缩到非刺激状态。阴茎回缩的速度取决于外在刺激的强度，如果有持续的性刺激，消退速度就会慢一些，相反则会加快。射精后，阴茎若立即被抽出阴道，则比留在体内的萎缩速度快得多。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:24:30</li>
+</ul>
+</li>
+<li><p>📌 自我刺激的发生率和实施频率，都以大学教育程度者为最高，以高中以下教育程度者为最低。当今上层社会中的自我刺激更自觉，人们普遍把它看作一种正常的性宣泄渠道，而对此不做道德评判。在自我刺激的过程中，人们几乎全部都伴以性幻想。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:25:46</li>
+</ul>
+</li>
+<li><p>📌 婚前有过爱抚经历的人，婚后可以形成较协调的夫妻关系，这一点已通过研究得到了肯定的结论。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:26:09</li>
+</ul>
+</li>
+<li><p>📌 妓女把性交前爱抚、深吻、口刺激乳房等行为看作是反常的、堕落的，价格较低廉的妓女总要求最快完事。尽管卖淫与黑社会活动等涉险状态有很大关系，还是有许多男性认为，嫖妓比与任何其他女性性交都便宜。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:27:27</li>
+</ul>
+</li>
+<li><p>📌 在海蒂的研究中，只有大约30%的女性能够有规律地在性交中达到性高潮。换言之，在性交过程中，大多数的女性通常不能体验到性高潮。对大多数女性来说，性交过程中的性高潮仅是一种小概率的体验，而不是常有的体验。虽然一小部分女性或多或少能经常从性交过程本身中获得性高潮，但几乎所有的女性都从阴蒂刺激中获得性高潮。总之，阴蒂刺激才是获得性高潮的必要手段。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:28:31</li>
+</ul>
+</li>
+<li><p>📌 其实女性达到性高潮所花时间并不比男性所花时间更长，只有在像性交这样不充分的刺激过程中女性才需要花比男性更长的时间达到性高潮。在自慰类的直接刺激中，女性达到高潮的时间完全可以像男性一样短促，也并不需要长时间的“前戏”（准备动作）。研究表明，目前在西方国家，终身无法获得性高潮的女性在全部女性人口中约占10%。我国近期调查显示，这个数字在中国高达26%。女性无法获得性高潮的原因绝大多数源于上述的错误观念：以为性交是获得性快感的唯一途径；以为自慰是不好的行为；以为不可以直接刺激自己的阴蒂以获得快感等。如果摆脱了上述的种种错误观念，女性完全可以像男性一样迅速、可靠地得到性高潮。 </p>
+<ul>
+<li>⏱ 2023-07-02 14:29:43</li>
+</ul>
+</li>
+<li><p>📌 当别人问到格林医生(Dr. J. Guerin)的意见时，他说：在所有的治疗都归于失败后，我用热烙铁烙阴蒂的办法，成功地治愈了那些受到手淫毒害的年轻女孩……我用烙铁尖在两片大阴唇上各点三下，再在阴蒂上点一下……在第一次手术之后，那种淫荡抽搐的频率从一天40至50次，减少到一天3至4次……我们因此可以相信，在你们考虑对类似情况处理时，应当毫不犹豫地求助于烙铁，而且是越早越好，以便同小女孩的阴蒂和阴道手淫行为做斗争。”（转引自鲁宾等，15） </p>
+<ul>
+<li>⏱ 2023-07-02 14:30:50</li>
+</ul>
+</li>
+<li><p>📌 关于自慰对女性的意义，有一种观点认为，这一行为是女性赢得性自主权的途径之一。由于过去女性总是从男性那里学习性知识，其性脚本总是同男性世界联系在一起的。而自慰可以使女性学会喜欢自己的生殖器官，使她们在性活动中不再扮演被动的角色。对自慰的评价在一定程度上反映了性观念的变迁。 </p>
+<ul>
+<li>⏱ 2023-07-02 17:31:47</li>
+</ul>
+</li>
+<li><p>📌 自慰能够使女性达到性高潮，所以大部分女性在生理上喜欢自慰，但是在心理上，由于长期生活在男权制的思维方式和传统观念的阴影中，自慰却往往会给女性带来孤独、负疚、自私、愚蠢等负面的感觉。 </p>
+<ul>
+<li>⏱ 2023-07-05 23:54:05</li>
+</ul>
+</li>
+<li><p>📌 成人自慰通常会涉及三个问题。首先是性财产权的问题，一般来说，个人的性资源被认为是属于其伴侣的，自慰往往被视为对这一权利的威胁。其次是对隐私行为的控制。自慰是个人私下的行为，因此被认为有碍于伴侣之间的坦诚和亲密。最后是自慰有可能取代性交的乐趣，因此被认为会有损于夫妻的性生活。 </p>
+<ul>
+<li>⏱ 2023-07-05 23:54:29</li>
+</ul>
+</li>
+<li><p>📌 性学将人类性行为按照指向分为两大类：自体性性行为和社会性性行为。当性行为指向自己的内心或身体时，被称为“自体性性行为”，如性幻想、梦遗、自慰等；当性行为指向人的外部或他人时，被称为“社会性性行为”，它涉及不同的性交对象、方式及途径等。 </p>
+<ul>
+<li>⏱ 2023-07-05 23:55:09</li>
+</ul>
+</li>
+<li><p>📌 自慰不仅无害，而且是人的一项基本人身权利，强加其上的任何限制、惩罚和恐吓都是毫无道理的。 </p>
+<ul>
+<li>⏱ 2023-07-05 23:55:24</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-3-性治疗"><a href="#2-3-性治疗" class="headerlink" title="2.3 性治疗"></a>2.3 性治疗</h2><ul>
+<li><p>📌 他们为早泄做了以下定义，即阴茎进入阴道后不能控制射精过程，阴茎在阴道中不能停留足够的时间使对方满足。但是如果性伴侣没有性高潮并不是因为男子射精太快，则不能认为是早泄。 </p>
+<ul>
+<li>⏱ 2023-07-05 23:57:42</li>
+</ul>
+</li>
+<li><p>📌 ，治疗师分三个步骤加以治疗，第一是刺激男性勃起，待丈夫有射精欲望时，由妻子用手指挤压法减轻丈夫的性兴奋，避免射精。第二步是采取女上位的性交姿势，使阴茎进入阴道并逐渐适应被阴道包裹的感觉，当有射精欲时，则再由妻子用挤压法阻止射精。如此几次，使男性逐渐控制射精过程。接下来的几天，丈夫在有了一定的控制能力的基础上，使阴茎完全进入阴道并保持勃起状态，仍然采取女上位的姿势。最后一个阶段是夫妻性交由女上位转为侧卧性交，以很好地控制射精。 </p>
+<ul>
+<li>⏱ 2023-07-05 23:58:18</li>
+</ul>
+</li>
+<li><p>📌 不管是同性恋还是异性恋，只要一个人阴茎能成功地插入，就不能被认定为原发性阳痿。患这种疾病的男性在初次性交以前或者初次性交时，表现出强烈的焦虑，以至无法勃起，不能进行正常的性生活。它的致病原因主要有以下几种：母亲的不利影响、宗教正统所产生的社会心理上的限制、同性恋、由嫖娼引起的自我贬抑，致病原因还包括药物、酗酒等。但是有一点是相同的：即这些人都接受了一种不成熟的甚至是消极的性价值体系。这种消极的社会心理体系对生理因素产生了决定性的影响。 </p>
+<ul>
+<li>⏱ 2023-07-16 00:31:30</li>
+</ul>
+</li>
+<li><p>📌 总体来看，对阳痿的治疗效果还远远不能令人满意。快速治疗阶段的失败率还是比较高的。统计表明，对原发性阳痿治疗的失败率高达40.6%，继发性阳痿的失败率是26.2%。 </p>
+<ul>
+<li>⏱ 2023-07-16 00:32:39</li>
+</ul>
+</li>
+</ul>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>性学入门</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E6%BA%90%E4%B8%8E%E6%B5%81"><span class="nav-text">1.1 源与流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E5%AD%A6%E8%80%85%E4%B8%8E%E8%91%97%E4%BD%9C"><span class="nav-text">1.2 学者与著作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E6%80%A7%E6%AC%B2%E6%9C%9B"><span class="nav-text">2.1 性欲望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E6%80%A7%E8%A1%8C%E4%B8%BA"><span class="nav-text">2.2 性行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E6%80%A7%E6%B2%BB%E7%96%97"><span class="nav-text">2.3 性治疗</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">244</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

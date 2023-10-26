@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="2.1 InnoDB存储引擎概述 📌 Heikki Tuuri（1964年，芬兰赫尔辛基）是InnoDB存储引擎的创始人，和著名的Linux创始人Linus是芬兰赫尔辛基大学校友。  ⏱ 2023-07-12 16:40:26    3.1 参数文件 📌 Oracle数据库存在所谓的隐藏参数（undocumented parameter），以供Oracle“内部人士”使用，SQL Serve">
+<meta property="og:type" content="website">
+<meta property="og:title" content="《MySQL技术内幕：InnoDB存储引擎 第2版》">
+<meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95%EF%BC%9AInnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%20%E7%AC%AC2%E7%89%88.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="2.1 InnoDB存储引擎概述 📌 Heikki Tuuri（1964年，芬兰赫尔辛基）是InnoDB存储引擎的创始人，和著名的Linux创始人Linus是芬兰赫尔辛基大学校友。  ⏱ 2023-07-12 16:40:26    3.1 参数文件 📌 Oracle数据库存在所谓的隐藏参数（undocumented parameter），以供Oracle“内部人士”使用，SQL Serve">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-12T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-26T11:33:43.915Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95%EF%BC%9AInnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%20%E7%AC%AC2%E7%89%88.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《MySQL技术内幕：InnoDB存储引擎 第2版》 | 趣读写
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">《MySQL技术内幕：InnoDB存储引擎 第2版》
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>MYSQL技术内幕：INNODB存储引擎 第2版</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <hr>
+<h2 id="2-1-InnoDB存储引擎概述"><a href="#2-1-InnoDB存储引擎概述" class="headerlink" title="2.1 InnoDB存储引擎概述"></a>2.1 InnoDB存储引擎概述</h2><ul>
+<li>📌 Heikki Tuuri（1964年，芬兰赫尔辛基）是InnoDB存储引擎的创始人，和著名的Linux创始人Linus是芬兰赫尔辛基大学校友。 <ul>
+<li>⏱ 2023-07-12 16:40:26</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-参数文件"><a href="#3-1-参数文件" class="headerlink" title="3.1 参数文件"></a>3.1 参数文件</h2><ul>
+<li>📌 Oracle数据库存在所谓的隐藏参数（undocumented parameter），以供Oracle“内部人士”使用，SQL Server也有类似的参数。有些DBA曾问我，MySQL中是否也有这类参数。我的回答是：没有，也不需要。即使Oracle和SQL Server中都有些所谓的隐藏参数，在绝大多数的情况下，这些数据库厂商也不建议用户在生产环境中对其进行很大的调整。 <ul>
+<li>⏱ 2023-07-11 19:43:22</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-2-4-二进制日志"><a href="#3-2-4-二进制日志" class="headerlink" title="3.2.4 二进制日志"></a>3.2.4 二进制日志</h2><ul>
+<li>📌 二进制日志文件在默认情况下并没有启动，需要手动指定参数来启动。可能有人会质疑，开启这个选项是否会对数据库整体性能有所影响。不错，开启这个选项的确会影响性能，但是性能的损失十分有限。根据MySQL官方手册中的测试表明，开启二进制日志会使性能下降1%。但考虑到可以使用复制（replication）和point-in-time的恢复，这些性能损失绝对是可以且应该被接受的。 <ul>
+<li>⏱ 2023-07-11 19:47:17</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-1-索引组织表"><a href="#4-1-索引组织表" class="headerlink" title="4.1 索引组织表"></a>4.1 索引组织表</h2><ul>
+<li><p>📌 如果在创建表时没有显式地定义主键，则InnoDB存储引擎会按如下方式选择或创建主键：❑首先判断表中是否有非空的唯一索引（Unique NOT NULL），如果有，则该列即为主键。❑如果不符合上述条件，InnoDB存储引擎自动创建一个6字节大小的指针。 </p>
+<ul>
+<li>⏱ 2023-07-11 19:49:19</li>
+</ul>
+</li>
+<li><p>📌 InnoDB存储引擎将选择建表时第一个定义的非空唯一索引为主键。这里需要非常注意的是，主键的选择根据的是定义索引的顺序，而不是建表时列的顺序。 </p>
+<ul>
+<li>⏱ 2023-07-11 19:49:53</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-InnoDB逻辑存储结构"><a href="#4-2-InnoDB逻辑存储结构" class="headerlink" title="4.2 InnoDB逻辑存储结构"></a>4.2 InnoDB逻辑存储结构</h2><ul>
+<li>📌 从InnoDB存储引擎的逻辑存储结构看，所有数据都被逻辑地存放在一个空间中，称之为表空间（tablespace）。表空间又由段（segment）、区（extent）、页（page）组成 <ul>
+<li>⏱ 2023-07-11 19:51:31</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-2-段"><a href="#4-2-2-段" class="headerlink" title="4.2.2 段"></a>4.2.2 段</h2><ul>
+<li>📌 InnoDB存储引擎表是索引组织的（index organized），因此数据即索引，索引即数据。那么数据段即为B+树的叶子节点（图4-1的Leaf node segment），索引段即为B+树的非索引节点（图4-1的Non-leaf node segment） <ul>
+<li>⏱ 2023-07-11 19:54:35</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-3-区"><a href="#4-2-3-区" class="headerlink" title="4.2.3 区"></a>4.2.3 区</h2><ul>
+<li><p>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。InnoDB 1.0.x版本开始引入压缩页，即每个页的大小可以通过参数KEY_BLOCK_SIZE设置为2K、4K、8K，因此每个区对应页的数量就应该为512、256、128。InnoDB 1.2.x版本新增了参数innodb_page_size，通过该参数可以将默认页的大小设置为4K、8K，但是页中的数据库不是压缩。这时区中页的数量同样也为256、128。总之，不论页的大小怎么变化，区的大小总是为1M。 </p>
+<ul>
+<li>⏱ 2023-07-11 20:44:36</li>
+</ul>
+</li>
+<li><p>📌 但是，这里还有这样一个问题：在用户启用了参数innodb_file_per_talbe后，创建的表默认大小是96KB。区中是64个连续的页，创建的表的大小至少是1MB才对啊？其实这是因为在每个段开始时，先用32个页大小的碎片页（fragment page）来存放数据，在使用完这些页之后才是64个连续页的申请。 </p>
+<ul>
+<li>⏱ 2023-07-11 20:51:51</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-4-页"><a href="#4-2-4-页" class="headerlink" title="4.2.4 页"></a>4.2.4 页</h2><ul>
+<li><p>📌 同大多数数据库一样，InnoDB有页（Page）的概念（也可以称为块），页是InnoDB磁盘管理的最小单位。在InnoDB存储引擎中，默认每个页的大小为16KB。而从InnoDB 1.2.x版本开始，可以通过参数innodb_page_size将页的大小设置为4K、8K、16K。若设置完成，则所有表中页的大小都为innodb_page_size，不可以对其再次进行修改。除非通过mysqldump导入和导出操作来产生新的库。 </p>
+<ul>
+<li>⏱ 2023-07-11 20:59:32</li>
+</ul>
+</li>
+<li><p>📌 在InnoDB存储引擎中，常见的页类型有：❑数据页（B-tree Node）❑undo页（undo Log Page）❑系统页（System Page） </p>
+<ul>
+<li>⏱ 2023-07-11 20:59:45</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-5-行"><a href="#4-2-5-行" class="headerlink" title="4.2.5 行"></a>4.2.5 行</h2><h2 id="4-3-InnoDB行记录格式"><a href="#4-3-InnoDB行记录格式" class="headerlink" title="4.3 InnoDB行记录格式"></a>4.3 InnoDB行记录格式</h2><ul>
+<li><p>📌 InnoDB存储引擎和大多数数据库一样（如Oracle和Microsoft SQL Server数据库），记录是以行的形式存储的。这意味着页中保存着表中一行行的数据 </p>
+<ul>
+<li>⏱ 2023-07-11 21:03:36</li>
+</ul>
+</li>
+<li><p>📌 变长字段的长度最大不可以超过2字节，这是因在MySQL数据库中VARCHAR类型的最大长度限制为65535。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:06:32</li>
+</ul>
+</li>
+<li><p>📌 最后的部分就是实际存储每个列的数据。需要特别注意的是，NULL不占该部分任何空间，即NULL除了占有NULL标志位，实际存储不占有任何空间。另外有一点需要注意的是，每行数据除了用户定义的列外，还有两个隐藏列，事务ID列和回滚指针列，分别为6字节和7字节的大小。若InnoDB表没有定义主键，每行还会增加一个6字节的rowid列。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:08:09</li>
+</ul>
+</li>
+<li><p>📌 03 02 01&#x2F;<em>变长字段长度列表，逆序</em>&#x2F;00&#x2F;<em>NULL标志位，第一行没有NULL值</em>&#x2F;00 00 10 00 2c&#x2F;<em>Record Header，固定5字节长度</em>&#x2F;00 00 00 2b 68 00&#x2F;<em>RowID InnoDB自动创建，6字节</em>&#x2F;00 00 00 00 06 05&#x2F;<em>TransactionID</em>&#x2F;80 00 0000 32 01 10&#x2F;<em>Roll Pointer</em>&#x2F;61&#x2F;<em>列1数据’a’</em>&#x2F;62 62&#x2F;<em>列2数据’bb’</em>&#x2F;62 62 20 20 20 20 20 20 20 20&#x2F;<em>列3数据’bb’</em>&#x2F;63 63 63&#x2F;<em>列4数据’ccc’</em>&#x2F;现在第一行数据就展现在用户眼前了。需要注意的是，变长字段长度列表是逆序存放的，因此变长字段长度列表为03 02 01，而不是01 02 03。此外还需要注意InnoDB每行有隐藏列TransactionID和Roll Pointer。同时可以发现，固定长度CHAR字段在未能完全占用其长度空间时，会用0x20来进行填充。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:13:26</li>
+</ul>
+</li>
+<li><p>📌 接着再来分析下Record Header的最后两个字节，这两个字节代表next_recorder，0x2c代表下一个记录的偏移量，即当前记录的位置加上偏移量0x2c就是下条记录的起始位置。所以InnoDB存储引擎在页内部是通过一种链表的结构来串连各个行记录的。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:11:58</li>
+</ul>
+</li>
+<li><p>📌 03 01&#x2F;<em>变长字段长度列表，逆序</em>&#x2F;06&#x2F;<em>NULL标志位，第三行有NULL值</em>&#x2F;00 00 20 ff 98&#x2F;<em>Record Header</em>&#x2F;00 00 00 2b 68 02&#x2F;<em>RowID</em>&#x2F;00 00 00 00 06 07&#x2F;<em>TransactionID</em>&#x2F;80 00 00 00 32 01 10&#x2F;<em>Roll Pointer</em>&#x2F;64&#x2F;<em>列1数据’d’</em>&#x2F;66 66 66&#x2F;<em>列4数据’fff’</em>&#x2F;第三行有NULL值，因此NULL标志位不再是00而是06，转换成二进制为00000110，为1的值代表第2列和第3列的数据为NULL。在其后存储列数据的部分，用户会发现没有存储NULL列，而只存储了第1列和第4列非NULL的值。因此这个例子很好地说明了：不管是CHAR类型还是VARCHAR类型，在compact格式下NULL值都不占用任何存储空间。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:13:07</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-2-Redundant行记录格式"><a href="#4-3-2-Redundant行记录格式" class="headerlink" title="4.3.2 Redundant行记录格式"></a>4.3.2 Redundant行记录格式</h2><ul>
+<li><p>📌 从表4-2中可以发现，n_fields值代表一行中列的数量，占用10位。同时这也很好地解释了为什么MySQL数据库一行支持最多的列为1023。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:16:13</li>
+</ul>
+</li>
+<li><p>📌 VARCHAR类型的NULL值，Redundant行记录格式同样不占用任何存储空间，而CHAR类型的NULL值需要占用空间。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:17:13</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-3-行溢出数据"><a href="#4-3-3-行溢出数据" class="headerlink" title="4.3.3 行溢出数据"></a>4.3.3 行溢出数据</h2><ul>
+<li><p>📌 InnoDB存储引擎可以将一条记录中的某些数据存储在真正的数据页面之外。一般认为BLOB、LOB这类的大对象列类型的存储会把数据存放在数据页面之外。但是，这个理解有点偏差，BLOB可以不将数据放在溢出页面，而且即便是VARCHAR列数据类型，依然有可能被存放为行溢出数据。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:18:09</li>
+</ul>
+</li>
+<li><p>📌 从错误消息可以看到InnoDB存储引擎并不支持65535长度的VARCHAR。这是因为还有别的开销，通过实际测试发现能存放VARCHAR类型的最大长度为65532。例如，按下面的命令创建表就不会报错了。mysql＞CREATE TABLE test(-＞a VARCHAR(65532)-＞)CHARSET&#x3D;latin1 ENGINE&#x3D;InnoDB;Query OK,0 rows affected(0.15 sec) </p>
+<ul>
+<li>⏱ 2023-07-11 21:18:56</li>
+</ul>
+</li>
+<li><p>📌 此外需要注意的是，MySQL官方手册中定义的65535长度是指所有VARCHAR列的长度总和，如果列的长度总和超出这个长度，依然无法创建，如下所示：mysql＞CREATE TABLE test2(-＞a VARCHAR(22000),-＞b VARCHAR(22000),-＞c VARCHAR(22000)-＞)CHARSET&#x3D;latin1 ENGINE&#x3D;InnoDB;ERROR 1118(42000):Row size too large.The maximum row size for the used table type,not counting BLOBs,is 65535.You have to change some columns to TEXT or BLOBs3个列长度总和是66000，因此InnoDB存储引擎再次报了同样的错误。即使能存放65532个字节，但是有没有想过，InnoDB存储引擎的页为16KB，即16384字节，怎么能存放65532字节呢？因此，在一般情况下，InnoDB存储引擎的数据都是存放在页类型为B-tree node中。但是当发生行溢出时，数据存放在页类型为Uncompress BLOB页中。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:20:24</li>
+</ul>
+</li>
+<li><p>📌 另一个问题是，对于TEXT或BLOB的数据类型，用户总是以为它们是存放在Uncompressed BLOB Page中的，其实这也是不准确的。是放在数据页中还是BLOB页中，和前面讨论的VARCHAR一样，至少保证一个页能存放两条记录， </p>
+<ul>
+<li>⏱ 2023-07-11 21:28:45</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-4-Compressed和Dynamic行记录格式"><a href="#4-3-4-Compressed和Dynamic行记录格式" class="headerlink" title="4.3.4 Compressed和Dynamic行记录格式"></a>4.3.4 Compressed和Dynamic行记录格式</h2><ul>
+<li><p>📌 InnoDB 1.0.x版本开始引入了新的文件格式（file format，用户可以理解为新的页格式），以前支持的Compact和Redundant格式称为Antelope文件格式，新的文件格式称为Barracuda文件格式。Barracuda文件格式下拥有两种新的行记录格式：Compressed和Dynamic。新的两种记录格式对于存放在BLOB中的数据采用了完全的行溢出的方式，如图4-5所示，在数据页中只存放20个字节的指针，实际的数据都存放在Off Page中，而之前的Compact和Redundant两种格式会存放768个前缀字节。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:32:04</li>
+</ul>
+</li>
+<li><p>📌 Compressed行记录格式的另一个功能就是，存储在其中的行数据会以zlib的算法进行压缩，因此对于BLOB、TEXT、VARCHAR这类大长度类型的数据能够进行非常有效的存储。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:32:19</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-5-CHAR的行结构存储"><a href="#4-3-5-CHAR的行结构存储" class="headerlink" title="4.3.5 CHAR的行结构存储"></a>4.3.5 CHAR的行结构存储</h2><ul>
+<li>📌 可以看到对于字符串’ab’，其内部存储为0x6162。而字符串’我们’为0xCED2C3C7。因此对于多字节的字符编码，CHAR类型不再代表固定长度的字符串了。例如，对于UTF-8下CHAR（10）类型的列，其最小可以存储10字节的字符，而最大可以存储30字节的字符。因此，对于多字节字符编码的CHAR数据类型的存储，InnoDB存储引擎在内部将其视为变长字符类型。这也就意味着在变长长度列表中会记录CHAR数据类型的长度。 <ul>
+<li>⏱ 2023-07-11 21:34:24</li>
+</ul>
+</li>
+</ul>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="4-2-3-区-1"><a href="#4-2-3-区-1" class="headerlink" title="4.2.3 区"></a>4.2.3 区</h2><h3 id="划线评论"><a href="#划线评论" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。  ^225207353-7JDcMQjuy<ul>
+<li>💭 16kb * 64 &#x3D; 1mb</li>
+<li>⏱ 2023-07-11 20:58:41</li>
+</ul>
+</li>
+</ul>
+<h3 id="划线评论-1"><a href="#划线评论-1" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。  ^225207353-7JDbOB0wn<ul>
+<li>💭 一个区64个页📃</li>
+<li>⏱ 2023-07-11 20:43:50</li>
+</ul>
+</li>
+</ul>
+<h3 id="划线评论-2"><a href="#划线评论-2" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。  ^225207353-7JDbMNI9R<ul>
+<li>💭 一个页是16kb</li>
+<li>⏱ 2023-07-11 20:43:24</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-5-行-1"><a href="#4-2-5-行-1" class="headerlink" title="4.2.5 行"></a>4.2.5 行</h2><h3 id="划线评论-3"><a href="#划线评论-3" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 InnoDB存储引擎是面向列的（row-oriented），也就说数据是按行进行存放的。每个页存放的行记录也是有硬性定义的，最多允许存放16KB&#x2F;2-200行的记录，即7992行记录  ^225207353-7JDd1sCXx<ul>
+<li>💭 16*1024&#x2F;2 -200 &#x3D; 7992</li>
+<li>⏱ 2023-07-11 21:02:17</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-InnoDB行记录格式-1"><a href="#4-3-InnoDB行记录格式-1" class="headerlink" title="4.3 InnoDB行记录格式"></a>4.3 InnoDB行记录格式</h2><h3 id="划线评论-4"><a href="#划线评论-4" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 现在第一行数据就展现在用户眼前了。需要注意的是，变长字段长度列表是逆序存放的，因此变长字段长度列表为03 02 01，而不是01 02 03。  ^225207353-7JDdRvfGG<ul>
+<li>💭 就是a bb ccc的长度</li>
+<li>⏱ 2023-07-11 21:15:06</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-5-CHAR的行结构存储-1"><a href="#4-3-5-CHAR的行结构存储-1" class="headerlink" title="4.3.5 CHAR的行结构存储"></a>4.3.5 CHAR的行结构存储</h2><h3 id="划线评论-5"><a href="#划线评论-5" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 上述例子清楚地显示了InnoDB存储引擎内部对CHAR类型在多字节字符集类型的存储。CHAR类型被明确视为了变长字符类型，对于未能占满长度的字符还是填充0x20。InnoDB存储引擎内部对字符的存储和我们用HEX函数看到的也是一致的。因此可以认为在多字节字符集的情况下，CHAR和VARCHAR的实际行存储基本是没有区别的。  ^225207353-7JDfcu0sa<ul>
+<li>💭 多字节字符集，utf8下，用char也是变长</li>
+<li>⏱ 2023-07-11 21:35:32</li>
+</ul>
+</li>
+</ul>
+<h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>MYSQL技术内幕：INNODB存储引擎 第2版</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E6%A6%82%E8%BF%B0"><span class="nav-text">2.1 InnoDB存储引擎概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%8F%82%E6%95%B0%E6%96%87%E4%BB%B6"><span class="nav-text">3.1 参数文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-4-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97"><span class="nav-text">3.2.4 二进制日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E7%B4%A2%E5%BC%95%E7%BB%84%E7%BB%87%E8%A1%A8"><span class="nav-text">4.1 索引组织表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-InnoDB%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-text">4.2 InnoDB逻辑存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-2-%E6%AE%B5"><span class="nav-text">4.2.2 段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-3-%E5%8C%BA"><span class="nav-text">4.2.3 区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-4-%E9%A1%B5"><span class="nav-text">4.2.4 页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-5-%E8%A1%8C"><span class="nav-text">4.2.5 行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-InnoDB%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">4.3 InnoDB行记录格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-2-Redundant%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">4.3.2 Redundant行记录格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-3-%E8%A1%8C%E6%BA%A2%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="nav-text">4.3.3 行溢出数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-4-Compressed%E5%92%8CDynamic%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">4.3.4 Compressed和Dynamic行记录格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-5-CHAR%E7%9A%84%E8%A1%8C%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8"><span class="nav-text">4.3.5 CHAR的行结构存储</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-3-%E5%8C%BA-1"><span class="nav-text">4.2.3 区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="nav-text">划线评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-1"><span class="nav-text">划线评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-2"><span class="nav-text">划线评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-5-%E8%A1%8C-1"><span class="nav-text">4.2.5 行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-3"><span class="nav-text">划线评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-InnoDB%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F-1"><span class="nav-text">4.3 InnoDB行记录格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-4"><span class="nav-text">划线评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-5-CHAR%E7%9A%84%E8%A1%8C%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8-1"><span class="nav-text">4.3.5 CHAR的行结构存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-5"><span class="nav-text">划线评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">244</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
