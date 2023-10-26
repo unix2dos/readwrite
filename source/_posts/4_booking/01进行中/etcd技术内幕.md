@@ -1,12 +1,17 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "3300055439"
+bookId: '3300055439'
 author: 百里燊
-cover: https://cdn.weread.qq.com/weread/cover/5/cpplatform_g1xmnpkbs4j9d4evg6qrmf/t7_cpplatform_g1xmnpkbs4j9d4evg6qrmf1681438996.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/5/cpplatform_g1xmnpkbs4j9d4evg6qrmf/t7_cpplatform_g1xmnpkbs4j9d4evg6qrmf1681438996.jpg
 reviewCount: 0
 noteCount: 7
 title: 《etcd技术内幕》
-date: 2023-09-18
+categories:
+  - 4_booking
+  - 01进行中
+abbrlink: 3f3e3def
+date: 2023-09-18 00:00:00
 ---
 
 ---
