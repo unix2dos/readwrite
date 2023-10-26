@@ -1,17 +1,12 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: '3300057552'
+bookId: "3300057552"
 author: 王深湛　
-cover: >-
-  https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg
+cover: https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg
 reviewCount: 0
 noteCount: 13
 title: 《Elasticsearch数据搜索与分析实战》
-categories:
-  - 4_booking
-  - 01进行中
-abbrlink: 6801e9a6
-date: 2023-08-28 00:00:00
+date: 2023-08-28
 ---
 
 ---

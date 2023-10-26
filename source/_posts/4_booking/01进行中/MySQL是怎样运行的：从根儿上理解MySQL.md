@@ -1,16 +1,12 @@
 ---
 doc_type: weread-highlights-reviews
 bookId: CB_DNhGZtGYWAJq6is6gbACk93M
-author: ''
-cover: 'https://res.weread.qq.com/wrepub/CB_EsC8gC8hnBzr6T96U7_parsecover'
+author: ""
+cover: https://res.weread.qq.com/wrepub/CB_EsC8gC8hnBzr6T96U7_parsecover
 reviewCount: 0
 noteCount: 10
 title: 《MySQL是怎样运行的：从根儿上理解MySQL》
-categories:
-  - 4_booking
-  - 01进行中
-abbrlink: 50bf68be
-date: 2023-09-05 00:00:00
+date: 2023-09-05
 ---
 
 ---

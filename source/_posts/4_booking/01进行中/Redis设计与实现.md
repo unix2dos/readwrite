@@ -1,16 +1,12 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: '622000'
+bookId: "622000"
 author: 黄健宏
-cover: 'https://cdn.weread.qq.com/weread/cover/54/YueWen_622000/t7_YueWen_622000.jpg'
+cover: https://cdn.weread.qq.com/weread/cover/54/YueWen_622000/t7_YueWen_622000.jpg
 reviewCount: 0
 noteCount: 2
 title: 《Redis设计与实现》
-categories:
-  - 4_booking
-  - 01进行中
-abbrlink: 68df92b4
-date: 2023-08-02 00:00:00
+date: 2023-08-02
 ---
 
 ---
