@@ -27,8 +27,8 @@
 <meta property="og:site_name" content="趣读写">
 <meta property="og:description" content="1.1 易于使用 📌 面向文档的数据库使用更灵活的“文档”模型取代了“行”的概念。通过嵌入文档和数组，面向文档的方式可以仅用一条记录来表示复杂的层次关系，这与使用现代面向对象语言的开发人员思考数据的方式非常契合。   ⏱ 2023-10-14 18:16:14   📌 MongoDB 中也没有预定义模式（predefined schema）：文档键值的类型和大小不是固定的。由于没有固定的模式">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-10-19T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-26T11:33:43.915Z">
+<meta property="article:published_time" content="2023-10-26T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-08T09:17:14.823Z">
 <meta property="article:author" content="levon">
 <meta name="twitter:card" content="summary">
 
@@ -329,6 +329,11 @@
 </li>
 </ul>
 <h2 id="5-1-索引简介"><a href="#5-1-索引简介" class="headerlink" title="5.1 索引简介"></a>5.1 索引简介</h2><ul>
+<li><p>📌 “totalDocsExamined” 是 MongoDB 在试图满足查询时查看的文档总数。 </p>
+<ul>
+<li>⏱ 2023-10-26 20:34:01</li>
+</ul>
+</li>
 <li><p>📌 为了使 MongoDB 高效地响应查询，应用程序中的所有查询模式都应该有索引支持。 </p>
 <ul>
 <li>⏱ 2023-10-17 09:06:11</li>
@@ -349,9 +354,54 @@
 <li>⏱ 2023-10-17 09:10:15</li>
 </ul>
 </li>
-<li><p>📌 在设计复合索引时，将排序键放在第一位通常是一个好策略。 </p>
+<li><p>📌 db.users.find({“age” : {“$gte” : 21, “$lte” : 30}}).sort({“username” : 1})　　与上一个方式类似，这是多值查询，但这次需要对结果进行排序。和之前一样，MongoDB 会使用索引来匹配查询条件。不过，索引不会按照顺序返回用户名，而查询要求按用户名对结果进行排序。这意味着 MongoDB 需要在返回结果之前在内存中对结果进行排序，而不是简单地遍历已经按需排好序的索引。因此，这种类型的查询通常效率较低。 </p>
 <ul>
-<li>⏱ 2023-10-17 09:15:31</li>
+<li>⏱ 2023-10-26 20:42:47</li>
+</ul>
+</li>
+<li><p>📌 这样非常好，因为不需要在内存中对大量数据进行排序。不过，它必须扫描整个索引以找到所有匹配项。在设计复合索引时，将排序键放在第一位通常是一个好策略。 </p>
+<ul>
+<li>⏱ 2023-10-26 20:42:11</li>
+</ul>
+</li>
+<li><p>📌 当在查询计划中看到 “SORT” 阶段时，意味着 MongoDB 将无法使用索引对数据库中的结果集进行排序，而必须执行内存排序： </p>
+<ul>
+<li>⏱ 2023-10-26 21:14:05</li>
+</ul>
+</li>
+<li><p>📌 然而，我们真正希望看到的是 “nReturned” 与 “totalKeysExamined” 非常接近。此外，为了更有效地执行此查询，我们希望可以不使用 hint。解决这两个问题的方法是设计一个更好的索引。 </p>
+<ul>
+<li>⏱ 2023-10-26 21:15:47</li>
+</ul>
+</li>
+<li><p>📌 虽然不是所有数据集都这样，但通常在设计复合索引时，应该将等值过滤字段排在多值过滤字段之前。 </p>
+<ul>
+<li>⏱ 2023-10-26 21:17:03</li>
+</ul>
+</li>
+<li><p>📌 在考虑复合索引的设计时，需要知道对于利用索引的通用查询模式，如何处理其等值过滤、多值过滤以及排序这些部分。对于所有复合索引都必须考虑这 3 个因素，而且如果在设计索引时可以正确地平衡这些关注点，那么你的查询就会从 MongoDB 中获得最佳的性能 </p>
+<ul>
+<li>⏱ 2023-10-26 21:17:36</li>
+</ul>
+</li>
+<li><p>📌 &gt; db.students.createIndex({class_id:1, final_grade:1, student_id:1})现在，再次执行这个查询：&gt; db.students.find({student_id:{$gt:500000}, class_id:54})￼ …          .sort({final_grade:1})￼ …          .explain(“executionStats”) </p>
+<ul>
+<li>⏱ 2023-10-26 21:18:58</li>
+</ul>
+</li>
+<li><p>📌 概括来说，在设计复合索引时：•  等值过滤的键应该在最前面；•  用于排序的键应该在多值字段之前；•  多值过滤的键应该在最后面。 </p>
+<ul>
+<li>⏱ 2023-10-26 21:19:07</li>
+</ul>
+</li>
+<li><p>📌 只有基于多个查询条件进行排序时，索引方向才是重要的。如果只是基于一个键进行排序，那么 MongoDB 可以简单地从相反方向读取索引。如果有一个在 {“age” : -1} 上的排序和基于 {“age” : 1} 的索引，那么 MongoDB 会在使用索引时进行优化，就如同存在一个 {“age” : -1} 索引一样。（所以不要两个都创建！）只有在基于多键排序时，方向才重要。 </p>
+<ul>
+<li>⏱ 2023-10-26 21:28:46</li>
+</ul>
+</li>
+<li><p>📌 如果对一个被覆盖的查询运行 explain，那么结果中会有一个并不处于 “FETCH” 阶段之下的 “IXSCAN” 阶段，并且在 “executionStats” 中，”totalDocsExamined” 的值是 0。 </p>
+<ul>
+<li>⏱ 2023-10-26 21:29:01</li>
 </ul>
 </li>
 </ul>
@@ -517,7 +567,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">244</span>
+          <span class="site-state-item-count">251</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
