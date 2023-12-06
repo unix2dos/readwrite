@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="二、用语解说 📌 在博弈中，首先必须确定参与者。所谓参与者，指的是在博弈中能够独立做出决策的最小单位。因此，在对企业间的竞争进行分析时，每个企业就是参与者；而对企业内部各部门之间的协调性进行分析时，各部门就是参与者  ⏱ 2023-12-05 00:14:39    第1节：囚徒困境 📌 最终，库克公司和戴尔公司并没有选择合作。他们都无法相信“对方一定能够遵守约定”。所以，结果和库克当初预计">
+<meta property="og:type" content="website">
+<meta property="og:title" content="《博弈论（MBA轻松读）》">
+<meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88MBA%E8%BD%BB%E6%9D%BE%E8%AF%BB%EF%BC%89.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="二、用语解说 📌 在博弈中，首先必须确定参与者。所谓参与者，指的是在博弈中能够独立做出决策的最小单位。因此，在对企业间的竞争进行分析时，每个企业就是参与者；而对企业内部各部门之间的协调性进行分析时，各部门就是参与者  ⏱ 2023-12-05 00:14:39    第1节：囚徒困境 📌 最终，库克公司和戴尔公司并没有选择合作。他们都无法相信“对方一定能够遵守约定”。所以，结果和库克当初预计">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-12-05T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-06T11:22:44.147Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E5%8D%9A%E5%BC%88%E8%AE%BA%EF%BC%88MBA%E8%BD%BB%E6%9D%BE%E8%AF%BB%EF%BC%89.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《博弈论（MBA轻松读）》 | 趣读写
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">《博弈论（MBA轻松读）》
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>博弈论（MBA轻松读）</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <hr>
+<h2 id="二、用语解说"><a href="#二、用语解说" class="headerlink" title="二、用语解说"></a>二、用语解说</h2><ul>
+<li>📌 在博弈中，首先必须确定参与者。所谓参与者，指的是在博弈中能够独立做出决策的最小单位。因此，在对企业间的竞争进行分析时，每个企业就是参与者；而对企业内部各部门之间的协调性进行分析时，各部门就是参与者 <ul>
+<li>⏱ 2023-12-05 00:14:39</li>
+</ul>
+</li>
+</ul>
+<h2 id="第1节：囚徒困境"><a href="#第1节：囚徒困境" class="headerlink" title="第1节：囚徒困境"></a>第1节：囚徒困境</h2><ul>
+<li><p>📌 最终，库克公司和戴尔公司并没有选择合作。他们都无法相信“对方一定能够遵守约定”。所以，结果和库克当初预计的一样，库克公司和戴尔公司都支持布什方式，X汽车也选择了布什公司作为技术委托方。虽然库克用“尽管并不是最好的结果，但总算赚到了一些。少赚总比不赚强。”来安慰自己，但心中却总感觉有些难以释怀。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:20:38</li>
+</ul>
+</li>
+<li><p>📌 在这个原版的“囚徒困境”之中，两名强盗都选择“坦白”这一占优策略，结果就是两人都被判处10年有期徒刑。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:23:03</li>
+</ul>
+</li>
+<li><p>📌 在面对“囚徒困境”的时候，双方要想获取更多的收益，可以采取以下的方法。（一）对背叛者施加惩罚 </p>
+<ul>
+<li>⏱ 2023-12-05 00:24:50</li>
+</ul>
+</li>
+<li><p>📌 假设背叛的一方要支付给受损害的一方15亿日元赔偿金，那么这次博弈的收益矩阵就会变成图表1-4那样。如果双方全都选择了背叛，都支持布什方式，那么双方相互赔偿15亿日元就自动抵消了，最终的结果和之前的收益（+37.5，+37.5）相同。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:24:58</li>
+</ul>
+</li>
+<li><p>📌 （二）增加博弈（交易）次数另一种解决方法就是增加库克公司和戴尔公司之间的交易次数。如果两家企业今后还有继续合作的可能性，那么为了追求眼前的收益而背叛对方，可能会对今后的合作造成影响。遭到背叛的一方在今后的合作之中肯定会采取相应的报复行动。考虑到这一点的话，“追求眼前的收益而背叛对方”就不是最好的选择。也就是说，通过将博弈从“单阶段”变成“重复”，可能会得出不同的解决方法。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:25:21</li>
+</ul>
+</li>
+</ul>
+<h2 id="第2节：纳什均衡与夫妻博弈"><a href="#第2节：纳什均衡与夫妻博弈" class="headerlink" title="第2节：纳什均衡与夫妻博弈"></a>第2节：纳什均衡与夫妻博弈</h2><ul>
+<li><p>📌 虽然不存在占优策略，但对双方参与者来说都能够接受的均衡选择却很多。这种均衡被称为“纳什均衡”。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:26:58</li>
+</ul>
+</li>
+<li><p>📌 用一句话来概括纳什均衡，就是“所有参与者都在‘以其他参与者的策略为前提的情况下，选择自己最合适的策略’的状态”。也就是说，一旦参与者们选择了满足纳什均衡的策略（以下简称为纳什均衡策略），那么不管博弈中的任何参与者选择其他任何策略，都不能使自身的收益增加。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:27:50</li>
+</ul>
+</li>
+<li><p>📌 对丈夫来说，看拳击（+2）比看歌剧（+1）的收益更大，而对妻子来说看歌剧（+2）比看拳击（+1）的收益更大。但是，两人都不想自己一个人去（-1）。在这种情况下，（拳击，拳击）（歌剧，歌剧）这两种策略组合都满足纳什均衡的条件 </p>
+<ul>
+<li>⏱ 2023-12-05 00:31:56</li>
+</ul>
+</li>
+<li><p>📌 首先沿纵列比较参与者1的收益，在最高的数值下划线（如果最高值有多个，则在所有最高值下面都划线）。其次沿横轴比较参与者2的收益，同样在最高值下划线。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:33:01</li>
+</ul>
+</li>
+<li><p>📌 如果在一个括号内有两个下划线，那么这个策略组合就是纳什均衡策略（图内灰色的部分）。即便有三个以上备选项的情况下，也同样可以使用这个方法来发现纳什均衡策略。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:33:21</li>
+</ul>
+</li>
+<li><p>📌 纳什均衡策略一旦实现，任何参与者都不能再选择其他策略，这一点是毋庸置疑的， </p>
+<ul>
+<li>⏱ 2023-12-05 00:39:50</li>
+</ul>
+</li>
+<li><p>📌 而且在参与者不以合作为前提的博弈中，参与者数量越多，“纳什均衡”的不确定性就越大。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:40:34</li>
+</ul>
+</li>
+<li><p>📌 事实标准实际上也是一种纳什均衡状况。特别是在没有法律规定的情况下，某种格式成为市场标准——比如电脑系统中的Windows——使用其他格式的消费者就很难增加自身的收益。事实上，IOS系统的软件价格一般都比Windows系统的软件价格更高。因此消费者只能屈从于事实标准。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:42:21</li>
+</ul>
+</li>
+<li><p>📌 比如在车站搭乘自动扶梯的时候。为了给赶时间的人让开一条快速的通道，搭乘自动扶梯的人都会自觉站在同一侧。如果每个人都按照自己的喜好随意站的话，那么赶时间的人就没办法快速通过。如果在其他人都站在同一侧的情况下，只有自己一个人站在另一侧，会让人感觉很不好意思，最终自己也会和其他人站到同一侧去。这就是纳什均衡。 </p>
+<ul>
+<li>⏱ 2023-12-05 00:42:44</li>
+</ul>
+</li>
+</ul>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>博弈论（MBA轻松读）</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%94%A8%E8%AF%AD%E8%A7%A3%E8%AF%B4"><span class="nav-text">二、用语解说</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E8%8A%82%EF%BC%9A%E5%9B%9A%E5%BE%92%E5%9B%B0%E5%A2%83"><span class="nav-text">第1节：囚徒困境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E8%8A%82%EF%BC%9A%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1%E4%B8%8E%E5%A4%AB%E5%A6%BB%E5%8D%9A%E5%BC%88"><span class="nav-text">第2节：纳什均衡与夫妻博弈</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">255</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
