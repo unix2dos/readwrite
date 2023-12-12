@@ -5,6 +5,7 @@ author: 日本顾彼思管理学院 铃木一功
 cover: https://cdn.weread.qq.com/weread/cover/80/YueWen_37178611/t7_YueWen_37178611.jpg
 reviewCount: 0
 noteCount: 15
+isbn: 9787569935097
 title: 《博弈论（MBA轻松读）》
 date: 2023-12-05
 ---

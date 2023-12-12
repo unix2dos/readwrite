@@ -5,6 +5,7 @@ author: 姜承尧
 cover: https://res.weread.qq.com/wrepub/CB_3GS3Oi3PzCth6hh6gbEmj3qo_parsecover
 reviewCount: 6
 noteCount: 28
+isbn: 
 title: 《MySQL技术内幕：InnoDB存储引擎 第2版》
 date: 2023-07-12
 ---

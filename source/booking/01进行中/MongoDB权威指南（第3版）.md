@@ -5,6 +5,7 @@ author: 香农·布拉德肖 克里斯蒂娜·霍多罗夫 约恩·布拉齐尔
 cover: https://wfqqreader-1252317822.image.myqcloud.com/cover/824/41779824/t7_41779824.jpg
 reviewCount: 1
 noteCount: 47
+isbn: 9787115576538
 title: 《MongoDB权威指南（第3版）》
 date: 2023-10-26
 ---

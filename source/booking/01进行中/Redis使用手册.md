@@ -5,6 +5,7 @@ author: 黄健宏
 cover: https://cdn.weread.qq.com/weread/cover/59/YueWen_26562837/t7_YueWen_26562837.jpg
 reviewCount: 1
 noteCount: 16
+isbn: 9787111636526
 title: 《Redis使用手册》
 date: 2023-09-06
 ---

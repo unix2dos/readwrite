@@ -1,10 +1,11 @@
 ---
 doc_type: weread-highlights-reviews
 bookId: CB_DNhGZtGYWAJq6is6gbACk93M
-author: ""
+author: 
 cover: https://res.weread.qq.com/wrepub/CB_EsC8gC8hnBzr6T96U7_parsecover
 reviewCount: 0
 noteCount: 10
+isbn: 
 title: 《MySQL是怎样运行的：从根儿上理解MySQL》
 date: 2023-09-05
 ---
