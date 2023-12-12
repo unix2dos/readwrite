@@ -12,6 +12,8 @@ date: 2023-12-05
 
 ---
 
+![ 博弈论（MBA轻松读）|200](https://cdn.weread.qq.com/weread/cover/80/YueWen_37178611/t7_YueWen_37178611.jpg)
+
 
 ## 封面
 

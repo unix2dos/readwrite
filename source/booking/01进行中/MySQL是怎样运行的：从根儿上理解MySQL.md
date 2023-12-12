@@ -12,6 +12,8 @@ date: 2023-09-05
 
 ---
 
+![ MySQL是怎样运行的：从根儿上理解MySQL|200](https://res.weread.qq.com/wrepub/CB_EsC8gC8hnBzr6T96U7_parsecover)
+
 
 ## 0 第0章 万里长征第一步（非常重要）-如何愉快的阅读本小册
 

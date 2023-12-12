@@ -12,6 +12,8 @@ date: 2023-12-03
 
 ---
 
+![ 老实人启蒙 (薛凯, 陆亚) (Z-Library)|200](https://res.weread.qq.com/wrepub/CB_4A3A9fA8O0v56iJ6gdBnQAvY_parsecover)
+
 
 ## 1
 

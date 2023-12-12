@@ -12,6 +12,8 @@ date: 2023-08-01
 
 ---
 
+![ What if？那些古怪又让人忧心的问题|200](https://cdn.weread.qq.com/weread/cover/54/yuewen_917441/t7_yuewen_9174411685965449.jpg)
+
 
 ## 封面
 

@@ -12,6 +12,8 @@ date: 2023-10-26
 
 ---
 
+![ MongoDB权威指南（第3版）|200](https://wfqqreader-1252317822.image.myqcloud.com/cover/824/41779824/t7_41779824.jpg)
+
 
 ## 封面
 

@@ -12,6 +12,8 @@ date: 2023-09-06
 
 ---
 
+![ Redis使用手册|200](https://cdn.weread.qq.com/weread/cover/59/YueWen_26562837/t7_YueWen_26562837.jpg)
+
 
 ## 封面
 

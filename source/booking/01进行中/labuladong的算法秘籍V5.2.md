@@ -12,6 +12,8 @@ date: 2023-09-09
 
 ---
 
+![ labuladong的算法秘籍V5.2|200](https://res.weread.qq.com/wrepub/CB_0NK0m60kC4WM6ic6gd4Mj698_parsecover)
+
 
 ## 第1章
 

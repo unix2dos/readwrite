@@ -12,6 +12,8 @@ date: 2023-08-28
 
 ---
 
+![ Elasticsearch数据搜索与分析实战|200](https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg)
+
 
 ## 封面
 
