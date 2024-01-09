@@ -1,5 +1,9 @@
 ---
-title: "STAR原则"
+title: STAR原则
+categories:
+  - 2_study
+  - 6改变
+abbrlink: b7b62172
 date: 2024-01-09 00:00:01
 ---
 
