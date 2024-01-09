@@ -2,10 +2,10 @@
 
 
 
-source_dir='/Users/liuwei/Dropbox/Obsidian/library/400_Map/微信读书/*'
+source_dir='/Users/liuwei/Dropbox/Obsidian/library/400_Map/微信读书/'
 dest_dir='/Users/liuwei/workspace/readwrite/source/booking/01进行中/'
+mv -f "$source_dir"* "$dest_dir"
 
-mv -f $source_dir $dest_dir
 
 
 
