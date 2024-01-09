@@ -1,10 +1,15 @@
 #!/bin/zsh
 
 
-#mv -f /Users/liuwei/Dropbox/Obsidian/library/400_Map/微信读书/* /Users/liuwei/workspace/readwrite/source/booking/01进行中/
 
-dir='/Users/liuwei/workspace/readwrite/source/booking/01进行中/'
-cd $dir
+source_dir='/Users/liuwei/Dropbox/Obsidian/library/400_Map/微信读书/*'
+dest_dir='/Users/liuwei/workspace/readwrite/source/booking/01进行中/'
+
+mv -f $source_dir $dest_dir
+
+
+
+cd $dest_dir
 subfolder="old_dir"
 if [ ! -d "$subfolder" ]; then
     mkdir "$subfolder"
