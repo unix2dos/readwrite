@@ -10,6 +10,7 @@ mv -f "$source_dir"* "$dest_dir"
 
 
 cd $dest_dir
+diff_day=7
 subfolder="old_dir"
 if [ ! -d "$subfolder" ]; then
     mkdir "$subfolder"
@@ -24,7 +25,7 @@ for file in *; do
 			input_timestamp=$(date -jf "%Y-%m-%d" "$input_date" "+%s")
 			today_timestamp=$(date -jf "%Y-%m-%d" "$today" "+%s")
 			time_diff=$(( (today_timestamp - input_timestamp) / 86400 ))
-			if [ "$time_diff" -gt 30 ]; then
+			if [ "$time_diff" -gt $diff_day ]; then
 		 		echo $time_diff "$file"
 				mv "$file" "$subfolder/"
 			fi
