@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="推荐序前言第1版与第2版的区别读者对象如何阅读本书勘误和支持致谢第1章 MySQL体系结构和存储引擎1.1 定义数据库和实例1.2 MySQL体系结构1.3 MySQL存储引擎1.3.2 MyISAM存储引擎1.3.3 NDB存储引擎1.3.4 Memory存储引擎1.3.5 Archive存储引擎1.3.6 Federated存储引擎1.3.7 Maria存储引擎1.3.8 其他存储引擎1.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="《MySQL技术内幕：InnoDB存储引擎 第2版》">
+<meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/old_dir/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95%EF%BC%9AInnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%20%E7%AC%AC2%E7%89%88.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="推荐序前言第1版与第2版的区别读者对象如何阅读本书勘误和支持致谢第1章 MySQL体系结构和存储引擎1.1 定义数据库和实例1.2 MySQL体系结构1.3 MySQL存储引擎1.3.2 MyISAM存储引擎1.3.3 NDB存储引擎1.3.4 Memory存储引擎1.3.5 Archive存储引擎1.3.6 Federated存储引擎1.3.7 Maria存储引擎1.3.8 其他存储引擎1.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://res.weread.qq.com/wrepub/CB_3GS3Oi3PzCth6hh6gbEmj3qo_parsecover">
+<meta property="article:published_time" content="2023-07-12T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-09T07:12:09.807Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://res.weread.qq.com/wrepub/CB_3GS3Oi3PzCth6hh6gbEmj3qo_parsecover">
+
+<link rel="canonical" href="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/old_dir/MySQL%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95%EF%BC%9AInnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%20%E7%AC%AC2%E7%89%88.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《MySQL技术内幕：InnoDB存储引擎 第2版》 | 趣读写
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">《MySQL技术内幕：InnoDB存储引擎 第2版》
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/old_dir/">OLD_DIR</a></li>
+            <li>MYSQL技术内幕：INNODB存储引擎 第2版</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <hr>
+<p><img src="https://res.weread.qq.com/wrepub/CB_3GS3Oi3PzCth6hh6gbEmj3qo_parsecover" alt=" MySQL技术内幕：InnoDB存储引擎 第2版|200"></p>
+<h2 id="推荐序"><a href="#推荐序" class="headerlink" title="推荐序"></a>推荐序</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="第1版与第2版的区别"><a href="#第1版与第2版的区别" class="headerlink" title="第1版与第2版的区别"></a>第1版与第2版的区别</h2><h2 id="读者对象"><a href="#读者对象" class="headerlink" title="读者对象"></a>读者对象</h2><h2 id="如何阅读本书"><a href="#如何阅读本书" class="headerlink" title="如何阅读本书"></a>如何阅读本书</h2><h2 id="勘误和支持"><a href="#勘误和支持" class="headerlink" title="勘误和支持"></a>勘误和支持</h2><h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><h2 id="第1章-MySQL体系结构和存储引擎"><a href="#第1章-MySQL体系结构和存储引擎" class="headerlink" title="第1章 MySQL体系结构和存储引擎"></a>第1章 MySQL体系结构和存储引擎</h2><h2 id="1-1-定义数据库和实例"><a href="#1-1-定义数据库和实例" class="headerlink" title="1.1 定义数据库和实例"></a>1.1 定义数据库和实例</h2><h2 id="1-2-MySQL体系结构"><a href="#1-2-MySQL体系结构" class="headerlink" title="1.2 MySQL体系结构"></a>1.2 MySQL体系结构</h2><h2 id="1-3-MySQL存储引擎"><a href="#1-3-MySQL存储引擎" class="headerlink" title="1.3 MySQL存储引擎"></a>1.3 MySQL存储引擎</h2><h2 id="1-3-2-MyISAM存储引擎"><a href="#1-3-2-MyISAM存储引擎" class="headerlink" title="1.3.2 MyISAM存储引擎"></a>1.3.2 MyISAM存储引擎</h2><h2 id="1-3-3-NDB存储引擎"><a href="#1-3-3-NDB存储引擎" class="headerlink" title="1.3.3 NDB存储引擎"></a>1.3.3 NDB存储引擎</h2><h2 id="1-3-4-Memory存储引擎"><a href="#1-3-4-Memory存储引擎" class="headerlink" title="1.3.4 Memory存储引擎"></a>1.3.4 Memory存储引擎</h2><h2 id="1-3-5-Archive存储引擎"><a href="#1-3-5-Archive存储引擎" class="headerlink" title="1.3.5 Archive存储引擎"></a>1.3.5 Archive存储引擎</h2><h2 id="1-3-6-Federated存储引擎"><a href="#1-3-6-Federated存储引擎" class="headerlink" title="1.3.6 Federated存储引擎"></a>1.3.6 Federated存储引擎</h2><h2 id="1-3-7-Maria存储引擎"><a href="#1-3-7-Maria存储引擎" class="headerlink" title="1.3.7 Maria存储引擎"></a>1.3.7 Maria存储引擎</h2><h2 id="1-3-8-其他存储引擎"><a href="#1-3-8-其他存储引擎" class="headerlink" title="1.3.8 其他存储引擎"></a>1.3.8 其他存储引擎</h2><h2 id="1-4-各存储引擎之间的比较"><a href="#1-4-各存储引擎之间的比较" class="headerlink" title="1.4 各存储引擎之间的比较"></a>1.4 各存储引擎之间的比较</h2><h2 id="1-5-连接MySQL"><a href="#1-5-连接MySQL" class="headerlink" title="1.5 连接MySQL"></a>1.5 连接MySQL</h2><h2 id="1-5-2-命名管道和共享内存"><a href="#1-5-2-命名管道和共享内存" class="headerlink" title="1.5.2 命名管道和共享内存"></a>1.5.2 命名管道和共享内存</h2><h2 id="1-5-3-UNIX域套接字"><a href="#1-5-3-UNIX域套接字" class="headerlink" title="1.5.3 UNIX域套接字"></a>1.5.3 UNIX域套接字</h2><h2 id="1-6-小结"><a href="#1-6-小结" class="headerlink" title="1.6 小结"></a>1.6 小结</h2><h2 id="第2章-InnoDB存储引擎"><a href="#第2章-InnoDB存储引擎" class="headerlink" title="第2章 InnoDB存储引擎"></a>第2章 InnoDB存储引擎</h2><h2 id="2-1-InnoDB存储引擎概述"><a href="#2-1-InnoDB存储引擎概述" class="headerlink" title="2.1 InnoDB存储引擎概述"></a>2.1 InnoDB存储引擎概述</h2><ul>
+<li>📌 Heikki Tuuri（1964年，芬兰赫尔辛基）是InnoDB存储引擎的创始人，和著名的Linux创始人Linus是芬兰赫尔辛基大学校友。 <ul>
+<li>⏱ 2023-07-12 16:40:26</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2-InnoDB存储引擎的版本"><a href="#2-2-InnoDB存储引擎的版本" class="headerlink" title="2.2 InnoDB存储引擎的版本"></a>2.2 InnoDB存储引擎的版本</h2><h2 id="2-3-InnoDB体系架构"><a href="#2-3-InnoDB体系架构" class="headerlink" title="2.3 InnoDB体系架构"></a>2.3 InnoDB体系架构</h2><h2 id="2-3-2-内存"><a href="#2-3-2-内存" class="headerlink" title="2.3.2 内存"></a>2.3.2 内存</h2><h2 id="2-4-Checkpoint技术"><a href="#2-4-Checkpoint技术" class="headerlink" title="2.4 Checkpoint技术"></a>2.4 Checkpoint技术</h2><h2 id="2-5-Master-Thread工作方式"><a href="#2-5-Master-Thread工作方式" class="headerlink" title="2.5 Master Thread工作方式"></a>2.5 Master Thread工作方式</h2><h2 id="2-5-2-InnoDB1-2-x版本之前的Master-Thread"><a href="#2-5-2-InnoDB1-2-x版本之前的Master-Thread" class="headerlink" title="2.5.2 InnoDB1.2.x版本之前的Master Thread"></a>2.5.2 InnoDB1.2.x版本之前的Master Thread</h2><h2 id="2-5-3-InnoDB-1-2-x版本的Master-Thread"><a href="#2-5-3-InnoDB-1-2-x版本的Master-Thread" class="headerlink" title="2.5.3 InnoDB 1.2.x版本的Master Thread"></a>2.5.3 InnoDB 1.2.x版本的Master Thread</h2><h2 id="2-6-InnoDB关键特性"><a href="#2-6-InnoDB关键特性" class="headerlink" title="2.6 InnoDB关键特性"></a>2.6 InnoDB关键特性</h2><h2 id="2-6-2-两次写"><a href="#2-6-2-两次写" class="headerlink" title="2.6.2 两次写"></a>2.6.2 两次写</h2><h2 id="2-6-3-自适应哈希索引"><a href="#2-6-3-自适应哈希索引" class="headerlink" title="2.6.3 自适应哈希索引"></a>2.6.3 自适应哈希索引</h2><h2 id="2-6-4-异步IO"><a href="#2-6-4-异步IO" class="headerlink" title="2.6.4 异步IO"></a>2.6.4 异步IO</h2><h2 id="2-6-5-刷新邻接页"><a href="#2-6-5-刷新邻接页" class="headerlink" title="2.6.5 刷新邻接页"></a>2.6.5 刷新邻接页</h2><h2 id="2-7-启动、关闭与恢复"><a href="#2-7-启动、关闭与恢复" class="headerlink" title="2.7 启动、关闭与恢复"></a>2.7 启动、关闭与恢复</h2><h2 id="2-8-小结"><a href="#2-8-小结" class="headerlink" title="2.8 小结"></a>2.8 小结</h2><h2 id="第3章-文件"><a href="#第3章-文件" class="headerlink" title="第3章 文件"></a>第3章 文件</h2><h2 id="3-1-参数文件"><a href="#3-1-参数文件" class="headerlink" title="3.1 参数文件"></a>3.1 参数文件</h2><ul>
+<li>📌 Oracle数据库存在所谓的隐藏参数（undocumented parameter），以供Oracle“内部人士”使用，SQL Server也有类似的参数。有些DBA曾问我，MySQL中是否也有这类参数。我的回答是：没有，也不需要。即使Oracle和SQL Server中都有些所谓的隐藏参数，在绝大多数的情况下，这些数据库厂商也不建议用户在生产环境中对其进行很大的调整。 <ul>
+<li>⏱ 2023-07-11 19:43:22</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-1-2-参数类型"><a href="#3-1-2-参数类型" class="headerlink" title="3.1.2 参数类型"></a>3.1.2 参数类型</h2><h2 id="3-2-日志文件"><a href="#3-2-日志文件" class="headerlink" title="3.2 日志文件"></a>3.2 日志文件</h2><h2 id="3-2-2-慢查询日志"><a href="#3-2-2-慢查询日志" class="headerlink" title="3.2.2 慢查询日志"></a>3.2.2 慢查询日志</h2><h2 id="3-2-3-查询日志"><a href="#3-2-3-查询日志" class="headerlink" title="3.2.3 查询日志"></a>3.2.3 查询日志</h2><h2 id="3-2-4-二进制日志"><a href="#3-2-4-二进制日志" class="headerlink" title="3.2.4 二进制日志"></a>3.2.4 二进制日志</h2><ul>
+<li>📌 二进制日志文件在默认情况下并没有启动，需要手动指定参数来启动。可能有人会质疑，开启这个选项是否会对数据库整体性能有所影响。不错，开启这个选项的确会影响性能，但是性能的损失十分有限。根据MySQL官方手册中的测试表明，开启二进制日志会使性能下降1%。但考虑到可以使用复制（replication）和point-in-time的恢复，这些性能损失绝对是可以且应该被接受的。 <ul>
+<li>⏱ 2023-07-11 19:47:17</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-3-套接字文件"><a href="#3-3-套接字文件" class="headerlink" title="3.3 套接字文件"></a>3.3 套接字文件</h2><h2 id="3-4-pid文件"><a href="#3-4-pid文件" class="headerlink" title="3.4 pid文件"></a>3.4 pid文件</h2><h2 id="3-5-表结构定义文件"><a href="#3-5-表结构定义文件" class="headerlink" title="3.5 表结构定义文件"></a>3.5 表结构定义文件</h2><h2 id="3-6-InnoDB存储引擎文件"><a href="#3-6-InnoDB存储引擎文件" class="headerlink" title="3.6 InnoDB存储引擎文件"></a>3.6 InnoDB存储引擎文件</h2><h2 id="3-6-2-重做日志文件"><a href="#3-6-2-重做日志文件" class="headerlink" title="3.6.2 重做日志文件"></a>3.6.2 重做日志文件</h2><h2 id="3-7-小结"><a href="#3-7-小结" class="headerlink" title="3.7 小结"></a>3.7 小结</h2><h2 id="第4章-表"><a href="#第4章-表" class="headerlink" title="第4章 表"></a>第4章 表</h2><h2 id="4-1-索引组织表"><a href="#4-1-索引组织表" class="headerlink" title="4.1 索引组织表"></a>4.1 索引组织表</h2><ul>
+<li><p>📌 如果在创建表时没有显式地定义主键，则InnoDB存储引擎会按如下方式选择或创建主键：❑首先判断表中是否有非空的唯一索引（Unique NOT NULL），如果有，则该列即为主键。❑如果不符合上述条件，InnoDB存储引擎自动创建一个6字节大小的指针。 </p>
+<ul>
+<li>⏱ 2023-07-11 19:49:19</li>
+</ul>
+</li>
+<li><p>📌 InnoDB存储引擎将选择建表时第一个定义的非空唯一索引为主键。这里需要非常注意的是，主键的选择根据的是定义索引的顺序，而不是建表时列的顺序。 </p>
+<ul>
+<li>⏱ 2023-07-11 19:49:53</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-InnoDB逻辑存储结构"><a href="#4-2-InnoDB逻辑存储结构" class="headerlink" title="4.2 InnoDB逻辑存储结构"></a>4.2 InnoDB逻辑存储结构</h2><ul>
+<li>📌 从InnoDB存储引擎的逻辑存储结构看，所有数据都被逻辑地存放在一个空间中，称之为表空间（tablespace）。表空间又由段（segment）、区（extent）、页（page）组成 <ul>
+<li>⏱ 2023-07-11 19:51:31</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-2-段"><a href="#4-2-2-段" class="headerlink" title="4.2.2 段"></a>4.2.2 段</h2><ul>
+<li>📌 InnoDB存储引擎表是索引组织的（index organized），因此数据即索引，索引即数据。那么数据段即为B+树的叶子节点（图4-1的Leaf node segment），索引段即为B+树的非索引节点（图4-1的Non-leaf node segment） <ul>
+<li>⏱ 2023-07-11 19:54:35</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-3-区"><a href="#4-2-3-区" class="headerlink" title="4.2.3 区"></a>4.2.3 区</h2><ul>
+<li><p>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。InnoDB 1.0.x版本开始引入压缩页，即每个页的大小可以通过参数KEY_BLOCK_SIZE设置为2K、4K、8K，因此每个区对应页的数量就应该为512、256、128。InnoDB 1.2.x版本新增了参数innodb_page_size，通过该参数可以将默认页的大小设置为4K、8K，但是页中的数据库不是压缩。这时区中页的数量同样也为256、128。总之，不论页的大小怎么变化，区的大小总是为1M。 </p>
+<ul>
+<li>⏱ 2023-07-11 20:44:36</li>
+</ul>
+</li>
+<li><p>📌 但是，这里还有这样一个问题：在用户启用了参数innodb_file_per_talbe后，创建的表默认大小是96KB。区中是64个连续的页，创建的表的大小至少是1MB才对啊？其实这是因为在每个段开始时，先用32个页大小的碎片页（fragment page）来存放数据，在使用完这些页之后才是64个连续页的申请。 </p>
+<ul>
+<li>⏱ 2023-07-11 20:51:51</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-4-页"><a href="#4-2-4-页" class="headerlink" title="4.2.4 页"></a>4.2.4 页</h2><ul>
+<li><p>📌 同大多数数据库一样，InnoDB有页（Page）的概念（也可以称为块），页是InnoDB磁盘管理的最小单位。在InnoDB存储引擎中，默认每个页的大小为16KB。而从InnoDB 1.2.x版本开始，可以通过参数innodb_page_size将页的大小设置为4K、8K、16K。若设置完成，则所有表中页的大小都为innodb_page_size，不可以对其再次进行修改。除非通过mysqldump导入和导出操作来产生新的库。 </p>
+<ul>
+<li>⏱ 2023-07-11 20:59:32</li>
+</ul>
+</li>
+<li><p>📌 在InnoDB存储引擎中，常见的页类型有：❑数据页（B-tree Node）❑undo页（undo Log Page）❑系统页（System Page） </p>
+<ul>
+<li>⏱ 2023-07-11 20:59:45</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-5-行"><a href="#4-2-5-行" class="headerlink" title="4.2.5 行"></a>4.2.5 行</h2><h2 id="4-3-InnoDB行记录格式"><a href="#4-3-InnoDB行记录格式" class="headerlink" title="4.3 InnoDB行记录格式"></a>4.3 InnoDB行记录格式</h2><ul>
+<li><p>📌 InnoDB存储引擎和大多数数据库一样（如Oracle和Microsoft SQL Server数据库），记录是以行的形式存储的。这意味着页中保存着表中一行行的数据 </p>
+<ul>
+<li>⏱ 2023-07-11 21:03:36</li>
+</ul>
+</li>
+<li><p>📌 变长字段的长度最大不可以超过2字节，这是因在MySQL数据库中VARCHAR类型的最大长度限制为65535。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:06:32</li>
+</ul>
+</li>
+<li><p>📌 最后的部分就是实际存储每个列的数据。需要特别注意的是，NULL不占该部分任何空间，即NULL除了占有NULL标志位，实际存储不占有任何空间。另外有一点需要注意的是，每行数据除了用户定义的列外，还有两个隐藏列，事务ID列和回滚指针列，分别为6字节和7字节的大小。若InnoDB表没有定义主键，每行还会增加一个6字节的rowid列。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:08:09</li>
+</ul>
+</li>
+<li><p>📌 03 02 01&#x2F;<em>变长字段长度列表，逆序</em>&#x2F;00&#x2F;<em>NULL标志位，第一行没有NULL值</em>&#x2F;00 00 10 00 2c&#x2F;<em>Record Header，固定5字节长度</em>&#x2F;00 00 00 2b 68 00&#x2F;<em>RowID InnoDB自动创建，6字节</em>&#x2F;00 00 00 00 06 05&#x2F;<em>TransactionID</em>&#x2F;80 00 0000 32 01 10&#x2F;<em>Roll Pointer</em>&#x2F;61&#x2F;<em>列1数据’a’</em>&#x2F;62 62&#x2F;<em>列2数据’bb’</em>&#x2F;62 62 20 20 20 20 20 20 20 20&#x2F;<em>列3数据’bb’</em>&#x2F;63 63 63&#x2F;<em>列4数据’ccc’</em>&#x2F;现在第一行数据就展现在用户眼前了。需要注意的是，变长字段长度列表是逆序存放的，因此变长字段长度列表为03 02 01，而不是01 02 03。此外还需要注意InnoDB每行有隐藏列TransactionID和Roll Pointer。同时可以发现，固定长度CHAR字段在未能完全占用其长度空间时，会用0x20来进行填充。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:13:26</li>
+</ul>
+</li>
+<li><p>📌 接着再来分析下Record Header的最后两个字节，这两个字节代表next_recorder，0x2c代表下一个记录的偏移量，即当前记录的位置加上偏移量0x2c就是下条记录的起始位置。所以InnoDB存储引擎在页内部是通过一种链表的结构来串连各个行记录的。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:11:58</li>
+</ul>
+</li>
+<li><p>📌 03 01&#x2F;<em>变长字段长度列表，逆序</em>&#x2F;06&#x2F;<em>NULL标志位，第三行有NULL值</em>&#x2F;00 00 20 ff 98&#x2F;<em>Record Header</em>&#x2F;00 00 00 2b 68 02&#x2F;<em>RowID</em>&#x2F;00 00 00 00 06 07&#x2F;<em>TransactionID</em>&#x2F;80 00 00 00 32 01 10&#x2F;<em>Roll Pointer</em>&#x2F;64&#x2F;<em>列1数据’d’</em>&#x2F;66 66 66&#x2F;<em>列4数据’fff’</em>&#x2F;第三行有NULL值，因此NULL标志位不再是00而是06，转换成二进制为00000110，为1的值代表第2列和第3列的数据为NULL。在其后存储列数据的部分，用户会发现没有存储NULL列，而只存储了第1列和第4列非NULL的值。因此这个例子很好地说明了：不管是CHAR类型还是VARCHAR类型，在compact格式下NULL值都不占用任何存储空间。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:13:07</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-2-Redundant行记录格式"><a href="#4-3-2-Redundant行记录格式" class="headerlink" title="4.3.2 Redundant行记录格式"></a>4.3.2 Redundant行记录格式</h2><ul>
+<li><p>📌 从表4-2中可以发现，n_fields值代表一行中列的数量，占用10位。同时这也很好地解释了为什么MySQL数据库一行支持最多的列为1023。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:16:13</li>
+</ul>
+</li>
+<li><p>📌 VARCHAR类型的NULL值，Redundant行记录格式同样不占用任何存储空间，而CHAR类型的NULL值需要占用空间。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:17:13</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-3-行溢出数据"><a href="#4-3-3-行溢出数据" class="headerlink" title="4.3.3 行溢出数据"></a>4.3.3 行溢出数据</h2><ul>
+<li><p>📌 InnoDB存储引擎可以将一条记录中的某些数据存储在真正的数据页面之外。一般认为BLOB、LOB这类的大对象列类型的存储会把数据存放在数据页面之外。但是，这个理解有点偏差，BLOB可以不将数据放在溢出页面，而且即便是VARCHAR列数据类型，依然有可能被存放为行溢出数据。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:18:09</li>
+</ul>
+</li>
+<li><p>📌 从错误消息可以看到InnoDB存储引擎并不支持65535长度的VARCHAR。这是因为还有别的开销，通过实际测试发现能存放VARCHAR类型的最大长度为65532。例如，按下面的命令创建表就不会报错了。mysql＞CREATE TABLE test(-＞a VARCHAR(65532)-＞)CHARSET&#x3D;latin1 ENGINE&#x3D;InnoDB;Query OK,0 rows affected(0.15 sec) </p>
+<ul>
+<li>⏱ 2023-07-11 21:18:56</li>
+</ul>
+</li>
+<li><p>📌 此外需要注意的是，MySQL官方手册中定义的65535长度是指所有VARCHAR列的长度总和，如果列的长度总和超出这个长度，依然无法创建，如下所示：mysql＞CREATE TABLE test2(-＞a VARCHAR(22000),-＞b VARCHAR(22000),-＞c VARCHAR(22000)-＞)CHARSET&#x3D;latin1 ENGINE&#x3D;InnoDB;ERROR 1118(42000):Row size too large.The maximum row size for the used table type,not counting BLOBs,is 65535.You have to change some columns to TEXT or BLOBs3个列长度总和是66000，因此InnoDB存储引擎再次报了同样的错误。即使能存放65532个字节，但是有没有想过，InnoDB存储引擎的页为16KB，即16384字节，怎么能存放65532字节呢？因此，在一般情况下，InnoDB存储引擎的数据都是存放在页类型为B-tree node中。但是当发生行溢出时，数据存放在页类型为Uncompress BLOB页中。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:20:24</li>
+</ul>
+</li>
+<li><p>📌 另一个问题是，对于TEXT或BLOB的数据类型，用户总是以为它们是存放在Uncompressed BLOB Page中的，其实这也是不准确的。是放在数据页中还是BLOB页中，和前面讨论的VARCHAR一样，至少保证一个页能存放两条记录， </p>
+<ul>
+<li>⏱ 2023-07-11 21:28:45</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-4-Compressed和Dynamic行记录格式"><a href="#4-3-4-Compressed和Dynamic行记录格式" class="headerlink" title="4.3.4 Compressed和Dynamic行记录格式"></a>4.3.4 Compressed和Dynamic行记录格式</h2><ul>
+<li><p>📌 InnoDB 1.0.x版本开始引入了新的文件格式（file format，用户可以理解为新的页格式），以前支持的Compact和Redundant格式称为Antelope文件格式，新的文件格式称为Barracuda文件格式。Barracuda文件格式下拥有两种新的行记录格式：Compressed和Dynamic。新的两种记录格式对于存放在BLOB中的数据采用了完全的行溢出的方式，如图4-5所示，在数据页中只存放20个字节的指针，实际的数据都存放在Off Page中，而之前的Compact和Redundant两种格式会存放768个前缀字节。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:32:04</li>
+</ul>
+</li>
+<li><p>📌 Compressed行记录格式的另一个功能就是，存储在其中的行数据会以zlib的算法进行压缩，因此对于BLOB、TEXT、VARCHAR这类大长度类型的数据能够进行非常有效的存储。 </p>
+<ul>
+<li>⏱ 2023-07-11 21:32:19</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-5-CHAR的行结构存储"><a href="#4-3-5-CHAR的行结构存储" class="headerlink" title="4.3.5 CHAR的行结构存储"></a>4.3.5 CHAR的行结构存储</h2><ul>
+<li>📌 可以看到对于字符串’ab’，其内部存储为0x6162。而字符串’我们’为0xCED2C3C7。因此对于多字节的字符编码，CHAR类型不再代表固定长度的字符串了。例如，对于UTF-8下CHAR（10）类型的列，其最小可以存储10字节的字符，而最大可以存储30字节的字符。因此，对于多字节字符编码的CHAR数据类型的存储，InnoDB存储引擎在内部将其视为变长字符类型。这也就意味着在变长长度列表中会记录CHAR数据类型的长度。 <ul>
+<li>⏱ 2023-07-11 21:34:24</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-4-InnoDB数据页结构"><a href="#4-4-InnoDB数据页结构" class="headerlink" title="4.4 InnoDB数据页结构"></a>4.4 InnoDB数据页结构</h2><h2 id="4-4-2-Page-Header"><a href="#4-4-2-Page-Header" class="headerlink" title="4.4.2 Page Header"></a>4.4.2 Page Header</h2><h2 id="4-4-3-Infimum和Supremum-Record"><a href="#4-4-3-Infimum和Supremum-Record" class="headerlink" title="4.4.3 Infimum和Supremum Record"></a>4.4.3 Infimum和Supremum Record</h2><h2 id="4-4-4-User-Record和Free-Space"><a href="#4-4-4-User-Record和Free-Space" class="headerlink" title="4.4.4 User Record和Free Space"></a>4.4.4 User Record和Free Space</h2><h2 id="4-4-5-Page-Directory"><a href="#4-4-5-Page-Directory" class="headerlink" title="4.4.5 Page Directory"></a>4.4.5 Page Directory</h2><h2 id="4-4-6-File-Trailer"><a href="#4-4-6-File-Trailer" class="headerlink" title="4.4.6 File Trailer"></a>4.4.6 File Trailer</h2><h2 id="4-4-7-InnoDB数据页结构示例分析"><a href="#4-4-7-InnoDB数据页结构示例分析" class="headerlink" title="4.4.7 InnoDB数据页结构示例分析"></a>4.4.7 InnoDB数据页结构示例分析</h2><h2 id="4-5-Named-File-Formats机制"><a href="#4-5-Named-File-Formats机制" class="headerlink" title="4.5 Named File Formats机制"></a>4.5 Named File Formats机制</h2><h2 id="4-6-约束"><a href="#4-6-约束" class="headerlink" title="4.6 约束"></a>4.6 约束</h2><h2 id="4-6-2-约束的创建和查找"><a href="#4-6-2-约束的创建和查找" class="headerlink" title="4.6.2 约束的创建和查找"></a>4.6.2 约束的创建和查找</h2><h2 id="4-6-3-约束和索引的区别"><a href="#4-6-3-约束和索引的区别" class="headerlink" title="4.6.3 约束和索引的区别"></a>4.6.3 约束和索引的区别</h2><h2 id="4-6-4-对错误数据的约束"><a href="#4-6-4-对错误数据的约束" class="headerlink" title="4.6.4 对错误数据的约束"></a>4.6.4 对错误数据的约束</h2><h2 id="4-6-5-ENUM和SET约束"><a href="#4-6-5-ENUM和SET约束" class="headerlink" title="4.6.5 ENUM和SET约束"></a>4.6.5 ENUM和SET约束</h2><h2 id="4-6-6-触发器与约束"><a href="#4-6-6-触发器与约束" class="headerlink" title="4.6.6 触发器与约束"></a>4.6.6 触发器与约束</h2><h2 id="4-6-7-外键约束"><a href="#4-6-7-外键约束" class="headerlink" title="4.6.7 外键约束"></a>4.6.7 外键约束</h2><h2 id="4-7-视图"><a href="#4-7-视图" class="headerlink" title="4.7 视图"></a>4.7 视图</h2><h2 id="4-7-2-物化视图"><a href="#4-7-2-物化视图" class="headerlink" title="4.7.2 物化视图"></a>4.7.2 物化视图</h2><h2 id="4-8-分区表"><a href="#4-8-分区表" class="headerlink" title="4.8 分区表"></a>4.8 分区表</h2><h2 id="4-8-2-分区类型"><a href="#4-8-2-分区类型" class="headerlink" title="4.8.2 分区类型"></a>4.8.2 分区类型</h2><h2 id="4-8-3-子分区"><a href="#4-8-3-子分区" class="headerlink" title="4.8.3 子分区"></a>4.8.3 子分区</h2><h2 id="4-8-4-分区中的NULL值"><a href="#4-8-4-分区中的NULL值" class="headerlink" title="4.8.4 分区中的NULL值"></a>4.8.4 分区中的NULL值</h2><h2 id="4-8-5-分区和性能"><a href="#4-8-5-分区和性能" class="headerlink" title="4.8.5 分区和性能"></a>4.8.5 分区和性能</h2><h2 id="4-8-6-在表和分区间交换数据"><a href="#4-8-6-在表和分区间交换数据" class="headerlink" title="4.8.6 在表和分区间交换数据"></a>4.8.6 在表和分区间交换数据</h2><h2 id="4-9-小结"><a href="#4-9-小结" class="headerlink" title="4.9 小结"></a>4.9 小结</h2><h2 id="第5章-索引与算法"><a href="#第5章-索引与算法" class="headerlink" title="第5章 索引与算法"></a>第5章 索引与算法</h2><h2 id="5-1-InnoDB存储引擎索引概述"><a href="#5-1-InnoDB存储引擎索引概述" class="headerlink" title="5.1 InnoDB存储引擎索引概述"></a>5.1 InnoDB存储引擎索引概述</h2><h2 id="5-2-数据结构与算法"><a href="#5-2-数据结构与算法" class="headerlink" title="5.2 数据结构与算法"></a>5.2 数据结构与算法</h2><h2 id="5-2-2-二叉查找树和平衡二叉树"><a href="#5-2-2-二叉查找树和平衡二叉树" class="headerlink" title="5.2.2 二叉查找树和平衡二叉树"></a>5.2.2 二叉查找树和平衡二叉树</h2><h2 id="5-3-B-树"><a href="#5-3-B-树" class="headerlink" title="5.3 B+树"></a>5.3 B+树</h2><h2 id="5-3-2-B-树的删除操作"><a href="#5-3-2-B-树的删除操作" class="headerlink" title="5.3.2 B+树的删除操作"></a>5.3.2 B+树的删除操作</h2><h2 id="5-4-B-树索引"><a href="#5-4-B-树索引" class="headerlink" title="5.4 B+树索引"></a>5.4 B+树索引</h2><h2 id="5-4-2-辅助索引"><a href="#5-4-2-辅助索引" class="headerlink" title="5.4.2 辅助索引"></a>5.4.2 辅助索引</h2><h2 id="5-4-3-B-树索引的分裂"><a href="#5-4-3-B-树索引的分裂" class="headerlink" title="5.4.3 B+树索引的分裂"></a>5.4.3 B+树索引的分裂</h2><h2 id="5-4-4-B-树索引的管理"><a href="#5-4-4-B-树索引的管理" class="headerlink" title="5.4.4 B+树索引的管理"></a>5.4.4 B+树索引的管理</h2><h2 id="5-5-Cardinality值"><a href="#5-5-Cardinality值" class="headerlink" title="5.5 Cardinality值"></a>5.5 Cardinality值</h2><h2 id="5-5-2-InnoDB存储引擎的Cardinality统计"><a href="#5-5-2-InnoDB存储引擎的Cardinality统计" class="headerlink" title="5.5.2 InnoDB存储引擎的Cardinality统计"></a>5.5.2 InnoDB存储引擎的Cardinality统计</h2><h2 id="5-6-B-树索引的使用"><a href="#5-6-B-树索引的使用" class="headerlink" title="5.6 B+树索引的使用"></a>5.6 B+树索引的使用</h2><h2 id="5-6-2-联合索引"><a href="#5-6-2-联合索引" class="headerlink" title="5.6.2 联合索引"></a>5.6.2 联合索引</h2><h2 id="5-6-3-覆盖索引"><a href="#5-6-3-覆盖索引" class="headerlink" title="5.6.3 覆盖索引"></a>5.6.3 覆盖索引</h2><h2 id="5-6-4-优化器选择不使用索引的情况"><a href="#5-6-4-优化器选择不使用索引的情况" class="headerlink" title="5.6.4 优化器选择不使用索引的情况"></a>5.6.4 优化器选择不使用索引的情况</h2><h2 id="5-6-5-索引提示"><a href="#5-6-5-索引提示" class="headerlink" title="5.6.5 索引提示"></a>5.6.5 索引提示</h2><h2 id="5-6-6-Multi-Range-Read优化"><a href="#5-6-6-Multi-Range-Read优化" class="headerlink" title="5.6.6 Multi-Range Read优化"></a>5.6.6 Multi-Range Read优化</h2><h2 id="5-6-7-Index-Condition-Pushdown（ICP）优化"><a href="#5-6-7-Index-Condition-Pushdown（ICP）优化" class="headerlink" title="5.6.7 Index Condition Pushdown（ICP）优化"></a>5.6.7 Index Condition Pushdown（ICP）优化</h2><h2 id="5-7-哈希算法"><a href="#5-7-哈希算法" class="headerlink" title="5.7 哈希算法"></a>5.7 哈希算法</h2><h2 id="5-7-2-InnoDB存储引擎中的哈希算法"><a href="#5-7-2-InnoDB存储引擎中的哈希算法" class="headerlink" title="5.7.2 InnoDB存储引擎中的哈希算法"></a>5.7.2 InnoDB存储引擎中的哈希算法</h2><h2 id="5-7-3-自适应哈希索引"><a href="#5-7-3-自适应哈希索引" class="headerlink" title="5.7.3 自适应哈希索引"></a>5.7.3 自适应哈希索引</h2><h2 id="5-8-全文检索"><a href="#5-8-全文检索" class="headerlink" title="5.8 全文检索"></a>5.8 全文检索</h2><h2 id="5-8-2-倒排索引"><a href="#5-8-2-倒排索引" class="headerlink" title="5.8.2 倒排索引"></a>5.8.2 倒排索引</h2><h2 id="5-8-3-InnoDB全文检索"><a href="#5-8-3-InnoDB全文检索" class="headerlink" title="5.8.3 InnoDB全文检索"></a>5.8.3 InnoDB全文检索</h2><h2 id="5-8-4-全文检索"><a href="#5-8-4-全文检索" class="headerlink" title="5.8.4 全文检索"></a>5.8.4 全文检索</h2><h2 id="5-9-小结"><a href="#5-9-小结" class="headerlink" title="5.9 小结"></a>5.9 小结</h2><h2 id="第6章-锁"><a href="#第6章-锁" class="headerlink" title="第6章 锁"></a>第6章 锁</h2><h2 id="6-1-什么是锁"><a href="#6-1-什么是锁" class="headerlink" title="6.1 什么是锁"></a>6.1 什么是锁</h2><h2 id="6-2-lock与latch"><a href="#6-2-lock与latch" class="headerlink" title="6.2 lock与latch"></a>6.2 lock与latch</h2><h2 id="6-3-InnoDB存储引擎中的锁"><a href="#6-3-InnoDB存储引擎中的锁" class="headerlink" title="6.3 InnoDB存储引擎中的锁"></a>6.3 InnoDB存储引擎中的锁</h2><h2 id="6-3-2-一致性非锁定读"><a href="#6-3-2-一致性非锁定读" class="headerlink" title="6.3.2 一致性非锁定读"></a>6.3.2 一致性非锁定读</h2><h2 id="6-3-3-一致性锁定读"><a href="#6-3-3-一致性锁定读" class="headerlink" title="6.3.3 一致性锁定读"></a>6.3.3 一致性锁定读</h2><h2 id="6-3-4-自增长与锁"><a href="#6-3-4-自增长与锁" class="headerlink" title="6.3.4 自增长与锁"></a>6.3.4 自增长与锁</h2><h2 id="6-3-5-外键和锁"><a href="#6-3-5-外键和锁" class="headerlink" title="6.3.5 外键和锁"></a>6.3.5 外键和锁</h2><h2 id="6-4-锁的算法"><a href="#6-4-锁的算法" class="headerlink" title="6.4 锁的算法"></a>6.4 锁的算法</h2><h2 id="6-4-2-解决Phantom-Problem"><a href="#6-4-2-解决Phantom-Problem" class="headerlink" title="6.4.2 解决Phantom Problem"></a>6.4.2 解决Phantom Problem</h2><h2 id="6-5-锁问题"><a href="#6-5-锁问题" class="headerlink" title="6.5 锁问题"></a>6.5 锁问题</h2><h2 id="6-5-2-不可重复读"><a href="#6-5-2-不可重复读" class="headerlink" title="6.5.2 不可重复读"></a>6.5.2 不可重复读</h2><h2 id="6-5-3-丢失更新"><a href="#6-5-3-丢失更新" class="headerlink" title="6.5.3 丢失更新"></a>6.5.3 丢失更新</h2><h2 id="6-6-阻塞"><a href="#6-6-阻塞" class="headerlink" title="6.6 阻塞"></a>6.6 阻塞</h2><h2 id="6-7-死锁"><a href="#6-7-死锁" class="headerlink" title="6.7 死锁"></a>6.7 死锁</h2><h2 id="6-7-2-死锁概率"><a href="#6-7-2-死锁概率" class="headerlink" title="6.7.2 死锁概率"></a>6.7.2 死锁概率</h2><h2 id="6-7-3-死锁的示例"><a href="#6-7-3-死锁的示例" class="headerlink" title="6.7.3 死锁的示例"></a>6.7.3 死锁的示例</h2><h2 id="6-8-锁升级"><a href="#6-8-锁升级" class="headerlink" title="6.8 锁升级"></a>6.8 锁升级</h2><h2 id="6-9-小结"><a href="#6-9-小结" class="headerlink" title="6.9 小结"></a>6.9 小结</h2><h2 id="第7章-事务"><a href="#第7章-事务" class="headerlink" title="第7章 事务"></a>第7章 事务</h2><h2 id="7-1-认识事务"><a href="#7-1-认识事务" class="headerlink" title="7.1 认识事务"></a>7.1 认识事务</h2><h2 id="7-1-2-分类"><a href="#7-1-2-分类" class="headerlink" title="7.1.2 分类"></a>7.1.2 分类</h2><h2 id="7-2-事务的实现"><a href="#7-2-事务的实现" class="headerlink" title="7.2 事务的实现"></a>7.2 事务的实现</h2><h2 id="7-2-2-undo"><a href="#7-2-2-undo" class="headerlink" title="7.2.2 undo"></a>7.2.2 undo</h2><h2 id="7-2-3-purge"><a href="#7-2-3-purge" class="headerlink" title="7.2.3 purge"></a>7.2.3 purge</h2><h2 id="7-2-4-group-commit"><a href="#7-2-4-group-commit" class="headerlink" title="7.2.4 group commit"></a>7.2.4 group commit</h2><h2 id="7-3-事务控制语句"><a href="#7-3-事务控制语句" class="headerlink" title="7.3 事务控制语句"></a>7.3 事务控制语句</h2><h2 id="7-4-隐式提交的SQL语句"><a href="#7-4-隐式提交的SQL语句" class="headerlink" title="7.4 隐式提交的SQL语句"></a>7.4 隐式提交的SQL语句</h2><h2 id="7-5-对于事务操作的统计"><a href="#7-5-对于事务操作的统计" class="headerlink" title="7.5 对于事务操作的统计"></a>7.5 对于事务操作的统计</h2><h2 id="7-6-事务的隔离级别"><a href="#7-6-事务的隔离级别" class="headerlink" title="7.6 事务的隔离级别"></a>7.6 事务的隔离级别</h2><h2 id="7-7-分布式事务"><a href="#7-7-分布式事务" class="headerlink" title="7.7 分布式事务"></a>7.7 分布式事务</h2><h2 id="7-7-2-内部XA事务"><a href="#7-7-2-内部XA事务" class="headerlink" title="7.7.2 内部XA事务"></a>7.7.2 内部XA事务</h2><h2 id="7-8-不好的事务习惯"><a href="#7-8-不好的事务习惯" class="headerlink" title="7.8 不好的事务习惯"></a>7.8 不好的事务习惯</h2><h2 id="7-8-2-使用自动提交"><a href="#7-8-2-使用自动提交" class="headerlink" title="7.8.2 使用自动提交"></a>7.8.2 使用自动提交</h2><h2 id="7-8-3-使用自动回滚"><a href="#7-8-3-使用自动回滚" class="headerlink" title="7.8.3 使用自动回滚"></a>7.8.3 使用自动回滚</h2><h2 id="7-9-长事务"><a href="#7-9-长事务" class="headerlink" title="7.9 长事务"></a>7.9 长事务</h2><h2 id="7-10-小结"><a href="#7-10-小结" class="headerlink" title="7.10 小结"></a>7.10 小结</h2><h2 id="第8章-备份与恢复"><a href="#第8章-备份与恢复" class="headerlink" title="第8章 备份与恢复"></a>第8章 备份与恢复</h2><h2 id="8-1-备份与恢复概述"><a href="#8-1-备份与恢复概述" class="headerlink" title="8.1 备份与恢复概述"></a>8.1 备份与恢复概述</h2><h2 id="8-2-冷备"><a href="#8-2-冷备" class="headerlink" title="8.2 冷备"></a>8.2 冷备</h2><h2 id="8-3-逻辑备份"><a href="#8-3-逻辑备份" class="headerlink" title="8.3 逻辑备份"></a>8.3 逻辑备份</h2><h2 id="8-3-2-SELECT…INTO-OUTFILE"><a href="#8-3-2-SELECT…INTO-OUTFILE" class="headerlink" title="8.3.2 SELECT…INTO OUTFILE"></a>8.3.2 SELECT…INTO OUTFILE</h2><h2 id="8-3-3-逻辑备份的恢复"><a href="#8-3-3-逻辑备份的恢复" class="headerlink" title="8.3.3 逻辑备份的恢复"></a>8.3.3 逻辑备份的恢复</h2><h2 id="8-3-4-LOAD-DATA-INFILE"><a href="#8-3-4-LOAD-DATA-INFILE" class="headerlink" title="8.3.4 LOAD DATA INFILE"></a>8.3.4 LOAD DATA INFILE</h2><h2 id="8-3-5-mysqlimport"><a href="#8-3-5-mysqlimport" class="headerlink" title="8.3.5 mysqlimport"></a>8.3.5 mysqlimport</h2><h2 id="8-4-二进制日志备份与恢复"><a href="#8-4-二进制日志备份与恢复" class="headerlink" title="8.4 二进制日志备份与恢复"></a>8.4 二进制日志备份与恢复</h2><h2 id="8-5-热备"><a href="#8-5-热备" class="headerlink" title="8.5 热备"></a>8.5 热备</h2><h2 id="8-5-2-XtraBackup"><a href="#8-5-2-XtraBackup" class="headerlink" title="8.5.2 XtraBackup"></a>8.5.2 XtraBackup</h2><h2 id="8-5-3-XtraBackup实现增量备份"><a href="#8-5-3-XtraBackup实现增量备份" class="headerlink" title="8.5.3 XtraBackup实现增量备份"></a>8.5.3 XtraBackup实现增量备份</h2><h2 id="8-6-快照备份"><a href="#8-6-快照备份" class="headerlink" title="8.6 快照备份"></a>8.6 快照备份</h2><h2 id="8-7-复制"><a href="#8-7-复制" class="headerlink" title="8.7 复制"></a>8.7 复制</h2><h2 id="8-7-2-快照-复制的备份架构"><a href="#8-7-2-快照-复制的备份架构" class="headerlink" title="8.7.2 快照+复制的备份架构"></a>8.7.2 快照+复制的备份架构</h2><h2 id="8-8-小结"><a href="#8-8-小结" class="headerlink" title="8.8 小结"></a>8.8 小结</h2><h2 id="第9章-性能调优"><a href="#第9章-性能调优" class="headerlink" title="第9章 性能调优"></a>第9章 性能调优</h2><h2 id="9-1-选择合适的CPU"><a href="#9-1-选择合适的CPU" class="headerlink" title="9.1 选择合适的CPU"></a>9.1 选择合适的CPU</h2><h2 id="9-2-内存的重要性"><a href="#9-2-内存的重要性" class="headerlink" title="9.2 内存的重要性"></a>9.2 内存的重要性</h2><h2 id="9-3-硬盘对数据库性能的影响"><a href="#9-3-硬盘对数据库性能的影响" class="headerlink" title="9.3 硬盘对数据库性能的影响"></a>9.3 硬盘对数据库性能的影响</h2><h2 id="9-3-2-固态硬盘"><a href="#9-3-2-固态硬盘" class="headerlink" title="9.3.2 固态硬盘"></a>9.3.2 固态硬盘</h2><h2 id="9-4-合理地设置RAID"><a href="#9-4-合理地设置RAID" class="headerlink" title="9.4 合理地设置RAID"></a>9.4 合理地设置RAID</h2><h2 id="9-4-2-RAID-Write-Back功能"><a href="#9-4-2-RAID-Write-Back功能" class="headerlink" title="9.4.2 RAID Write Back功能"></a>9.4.2 RAID Write Back功能</h2><h2 id="9-4-3-RAID配置工具"><a href="#9-4-3-RAID配置工具" class="headerlink" title="9.4.3 RAID配置工具"></a>9.4.3 RAID配置工具</h2><h2 id="9-5-操作系统的选择"><a href="#9-5-操作系统的选择" class="headerlink" title="9.5 操作系统的选择"></a>9.5 操作系统的选择</h2><h2 id="9-6-不同的文件系统对数据库性能的影响"><a href="#9-6-不同的文件系统对数据库性能的影响" class="headerlink" title="9.6 不同的文件系统对数据库性能的影响"></a>9.6 不同的文件系统对数据库性能的影响</h2><h2 id="9-7-选择合适的基准测试工具"><a href="#9-7-选择合适的基准测试工具" class="headerlink" title="9.7 选择合适的基准测试工具"></a>9.7 选择合适的基准测试工具</h2><h2 id="9-7-2-mysql-tpcc"><a href="#9-7-2-mysql-tpcc" class="headerlink" title="9.7.2 mysql-tpcc"></a>9.7.2 mysql-tpcc</h2><h2 id="9-8-小结"><a href="#9-8-小结" class="headerlink" title="9.8 小结"></a>9.8 小结</h2><h2 id="第10章-InnoDB存储引擎源代码的编译和调试"><a href="#第10章-InnoDB存储引擎源代码的编译和调试" class="headerlink" title="第10章 InnoDB存储引擎源代码的编译和调试"></a>第10章 InnoDB存储引擎源代码的编译和调试</h2><h2 id="10-1-获取InnoDB存储引擎源代码"><a href="#10-1-获取InnoDB存储引擎源代码" class="headerlink" title="10.1 获取InnoDB存储引擎源代码"></a>10.1 获取InnoDB存储引擎源代码</h2><h2 id="10-2-InnoDB源代码结构"><a href="#10-2-InnoDB源代码结构" class="headerlink" title="10.2 InnoDB源代码结构"></a>10.2 InnoDB源代码结构</h2><h2 id="10-3-MySQL-5-1版本编译和调试InnoDB源代码"><a href="#10-3-MySQL-5-1版本编译和调试InnoDB源代码" class="headerlink" title="10.3 MySQL 5.1版本编译和调试InnoDB源代码"></a>10.3 MySQL 5.1版本编译和调试InnoDB源代码</h2><h2 id="10-3-2-Linux下的调试"><a href="#10-3-2-Linux下的调试" class="headerlink" title="10.3.2 Linux下的调试"></a>10.3.2 Linux下的调试</h2><h2 id="10-4-cmake方式编译和调试InnoDB存储引擎"><a href="#10-4-cmake方式编译和调试InnoDB存储引擎" class="headerlink" title="10.4 cmake方式编译和调试InnoDB存储引擎"></a>10.4 cmake方式编译和调试InnoDB存储引擎</h2><h2 id="10-5-小结"><a href="#10-5-小结" class="headerlink" title="10.5 小结"></a>10.5 小结</h2><h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="4-2-3-区-1"><a href="#4-2-3-区-1" class="headerlink" title="4.2.3 区"></a>4.2.3 区</h2><h3 id="划线评论"><a href="#划线评论" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。  ^225207353-7JDcMQjuy<ul>
+<li>💭 16kb * 64 &#x3D; 1mb</li>
+<li>⏱ 2023-07-11 20:58:41</li>
+</ul>
+</li>
+</ul>
+<h3 id="划线评论-1"><a href="#划线评论-1" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。  ^225207353-7JDbOB0wn<ul>
+<li>💭 一个区64个页📃</li>
+<li>⏱ 2023-07-11 20:43:50</li>
+</ul>
+</li>
+</ul>
+<h3 id="划线评论-2"><a href="#划线评论-2" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 区是由连续页组成的空间，在任何情况下每个区的大小都为1MB。为了保证区中页的连续性，InnoDB存储引擎一次从磁盘申请4～5个区。在默认情况下，InnoDB存储引擎页的大小为16KB，即一个区中一共有64个连续的页。  ^225207353-7JDbMNI9R<ul>
+<li>💭 一个页是16kb</li>
+<li>⏱ 2023-07-11 20:43:24</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-2-5-行-1"><a href="#4-2-5-行-1" class="headerlink" title="4.2.5 行"></a>4.2.5 行</h2><h3 id="划线评论-3"><a href="#划线评论-3" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 InnoDB存储引擎是面向列的（row-oriented），也就说数据是按行进行存放的。每个页存放的行记录也是有硬性定义的，最多允许存放16KB&#x2F;2-200行的记录，即7992行记录  ^225207353-7JDd1sCXx<ul>
+<li>💭 16*1024&#x2F;2 -200 &#x3D; 7992</li>
+<li>⏱ 2023-07-11 21:02:17</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-InnoDB行记录格式-1"><a href="#4-3-InnoDB行记录格式-1" class="headerlink" title="4.3 InnoDB行记录格式"></a>4.3 InnoDB行记录格式</h2><h3 id="划线评论-4"><a href="#划线评论-4" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 现在第一行数据就展现在用户眼前了。需要注意的是，变长字段长度列表是逆序存放的，因此变长字段长度列表为03 02 01，而不是01 02 03。  ^225207353-7JDdRvfGG<ul>
+<li>💭 就是a bb ccc的长度</li>
+<li>⏱ 2023-07-11 21:15:06</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-3-5-CHAR的行结构存储-1"><a href="#4-3-5-CHAR的行结构存储-1" class="headerlink" title="4.3.5 CHAR的行结构存储"></a>4.3.5 CHAR的行结构存储</h2><h3 id="划线评论-5"><a href="#划线评论-5" class="headerlink" title="划线评论"></a>划线评论</h3><ul>
+<li>📌 上述例子清楚地显示了InnoDB存储引擎内部对CHAR类型在多字节字符集类型的存储。CHAR类型被明确视为了变长字符类型，对于未能占满长度的字符还是填充0x20。InnoDB存储引擎内部对字符的存储和我们用HEX函数看到的也是一致的。因此可以认为在多字节字符集的情况下，CHAR和VARCHAR的实际行存储基本是没有区别的。  ^225207353-7JDfcu0sa<ul>
+<li>💭 多字节字符集，utf8下，用char也是变长</li>
+<li>⏱ 2023-07-11 21:35:32</li>
+</ul>
+</li>
+</ul>
+<h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/old_dir/">OLD_DIR</a></li>
+            <li>MYSQL技术内幕：INNODB存储引擎 第2版</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E5%BA%8F"><span class="nav-text">推荐序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%89%88%E4%B8%8E%E7%AC%AC2%E7%89%88%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">第1版与第2版的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E8%80%85%E5%AF%B9%E8%B1%A1"><span class="nav-text">读者对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E6%9C%AC%E4%B9%A6"><span class="nav-text">如何阅读本书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8B%98%E8%AF%AF%E5%92%8C%E6%94%AF%E6%8C%81"><span class="nav-text">勘误和支持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%B4%E8%B0%A2"><span class="nav-text">致谢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC1%E7%AB%A0-MySQL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%92%8C%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">第1章 MySQL体系结构和存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E5%AE%9E%E4%BE%8B"><span class="nav-text">1.1 定义数据库和实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-MySQL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-text">1.2 MySQL体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-MySQL%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3 MySQL存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-2-MyISAM%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3.2 MyISAM存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-3-NDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3.3 NDB存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-4-Memory%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3.4 Memory存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-5-Archive%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3.5 Archive存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-6-Federated%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3.6 Federated存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-7-Maria%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3.7 Maria存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-8-%E5%85%B6%E4%BB%96%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">1.3.8 其他存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-%E5%90%84%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E4%B9%8B%E9%97%B4%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-text">1.4 各存储引擎之间的比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-%E8%BF%9E%E6%8E%A5MySQL"><span class="nav-text">1.5 连接MySQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-2-%E5%91%BD%E5%90%8D%E7%AE%A1%E9%81%93%E5%92%8C%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="nav-text">1.5.2 命名管道和共享内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-3-UNIX%E5%9F%9F%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="nav-text">1.5.3 UNIX域套接字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-%E5%B0%8F%E7%BB%93"><span class="nav-text">1.6 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">第2章 InnoDB存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E6%A6%82%E8%BF%B0"><span class="nav-text">2.1 InnoDB存储引擎概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84%E7%89%88%E6%9C%AC"><span class="nav-text">2.2 InnoDB存储引擎的版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-InnoDB%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84"><span class="nav-text">2.3 InnoDB体系架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-2-%E5%86%85%E5%AD%98"><span class="nav-text">2.3.2 内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Checkpoint%E6%8A%80%E6%9C%AF"><span class="nav-text">2.4 Checkpoint技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Master-Thread%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-text">2.5 Master Thread工作方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-2-InnoDB1-2-x%E7%89%88%E6%9C%AC%E4%B9%8B%E5%89%8D%E7%9A%84Master-Thread"><span class="nav-text">2.5.2 InnoDB1.2.x版本之前的Master Thread</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-3-InnoDB-1-2-x%E7%89%88%E6%9C%AC%E7%9A%84Master-Thread"><span class="nav-text">2.5.3 InnoDB 1.2.x版本的Master Thread</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-InnoDB%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7"><span class="nav-text">2.6 InnoDB关键特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-2-%E4%B8%A4%E6%AC%A1%E5%86%99"><span class="nav-text">2.6.2 两次写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-3-%E8%87%AA%E9%80%82%E5%BA%94%E5%93%88%E5%B8%8C%E7%B4%A2%E5%BC%95"><span class="nav-text">2.6.3 自适应哈希索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-4-%E5%BC%82%E6%AD%A5IO"><span class="nav-text">2.6.4 异步IO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-5-%E5%88%B7%E6%96%B0%E9%82%BB%E6%8E%A5%E9%A1%B5"><span class="nav-text">2.6.5 刷新邻接页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-%E5%90%AF%E5%8A%A8%E3%80%81%E5%85%B3%E9%97%AD%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="nav-text">2.7 启动、关闭与恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-%E5%B0%8F%E7%BB%93"><span class="nav-text">2.8 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC3%E7%AB%A0-%E6%96%87%E4%BB%B6"><span class="nav-text">第3章 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%8F%82%E6%95%B0%E6%96%87%E4%BB%B6"><span class="nav-text">3.1 参数文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-2-%E5%8F%82%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="nav-text">3.1.2 参数类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="nav-text">3.2 日志文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-2-%E6%85%A2%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97"><span class="nav-text">3.2.2 慢查询日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-3-%E6%9F%A5%E8%AF%A2%E6%97%A5%E5%BF%97"><span class="nav-text">3.2.3 查询日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-4-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97"><span class="nav-text">3.2.4 二进制日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E5%A5%97%E6%8E%A5%E5%AD%97%E6%96%87%E4%BB%B6"><span class="nav-text">3.3 套接字文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-pid%E6%96%87%E4%BB%B6"><span class="nav-text">3.4 pid文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E8%A1%A8%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6"><span class="nav-text">3.5 表结构定义文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E6%96%87%E4%BB%B6"><span class="nav-text">3.6 InnoDB存储引擎文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-2-%E9%87%8D%E5%81%9A%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="nav-text">3.6.2 重做日志文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-%E5%B0%8F%E7%BB%93"><span class="nav-text">3.7 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E8%A1%A8"><span class="nav-text">第4章 表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E7%B4%A2%E5%BC%95%E7%BB%84%E7%BB%87%E8%A1%A8"><span class="nav-text">4.1 索引组织表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-InnoDB%E9%80%BB%E8%BE%91%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-text">4.2 InnoDB逻辑存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-2-%E6%AE%B5"><span class="nav-text">4.2.2 段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-3-%E5%8C%BA"><span class="nav-text">4.2.3 区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-4-%E9%A1%B5"><span class="nav-text">4.2.4 页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-5-%E8%A1%8C"><span class="nav-text">4.2.5 行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-InnoDB%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">4.3 InnoDB行记录格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-2-Redundant%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">4.3.2 Redundant行记录格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-3-%E8%A1%8C%E6%BA%A2%E5%87%BA%E6%95%B0%E6%8D%AE"><span class="nav-text">4.3.3 行溢出数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-4-Compressed%E5%92%8CDynamic%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F"><span class="nav-text">4.3.4 Compressed和Dynamic行记录格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-5-CHAR%E7%9A%84%E8%A1%8C%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8"><span class="nav-text">4.3.5 CHAR的行结构存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-InnoDB%E6%95%B0%E6%8D%AE%E9%A1%B5%E7%BB%93%E6%9E%84"><span class="nav-text">4.4 InnoDB数据页结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-2-Page-Header"><span class="nav-text">4.4.2 Page Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-3-Infimum%E5%92%8CSupremum-Record"><span class="nav-text">4.4.3 Infimum和Supremum Record</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-4-User-Record%E5%92%8CFree-Space"><span class="nav-text">4.4.4 User Record和Free Space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-5-Page-Directory"><span class="nav-text">4.4.5 Page Directory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-6-File-Trailer"><span class="nav-text">4.4.6 File Trailer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-7-InnoDB%E6%95%B0%E6%8D%AE%E9%A1%B5%E7%BB%93%E6%9E%84%E7%A4%BA%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-text">4.4.7 InnoDB数据页结构示例分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-Named-File-Formats%E6%9C%BA%E5%88%B6"><span class="nav-text">4.5 Named File Formats机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-%E7%BA%A6%E6%9D%9F"><span class="nav-text">4.6 约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-2-%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E6%9F%A5%E6%89%BE"><span class="nav-text">4.6.2 约束的创建和查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-3-%E7%BA%A6%E6%9D%9F%E5%92%8C%E7%B4%A2%E5%BC%95%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">4.6.3 约束和索引的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-4-%E5%AF%B9%E9%94%99%E8%AF%AF%E6%95%B0%E6%8D%AE%E7%9A%84%E7%BA%A6%E6%9D%9F"><span class="nav-text">4.6.4 对错误数据的约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-5-ENUM%E5%92%8CSET%E7%BA%A6%E6%9D%9F"><span class="nav-text">4.6.5 ENUM和SET约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-6-%E8%A7%A6%E5%8F%91%E5%99%A8%E4%B8%8E%E7%BA%A6%E6%9D%9F"><span class="nav-text">4.6.6 触发器与约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-7-%E5%A4%96%E9%94%AE%E7%BA%A6%E6%9D%9F"><span class="nav-text">4.6.7 外键约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-%E8%A7%86%E5%9B%BE"><span class="nav-text">4.7 视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-2-%E7%89%A9%E5%8C%96%E8%A7%86%E5%9B%BE"><span class="nav-text">4.7.2 物化视图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-%E5%88%86%E5%8C%BA%E8%A1%A8"><span class="nav-text">4.8 分区表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-2-%E5%88%86%E5%8C%BA%E7%B1%BB%E5%9E%8B"><span class="nav-text">4.8.2 分区类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-3-%E5%AD%90%E5%88%86%E5%8C%BA"><span class="nav-text">4.8.3 子分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-4-%E5%88%86%E5%8C%BA%E4%B8%AD%E7%9A%84NULL%E5%80%BC"><span class="nav-text">4.8.4 分区中的NULL值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-5-%E5%88%86%E5%8C%BA%E5%92%8C%E6%80%A7%E8%83%BD"><span class="nav-text">4.8.5 分区和性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-6-%E5%9C%A8%E8%A1%A8%E5%92%8C%E5%88%86%E5%8C%BA%E9%97%B4%E4%BA%A4%E6%8D%A2%E6%95%B0%E6%8D%AE"><span class="nav-text">4.8.6 在表和分区间交换数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-9-%E5%B0%8F%E7%BB%93"><span class="nav-text">4.9 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E7%B4%A2%E5%BC%95%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="nav-text">第5章 索引与算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%B4%A2%E5%BC%95%E6%A6%82%E8%BF%B0"><span class="nav-text">5.1 InnoDB存储引擎索引概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="nav-text">5.2 数据结构与算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-2-%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E5%92%8C%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-text">5.2.2 二叉查找树和平衡二叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-B-%E6%A0%91"><span class="nav-text">5.3 B+树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-2-B-%E6%A0%91%E7%9A%84%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="nav-text">5.3.2 B+树的删除操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-B-%E6%A0%91%E7%B4%A2%E5%BC%95"><span class="nav-text">5.4 B+树索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-2-%E8%BE%85%E5%8A%A9%E7%B4%A2%E5%BC%95"><span class="nav-text">5.4.2 辅助索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-3-B-%E6%A0%91%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%86%E8%A3%82"><span class="nav-text">5.4.3 B+树索引的分裂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-4-B-%E6%A0%91%E7%B4%A2%E5%BC%95%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-text">5.4.4 B+树索引的管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-Cardinality%E5%80%BC"><span class="nav-text">5.5 Cardinality值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-2-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E7%9A%84Cardinality%E7%BB%9F%E8%AE%A1"><span class="nav-text">5.5.2 InnoDB存储引擎的Cardinality统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-B-%E6%A0%91%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">5.6 B+树索引的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-2-%E8%81%94%E5%90%88%E7%B4%A2%E5%BC%95"><span class="nav-text">5.6.2 联合索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-3-%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="nav-text">5.6.3 覆盖索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-4-%E4%BC%98%E5%8C%96%E5%99%A8%E9%80%89%E6%8B%A9%E4%B8%8D%E4%BD%BF%E7%94%A8%E7%B4%A2%E5%BC%95%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-text">5.6.4 优化器选择不使用索引的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-5-%E7%B4%A2%E5%BC%95%E6%8F%90%E7%A4%BA"><span class="nav-text">5.6.5 索引提示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-6-Multi-Range-Read%E4%BC%98%E5%8C%96"><span class="nav-text">5.6.6 Multi-Range Read优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-7-Index-Condition-Pushdown%EF%BC%88ICP%EF%BC%89%E4%BC%98%E5%8C%96"><span class="nav-text">5.6.7 Index Condition Pushdown（ICP）优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-7-%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-text">5.7 哈希算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-7-2-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E4%B8%AD%E7%9A%84%E5%93%88%E5%B8%8C%E7%AE%97%E6%B3%95"><span class="nav-text">5.7.2 InnoDB存储引擎中的哈希算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-7-3-%E8%87%AA%E9%80%82%E5%BA%94%E5%93%88%E5%B8%8C%E7%B4%A2%E5%BC%95"><span class="nav-text">5.7.3 自适应哈希索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2"><span class="nav-text">5.8 全文检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-2-%E5%80%92%E6%8E%92%E7%B4%A2%E5%BC%95"><span class="nav-text">5.8.2 倒排索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-3-InnoDB%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2"><span class="nav-text">5.8.3 InnoDB全文检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-4-%E5%85%A8%E6%96%87%E6%A3%80%E7%B4%A2"><span class="nav-text">5.8.4 全文检索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-9-%E5%B0%8F%E7%BB%93"><span class="nav-text">5.9 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E9%94%81"><span class="nav-text">第6章 锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-%E4%BB%80%E4%B9%88%E6%98%AF%E9%94%81"><span class="nav-text">6.1 什么是锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-lock%E4%B8%8Elatch"><span class="nav-text">6.2 lock与latch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E4%B8%AD%E7%9A%84%E9%94%81"><span class="nav-text">6.3 InnoDB存储引擎中的锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-2-%E4%B8%80%E8%87%B4%E6%80%A7%E9%9D%9E%E9%94%81%E5%AE%9A%E8%AF%BB"><span class="nav-text">6.3.2 一致性非锁定读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-3-%E4%B8%80%E8%87%B4%E6%80%A7%E9%94%81%E5%AE%9A%E8%AF%BB"><span class="nav-text">6.3.3 一致性锁定读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-4-%E8%87%AA%E5%A2%9E%E9%95%BF%E4%B8%8E%E9%94%81"><span class="nav-text">6.3.4 自增长与锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-5-%E5%A4%96%E9%94%AE%E5%92%8C%E9%94%81"><span class="nav-text">6.3.5 外键和锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-%E9%94%81%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-text">6.4 锁的算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-2-%E8%A7%A3%E5%86%B3Phantom-Problem"><span class="nav-text">6.4.2 解决Phantom Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-%E9%94%81%E9%97%AE%E9%A2%98"><span class="nav-text">6.5 锁问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-2-%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB"><span class="nav-text">6.5.2 不可重复读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-5-3-%E4%B8%A2%E5%A4%B1%E6%9B%B4%E6%96%B0"><span class="nav-text">6.5.3 丢失更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-6-%E9%98%BB%E5%A1%9E"><span class="nav-text">6.6 阻塞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-7-%E6%AD%BB%E9%94%81"><span class="nav-text">6.7 死锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-7-2-%E6%AD%BB%E9%94%81%E6%A6%82%E7%8E%87"><span class="nav-text">6.7.2 死锁概率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-7-3-%E6%AD%BB%E9%94%81%E7%9A%84%E7%A4%BA%E4%BE%8B"><span class="nav-text">6.7.3 死锁的示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-8-%E9%94%81%E5%8D%87%E7%BA%A7"><span class="nav-text">6.8 锁升级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-9-%E5%B0%8F%E7%BB%93"><span class="nav-text">6.9 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AB%A0-%E4%BA%8B%E5%8A%A1"><span class="nav-text">第7章 事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-%E8%AE%A4%E8%AF%86%E4%BA%8B%E5%8A%A1"><span class="nav-text">7.1 认识事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-2-%E5%88%86%E7%B1%BB"><span class="nav-text">7.1.2 分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-text">7.2 事务的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-2-undo"><span class="nav-text">7.2.2 undo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-3-purge"><span class="nav-text">7.2.3 purge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-4-group-commit"><span class="nav-text">7.2.4 group commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-text">7.3 事务控制语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-%E9%9A%90%E5%BC%8F%E6%8F%90%E4%BA%A4%E7%9A%84SQL%E8%AF%AD%E5%8F%A5"><span class="nav-text">7.4 隐式提交的SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-%E5%AF%B9%E4%BA%8E%E4%BA%8B%E5%8A%A1%E6%93%8D%E4%BD%9C%E7%9A%84%E7%BB%9F%E8%AE%A1"><span class="nav-text">7.5 对于事务操作的统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-6-%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="nav-text">7.6 事务的隔离级别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-7-%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="nav-text">7.7 分布式事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-7-2-%E5%86%85%E9%83%A8XA%E4%BA%8B%E5%8A%A1"><span class="nav-text">7.7.2 内部XA事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-8-%E4%B8%8D%E5%A5%BD%E7%9A%84%E4%BA%8B%E5%8A%A1%E4%B9%A0%E6%83%AF"><span class="nav-text">7.8 不好的事务习惯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-8-2-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%8A%A8%E6%8F%90%E4%BA%A4"><span class="nav-text">7.8.2 使用自动提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-8-3-%E4%BD%BF%E7%94%A8%E8%87%AA%E5%8A%A8%E5%9B%9E%E6%BB%9A"><span class="nav-text">7.8.3 使用自动回滚</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-9-%E9%95%BF%E4%BA%8B%E5%8A%A1"><span class="nav-text">7.9 长事务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-10-%E5%B0%8F%E7%BB%93"><span class="nav-text">7.10 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="nav-text">第8章 备份与恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D%E6%A6%82%E8%BF%B0"><span class="nav-text">8.1 备份与恢复概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-%E5%86%B7%E5%A4%87"><span class="nav-text">8.2 冷备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-%E9%80%BB%E8%BE%91%E5%A4%87%E4%BB%BD"><span class="nav-text">8.3 逻辑备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-2-SELECT%E2%80%A6INTO-OUTFILE"><span class="nav-text">8.3.2 SELECT…INTO OUTFILE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-3-%E9%80%BB%E8%BE%91%E5%A4%87%E4%BB%BD%E7%9A%84%E6%81%A2%E5%A4%8D"><span class="nav-text">8.3.3 逻辑备份的恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-4-LOAD-DATA-INFILE"><span class="nav-text">8.3.4 LOAD DATA INFILE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-5-mysqlimport"><span class="nav-text">8.3.5 mysqlimport</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4-%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%97%A5%E5%BF%97%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D"><span class="nav-text">8.4 二进制日志备份与恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-%E7%83%AD%E5%A4%87"><span class="nav-text">8.5 热备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-2-XtraBackup"><span class="nav-text">8.5.2 XtraBackup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-3-XtraBackup%E5%AE%9E%E7%8E%B0%E5%A2%9E%E9%87%8F%E5%A4%87%E4%BB%BD"><span class="nav-text">8.5.3 XtraBackup实现增量备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-6-%E5%BF%AB%E7%85%A7%E5%A4%87%E4%BB%BD"><span class="nav-text">8.6 快照备份</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-7-%E5%A4%8D%E5%88%B6"><span class="nav-text">8.7 复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-7-2-%E5%BF%AB%E7%85%A7-%E5%A4%8D%E5%88%B6%E7%9A%84%E5%A4%87%E4%BB%BD%E6%9E%B6%E6%9E%84"><span class="nav-text">8.7.2 快照+复制的备份架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-8-%E5%B0%8F%E7%BB%93"><span class="nav-text">8.8 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E7%AB%A0-%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98"><span class="nav-text">第9章 性能调优</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84CPU"><span class="nav-text">9.1 选择合适的CPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-%E5%86%85%E5%AD%98%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-text">9.2 内存的重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-%E7%A1%AC%E7%9B%98%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-text">9.3 硬盘对数据库性能的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-2-%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98"><span class="nav-text">9.3.2 固态硬盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-%E5%90%88%E7%90%86%E5%9C%B0%E8%AE%BE%E7%BD%AERAID"><span class="nav-text">9.4 合理地设置RAID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-2-RAID-Write-Back%E5%8A%9F%E8%83%BD"><span class="nav-text">9.4.2 RAID Write Back功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-3-RAID%E9%85%8D%E7%BD%AE%E5%B7%A5%E5%85%B7"><span class="nav-text">9.4.3 RAID配置工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-5-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-text">9.5 操作系统的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-6-%E4%B8%8D%E5%90%8C%E7%9A%84%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E6%80%A7%E8%83%BD%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-text">9.6 不同的文件系统对数据库性能的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-7-%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="nav-text">9.7 选择合适的基准测试工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-7-2-mysql-tpcc"><span class="nav-text">9.7.2 mysql-tpcc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-8-%E5%B0%8F%E7%BB%93"><span class="nav-text">9.8 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC10%E7%AB%A0-InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E6%BA%90%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BC%96%E8%AF%91%E5%92%8C%E8%B0%83%E8%AF%95"><span class="nav-text">第10章 InnoDB存储引擎源代码的编译和调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-1-%E8%8E%B7%E5%8F%96InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-text">10.1 获取InnoDB存储引擎源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-2-InnoDB%E6%BA%90%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="nav-text">10.2 InnoDB源代码结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-3-MySQL-5-1%E7%89%88%E6%9C%AC%E7%BC%96%E8%AF%91%E5%92%8C%E8%B0%83%E8%AF%95InnoDB%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-text">10.3 MySQL 5.1版本编译和调试InnoDB源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-3-2-Linux%E4%B8%8B%E7%9A%84%E8%B0%83%E8%AF%95"><span class="nav-text">10.3.2 Linux下的调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-4-cmake%E6%96%B9%E5%BC%8F%E7%BC%96%E8%AF%91%E5%92%8C%E8%B0%83%E8%AF%95InnoDB%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-text">10.4 cmake方式编译和调试InnoDB存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-5-%E5%B0%8F%E7%BB%93"><span class="nav-text">10.5 小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-3-%E5%8C%BA-1"><span class="nav-text">4.2.3 区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="nav-text">划线评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-1"><span class="nav-text">划线评论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-2"><span class="nav-text">划线评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-5-%E8%A1%8C-1"><span class="nav-text">4.2.5 行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-3"><span class="nav-text">划线评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-InnoDB%E8%A1%8C%E8%AE%B0%E5%BD%95%E6%A0%BC%E5%BC%8F-1"><span class="nav-text">4.3 InnoDB行记录格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-4"><span class="nav-text">划线评论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-5-CHAR%E7%9A%84%E8%A1%8C%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8-1"><span class="nav-text">4.3.5 CHAR的行结构存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA-5"><span class="nav-text">划线评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">270</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
