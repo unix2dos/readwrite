@@ -1,5 +1,5 @@
 ---
-title: STAR原则
+title: 面试的STAR原则
 categories:
   - 2_study
   - 6改变
