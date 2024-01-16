@@ -34,3 +34,5 @@ for file in *; do
 	fi
 done
 
+
+git add source/booking/01进行中/old_dir
