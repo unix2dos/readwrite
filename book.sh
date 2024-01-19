@@ -34,3 +34,5 @@ for file in *; do
 	fi
 done
 
+git add -AN
+git status | grep deleted | awk -F ':' '{print $2}' |  xargs git add
