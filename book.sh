@@ -36,3 +36,4 @@ done
 
 git add -AN
 git status | grep deleted | awk -F ':' '{print $2}' |  xargs git add
+git add old_dir/
