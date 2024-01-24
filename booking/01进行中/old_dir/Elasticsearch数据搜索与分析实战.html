@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="封面版权信息内容提要前言原理篇 📌 关系数据库在使用时存在明显的短板，导致它的应用存在一些缺点。(1)性能差：当单表的数据量达到数百万条甚至数千万条时，即使采用一定的方法去优化SQL，查询速度依然可能很慢，这在很多业务场景中是不允许的。(2)扩展难：关系数据库的集群不太容易搭建，即使采用了分表分库的中间件将数据库集群化，查询性能在很多业务场景中依然没有保障   ⏱ 2023-08-26 23">
+  <meta name="description" content="原理篇 📌 关系数据库在使用时存在明显的短板，导致它的应用存在一些缺点。(1)性能差：当单表的数据量达到数百万条甚至数千万条时，即使采用一定的方法去优化SQL，查询速度依然可能很慢，这在很多业务场景中是不允许的。(2)扩展难：关系数据库的集群不太容易搭建，即使采用了分表分库的中间件将数据库集群化，查询性能在很多业务场景中依然没有保障   ⏱ 2023-08-26 23:45:52   📌 E">
 <meta property="og:type" content="website">
 <meta property="og:title" content="《Elasticsearch数据搜索与分析实战》">
 <meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/old_dir/Elasticsearch%E6%95%B0%E6%8D%AE%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%88%86%E6%9E%90%E5%AE%9E%E6%88%98.html">
 <meta property="og:site_name" content="趣读写">
-<meta property="og:description" content="封面版权信息内容提要前言原理篇 📌 关系数据库在使用时存在明显的短板，导致它的应用存在一些缺点。(1)性能差：当单表的数据量达到数百万条甚至数千万条时，即使采用一定的方法去优化SQL，查询速度依然可能很慢，这在很多业务场景中是不允许的。(2)扩展难：关系数据库的集群不太容易搭建，即使采用了分表分库的中间件将数据库集群化，查询性能在很多业务场景中依然没有保障   ⏱ 2023-08-26 23">
+<meta property="og:description" content="原理篇 📌 关系数据库在使用时存在明显的短板，导致它的应用存在一些缺点。(1)性能差：当单表的数据量达到数百万条甚至数千万条时，即使采用一定的方法去优化SQL，查询速度依然可能很慢，这在很多业务场景中是不允许的。(2)扩展难：关系数据库的集群不太容易搭建，即使采用了分表分库的中间件将数据库集群化，查询性能在很多业务场景中依然没有保障   ⏱ 2023-08-26 23:45:52   📌 E">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg">
 <meta property="article:published_time" content="2023-08-28T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-09T07:12:09.807Z">
+<meta property="article:modified_time" content="2024-01-24T06:36:09.067Z">
 <meta property="article:author" content="levon">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg">
@@ -220,10 +220,9 @@
       
       
       <div class="post-body">
-          <hr>
-<p><img src="https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg" alt=" Elasticsearch数据搜索与分析实战|200"></p>
-<h2 id="封面"><a href="#封面" class="headerlink" title="封面"></a>封面</h2><h2 id="版权信息"><a href="#版权信息" class="headerlink" title="版权信息"></a>版权信息</h2><h2 id="内容提要"><a href="#内容提要" class="headerlink" title="内容提要"></a>内容提要</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><h2 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇</h2><ul>
-<li><p>📌 关系数据库在使用时存在明显的短板，导致它的应用存在一些缺点。(1)性能差：当单表的数据量达到数百万条甚至数千万条时，即使采用一定的方法去优化SQL，查询速度依然可能很慢，这在很多业务场景中是不允许的。(2)扩展难：关系数据库的集群不太容易搭建，即使采用了分表分库的中间件将数据库集群化，查询性能在很多业务场景中依然没有保障 </p>
+          <p><img src="https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg" alt=" Elasticsearch数据搜索与分析实战|200"></p>
+<h2 id="原理篇"><a href="#原理篇" class="headerlink" title="原理篇"></a>原理篇</h2><ul>
+<li><p>📌 关系数据库在使用时存在明显的短板，导致它的应用存在一些缺点。<br>(1)性能差：当单表的数据量达到数百万条甚至数千万条时，即使采用一定的方法去优化SQL，查询速度依然可能很慢，这在很多业务场景中是不允许的。<br>(2)扩展难：关系数据库的集群不太容易搭建，即使采用了分表分库的中间件将数据库集群化，查询性能在很多业务场景中依然没有保障 </p>
 <ul>
 <li>⏱ 2023-08-26 23:45:52</li>
 </ul>
@@ -248,12 +247,12 @@
 <li>⏱ 2023-08-26 23:50:25</li>
 </ul>
 </li>
-<li><p>📌 (3)索引(index)：索引是存储数据的基本单元，在大多数情况下，可以把它理解为关系数据库中的表。(4)文档(document)：文档是写入索引的基本单元，一个文档就是索引中的一条数据。写入索引的文档是JSON格式的文本字符串，里面包含各个字段的信息，保存在索引的_source元数据中。 </p>
+<li><p>📌 (3)索引(index)：索引是存储数据的基本单元，在大多数情况下，可以把它理解为关系数据库中的表。<br>(4)文档(document)：文档是写入索引的基本单元，一个文档就是索引中的一条数据。写入索引的文档是JSON格式的文本字符串，里面包含各个字段的信息，保存在索引的_source元数据中。 </p>
 <ul>
 <li>⏱ 2023-08-26 23:51:27</li>
 </ul>
 </li>
-<li><p>📌 (5)分片(shard)：分片分为主分片和副本分片，每个索引拥有至少一个主分片和零个或多个副本分片，一个分片本质上是一个Lucene索引。当整个集群的节点数量增加或减少时，为了让分片在每个节点上分布得比较均匀，通常会使分片在集群中移动，这个过程也就是分片的分配。在任何时候，索引的主分片和它对应的副本分片不能位于同一个节点上，这是为了保证节点宕机时，主分片和副本分片不会同时丢失。(6)主分片(primary shard)：当文档数据写入索引时，会首先选择一个主分片进行写入，再把数据同步到副本分片。主分片的数目在建立索引时就已经固定，无法修改。如果一个索引拥有的主分片越多，那么它能存储的数据越多，主分片的个数通常跟索引的数据量成正相关。(7)副本分片(replica shard)：副本分片是主分片的一个副本，它能够分担一些数据搜索的请求，从而提高搜索的吞吐量。同时，副本分片还具备容灾备份的能力，当主分片所在的节点宕机时，副本分片可以被选举为主分片来保持数据的完整性。另外，索引的副本分片数目可以随时修改。 </p>
+<li><p>📌 (5)分片(shard)：分片分为主分片和副本分片，每个索引拥有至少一个主分片和零个或多个副本分片，一个分片本质上是一个Lucene索引。当整个集群的节点数量增加或减少时，为了让分片在每个节点上分布得比较均匀，通常会使分片在集群中移动，这个过程也就是分片的分配。在任何时候，索引的主分片和它对应的副本分片不能位于同一个节点上，这是为了保证节点宕机时，主分片和副本分片不会同时丢失。<br>(6)主分片(primary shard)：当文档数据写入索引时，会首先选择一个主分片进行写入，再把数据同步到副本分片。主分片的数目在建立索引时就已经固定，无法修改。如果一个索引拥有的主分片越多，那么它能存储的数据越多，主分片的个数通常跟索引的数据量成正相关。<br>(7)副本分片(replica shard)：副本分片是主分片的一个副本，它能够分担一些数据搜索的请求，从而提高搜索的吞吐量。同时，副本分片还具备容灾备份的能力，当主分片所在的节点宕机时，副本分片可以被选举为主分片来保持数据的完整性。另外，索引的副本分片数目可以随时修改。 </p>
 <ul>
 <li>⏱ 2023-08-26 23:58:44</li>
 </ul>
@@ -269,7 +268,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="第2章-深入原理"><a href="#第2章-深入原理" class="headerlink" title="第2章 深入原理"></a>第2章 深入原理</h2><ul>
+<h3 id="第2章-深入原理"><a href="#第2章-深入原理" class="headerlink" title="第2章 深入原理"></a>第2章 深入原理</h3><ul>
 <li><p>📌 数据采集模块负责采集需要搜索的数据源，很多网络爬虫可以快速地从各种网站上采集结构化的数据。对于Elasticsearch而言，数据采集模块既可以是官方指定的Beats工具，也可以是第三方提供的ETL工具，还可以是使用Java客户端写入的数据。总之，这个模块的目的就是把用户需要搜索的数据采集起来以备写入搜索引擎。为了提高采集数据的效率，可以使用多线程和分布式等手段，再配合一些比较好的采集策略（例如时间戳增量采集）来满足实际项目的需要。 </p>
 <ul>
 <li>⏱ 2023-08-28 09:01:45</li>
@@ -291,7 +290,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="应用篇"><a href="#应用篇" class="headerlink" title="应用篇"></a>应用篇</h2><h2 id="第4章-文本分析"><a href="#第4章-文本分析" class="headerlink" title="第4章 文本分析"></a>第4章 文本分析</h2><h2 id="第5章-搜索数据"><a href="#第5章-搜索数据" class="headerlink" title="第5章 搜索数据"></a>第5章 搜索数据</h2><h2 id="第6章-聚集统计"><a href="#第6章-聚集统计" class="headerlink" title="第6章 聚集统计"></a>第6章 聚集统计</h2><h2 id="第7章-父子关联"><a href="#第7章-父子关联" class="headerlink" title="第7章 父子关联"></a>第7章 父子关联</h2><h2 id="第8章-Java高级客户端编程"><a href="#第8章-Java高级客户端编程" class="headerlink" title="第8章 Java高级客户端编程"></a>第8章 Java高级客户端编程</h2><h2 id="第9章-集群扩展和性能优化"><a href="#第9章-集群扩展和性能优化" class="headerlink" title="第9章 集群扩展和性能优化"></a>第9章 集群扩展和性能优化</h2><h2 id="发散篇"><a href="#发散篇" class="headerlink" title="发散篇"></a>发散篇</h2><h2 id="第11章-Kibana：数据可视化利器"><a href="#第11章-Kibana：数据可视化利器" class="headerlink" title="第11章 Kibana：数据可视化利器"></a>第11章 Kibana：数据可视化利器</h2><h2 id="第12章-Beats家族：精细化数据采集"><a href="#第12章-Beats家族：精细化数据采集" class="headerlink" title="第12章 Beats家族：精细化数据采集"></a>第12章 Beats家族：精细化数据采集</h2><h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
       </div>
       
       
@@ -361,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2"><span class="nav-text">封面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF"><span class="nav-text">版权信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E6%8F%90%E8%A6%81"><span class="nav-text">内容提要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E7%AF%87"><span class="nav-text">原理篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E6%B7%B1%E5%85%A5%E5%8E%9F%E7%90%86"><span class="nav-text">第2章 深入原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%AF%87"><span class="nav-text">应用篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC4%E7%AB%A0-%E6%96%87%E6%9C%AC%E5%88%86%E6%9E%90"><span class="nav-text">第4章 文本分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC5%E7%AB%A0-%E6%90%9C%E7%B4%A2%E6%95%B0%E6%8D%AE"><span class="nav-text">第5章 搜索数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC6%E7%AB%A0-%E8%81%9A%E9%9B%86%E7%BB%9F%E8%AE%A1"><span class="nav-text">第6章 聚集统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AB%A0-%E7%88%B6%E5%AD%90%E5%85%B3%E8%81%94"><span class="nav-text">第7章 父子关联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC8%E7%AB%A0-Java%E9%AB%98%E7%BA%A7%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%BC%96%E7%A8%8B"><span class="nav-text">第8章 Java高级客户端编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC9%E7%AB%A0-%E9%9B%86%E7%BE%A4%E6%89%A9%E5%B1%95%E5%92%8C%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-text">第9章 集群扩展和性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E6%95%A3%E7%AF%87"><span class="nav-text">发散篇</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC11%E7%AB%A0-Kibana%EF%BC%9A%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E5%88%A9%E5%99%A8"><span class="nav-text">第11章 Kibana：数据可视化利器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC12%E7%AB%A0-Beats%E5%AE%B6%E6%97%8F%EF%BC%9A%E7%B2%BE%E7%BB%86%E5%8C%96%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86"><span class="nav-text">第12章 Beats家族：精细化数据采集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%90%86%E7%AF%87"><span class="nav-text">原理篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E6%B7%B1%E5%85%A5%E5%8E%9F%E7%90%86"><span class="nav-text">第2章 深入原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -375,7 +374,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">277</span>
+          <span class="site-state-item-count">281</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
