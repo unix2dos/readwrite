@@ -6,9 +6,9 @@ cover: https://wfqqreader-1252317822.image.myqcloud.com/cover/824/41779824/t7_41
 reviewCount: 1
 noteCount: 35
 readingStatus: 在读
-progress: 73%
-totalReadDay: 10
-readingTime: 4小时36分钟
+progress: 76%
+totalReadDay: 11
+readingTime: 4小时53分钟
 readingDate: 2023-10-13
 isbn: 9787115576538
 title: 《MongoDB权威指南（第3版）》
