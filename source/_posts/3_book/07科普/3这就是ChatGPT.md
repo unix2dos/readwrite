@@ -1,20 +1,24 @@
 ---
 doc_type: weread-highlights-reviews
-bookId: "3300082609"
+bookId: '3300082609'
 author: 斯蒂芬·沃尔弗拉姆
-cover: https://cdn.weread.qq.com/weread/cover/24/cpplatform_4cn8w4tmgzntjobg9ffeny/t7_cpplatform_4cn8w4tmgzntjobg9ffeny1703648785.jpg
+cover: >-
+  https://cdn.weread.qq.com/weread/cover/24/cpplatform_4cn8w4tmgzntjobg9ffeny/t7_cpplatform_4cn8w4tmgzntjobg9ffeny1703648785.jpg
 reviewCount: 0
 noteCount: 35
 readingStatus: 读完
 progress: 99%
 totalReadDay: 2
 readingTime: 0小时59分钟
-readingDate: 2024-01-20
-finishedDate: 2024-01-23
 isbn: 9787115618085
 title: 《这就是ChatGPT》3星
-date: 2024-01-23
-
+categories:
+  - 3_book
+  - 07科普
+abbrlink: 22f795ff
+readingDate: 2024-01-20 00:00:00
+finishedDate: 2024-01-23 00:00:00
+date: 2024-01-23 00:00:00
 ---
 
 ![ 这就是ChatGPT|200](https://cdn.weread.qq.com/weread/cover/24/cpplatform_4cn8w4tmgzntjobg9ffeny/t7_cpplatform_4cn8w4tmgzntjobg9ffeny1703648785.jpg)
