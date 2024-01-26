@@ -1,7 +1,7 @@
 ---
 doc_type: weread-highlights-reviews
 bookId: CB_0Lc6TU6Sb0Ud6kl6kiGFp88m
-author: ""
+author: 
 cover: https://res.weread.qq.com/wrepub/CB_4A3A9fA8O0v56iJ6gdBnQAvY_parsecover
 reviewCount: 0
 noteCount: 19

@@ -1,7 +1,7 @@
 ---
 doc_type: weread-highlights-reviews
 bookId: "3300057552"
-author: 王深湛　
+author: 王深湛
 cover: https://cdn.weread.qq.com/weread/cover/8/cpplatform_maamrrjyhwbembgxbpfdg5/t7_cpplatform_maamrrjyhwbembgxbpfdg51682672069.jpg
 reviewCount: 0
 noteCount: 13
