@@ -4,7 +4,7 @@ bookId: CB_0Lc6TU6Sb0Ud6kl6kiGFp88m
 author: 
 cover: https://res.weread.qq.com/wrepub/CB_4A3A9fA8O0v56iJ6gdBnQAvY_parsecover
 reviewCount: 0
-noteCount: 18
+noteCount: 19
 readingStatus: 未标记
 progress: undefined%
 totalReadDay: 2
@@ -12,7 +12,7 @@ readingTime: 0小时0分钟
 readingDate: 2023-12-03
 isbn: 
 title: 《老实人启蒙 (薛凯, 陆亚) (Z-Library)》
-date: 2023-12-03
+date: 2024-01-22
 
 ---
 
@@ -101,6 +101,11 @@ date: 2023-12-03
 
 - 📌 英国政治学家霍布斯就曾指出，人的一生所追求的东西,无非就是财富、权力和名声。正因为大家都有所追求,人才有上进心，世界才变得生机勃勃。如果大家都甘于清贫平庸,淡泊于名利,社会也就谈不上什么发展了。 
     - ⏱ 2023-12-03 23:25:49 
+## 第六章怎样理解与领导接近
+
+
+- 📌 与领导接近是一门艺术。老实人不能与领导接近,原因不是因领导高高在上，而是因老实人自身存在着一些观念上和心理上的障碍。克服了心理障碍，并且注意与领导相处的重要原则，那么老实人的处世能力和自身发展将有较大提高。 
+    - ⏱ 2024-01-22 10:33:26 
 
 # 读书笔记
 
