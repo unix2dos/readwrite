@@ -13,7 +13,9 @@ date: 2024-02-04 00:00:01
 
 该评量的理论框架包括四组相反的先天偏好：内向与外向（Introversion-Extraversion）、实感与直觉（Sensing-iNtuition）、思考与情感（Thinking-Feeling）、判断与感知（Judging-Perceiving），四项偏好可交叉组成16种人格类型，旨在反映健康行为之下的基础认知模式。
 
-MBTI是由两名美国人——凯瑟琳·库克·布里格斯和她的女儿伊莎贝尔·布里格斯·迈尔斯所建构[10]，最早于1944年发表[11]。
+MBTI是由两名美国人——凯瑟琳·库克·布里格斯和她的女儿伊莎贝尔·布里格斯·迈尔斯所建构，最早于1944年发表。
+
+<img src="./MBTI%E6%80%A7%E6%A0%BC/43.png" alt="img" style="zoom:30%;" />
 
 <img src="./MBTI%E6%80%A7%E6%A0%BC/image-20240204170230808.png" alt="image-20240204170230808" style="zoom:30%;" />
 
@@ -28,7 +30,7 @@ MBTI是由两名美国人——凯瑟琳·库克·布里格斯和她的女儿伊
 | 思考/情感（T/F） | Thinking，Feeling          | 心理功能 |
 | 判断/感知（J/P） | Judging，  Perceiving      | 生活态度 |
 
-
+<img src="./MBTI%E6%80%A7%E6%A0%BC/image-20240204201401313.png" alt="image-20240204201401313" style="zoom:50%;" />
 
 ### 2.1 能量态度：外向/内向（E/I）
 
