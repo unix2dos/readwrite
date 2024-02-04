@@ -1,5 +1,9 @@
 ---
-title: "MBTI性格"
+title: MBTI性格
+categories:
+  - 2_study
+  - 9心理学
+abbrlink: 18ad849c
 date: 2024-02-04 00:00:01
 ---
 
