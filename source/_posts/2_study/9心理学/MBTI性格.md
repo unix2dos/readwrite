@@ -74,19 +74,19 @@ MBTI是由两名美国人——凯瑟琳·库克·布里格斯和她的女儿伊
 
 ### 1.5 四大类
 
-##### NT
+##### NT 分析家
 
 <img src="./MBTI%E6%80%A7%E6%A0%BC/image-20240204204624045.png" alt="image-20240204204624045" style="zoom:50%;" />
 
-##### NF
+##### NF 外交家
 
 <img src="./MBTI%E6%80%A7%E6%A0%BC/image-20240204204658487.png" alt="image-20240204204658487" style="zoom:50%;" />
 
-##### SF
+##### SJ 守护者
 
 <img src="./MBTI%E6%80%A7%E6%A0%BC/image-20240204204725179.png" alt="image-20240204204725179" style="zoom:50%;" />
 
-##### ST
+##### SP 探险家
 
 <img src="./MBTI%E6%80%A7%E6%A0%BC/image-20240204204759884.png" alt="image-20240204204759884" style="zoom:50%;" />
 
