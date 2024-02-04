@@ -7,8 +7,8 @@ reviewCount: 0
 noteCount: 1
 readingStatus: 在读
 progress: 96%
-totalReadDay: 4
-readingTime: 1小时42分钟
+totalReadDay: 5
+readingTime: 1小时43分钟
 readingDate: 2023-07-21
 isbn: 9787302603887
 title: 《云原生Kubernetes全栈架构师实战》
