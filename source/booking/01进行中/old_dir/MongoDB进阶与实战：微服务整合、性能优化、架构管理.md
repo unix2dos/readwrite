@@ -8,7 +8,7 @@ noteCount: 1
 readingStatus: 在读
 progress: 27%
 totalReadDay: 1
-readingTime: 0小时15分钟
+readingTime: 0小时16分钟
 readingDate: 2023-10-26
 isbn: 9787121408274
 title: 《MongoDB进阶与实战：微服务整合、性能优化、架构管理》
