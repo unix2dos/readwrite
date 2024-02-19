@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="第7篇 拓展篇 📌 初学者第一次接触Istio时，往往无法区分VirtualService和DestinationRule，在实际使用时很容易混淆两者的概念和用途。我们可以将VirtualService理解为Kubernetes Service层面，DestinationRule理解为Service后端真实的目标地址，即VirtualService用于Service层面的路由管控，Destin">
+  <meta name="description" content="推荐序一 从这本书开始，找到适合自己的方法 📌 “如果你认为你可以，你就可以；如果你认为你不行，你就不行。”这是史蒂芬·科特勒在书中引用他的朋友彼得·戴曼迪斯的一句话。这句话带出一个重要的概念——成长型思维，这个概念同时出现在这本书的“动机”和“学习力”两个部分。  ⏱ 2024-02-15 07:08:11    推荐序三 在挑战中孕育人才 📌 到2021年，樊登读书已经创立8年，我们每年">
 <meta property="og:type" content="website">
-<meta property="og:title" content="《云原生Kubernetes全栈架构师实战》">
-<meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E4%BA%91%E5%8E%9F%E7%94%9FKubernetes%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84%E5%B8%88%E5%AE%9E%E6%88%98.html">
+<meta property="og:title" content="《跨越不可能》">
+<meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E8%B7%A8%E8%B6%8A%E4%B8%8D%E5%8F%AF%E8%83%BD.html">
 <meta property="og:site_name" content="趣读写">
-<meta property="og:description" content="第7篇 拓展篇 📌 初学者第一次接触Istio时，往往无法区分VirtualService和DestinationRule，在实际使用时很容易混淆两者的概念和用途。我们可以将VirtualService理解为Kubernetes Service层面，DestinationRule理解为Service后端真实的目标地址，即VirtualService用于Service层面的路由管控，Destin">
+<meta property="og:description" content="推荐序一 从这本书开始，找到适合自己的方法 📌 “如果你认为你可以，你就可以；如果你认为你不行，你就不行。”这是史蒂芬·科特勒在书中引用他的朋友彼得·戴曼迪斯的一句话。这句话带出一个重要的概念——成长型思维，这个概念同时出现在这本书的“动机”和“学习力”两个部分。  ⏱ 2024-02-15 07:08:11    推荐序三 在挑战中孕育人才 📌 到2021年，樊登读书已经创立8年，我们每年">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.weread.qq.com/weread/cover/87/cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS/t7_cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS.jpg">
-<meta property="article:published_time" content="2024-01-28T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-04T11:17:09.665Z">
+<meta property="og:image" content="https://cdn.weread.qq.com/weread/cover/64/cpplatform_c56nkbq8f8xxagk49wwuss/t7_cpplatform_c56nkbq8f8xxagk49wwuss1684822837.jpg">
+<meta property="article:published_time" content="2024-02-15T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-02-19T03:58:06.905Z">
 <meta property="article:author" content="levon">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.weread.qq.com/weread/cover/87/cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS/t7_cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS.jpg">
+<meta name="twitter:image" content="https://cdn.weread.qq.com/weread/cover/64/cpplatform_c56nkbq8f8xxagk49wwuss/t7_cpplatform_c56nkbq8f8xxagk49wwuss1684822837.jpg">
 
-<link rel="canonical" href="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E4%BA%91%E5%8E%9F%E7%94%9FKubernetes%E5%85%A8%E6%A0%88%E6%9E%B6%E6%9E%84%E5%B8%88%E5%AE%9E%E6%88%98.html">
+<link rel="canonical" href="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/%E8%B7%A8%E8%B6%8A%E4%B8%8D%E5%8F%AF%E8%83%BD.html">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>《云原生Kubernetes全栈架构师实战》 | 趣读写
+  <title>《跨越不可能》 | 趣读写
 </title>
   
 
@@ -198,7 +198,7 @@
     <div class="post-block" lang="en">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">《云原生Kubernetes全栈架构师实战》
+<h1 class="post-title" itemprop="name headline">《跨越不可能》
 </h1>
 
 <div class="post-meta">
@@ -207,7 +207,7 @@
           
             <li><a href="/booking/">BOOKING</a></li>
             <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
-            <li>云原生KUBERNETES全栈架构师实战</li>
+            <li>跨越不可能</li>
           
   </ul>
 
@@ -219,10 +219,28 @@
       
       
       <div class="post-body">
-          <p><img src="https://cdn.weread.qq.com/weread/cover/87/cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS/t7_cpPlatform_11t4mDHaSQ79ZmwxgZ2SkS.jpg" alt=" 云原生Kubernetes全栈架构师实战|200"></p>
-<h2 id="第7篇-拓展篇"><a href="#第7篇-拓展篇" class="headerlink" title="第7篇 拓展篇"></a>第7篇 拓展篇</h2><ul>
-<li>📌 初学者第一次接触Istio时，往往无法区分VirtualService和DestinationRule，在实际使用时很容易混淆两者的概念和用途。<br>我们可以将VirtualService理解为Kubernetes Service层面，DestinationRule理解为Service后端真实的目标地址，即VirtualService用于Service层面的路由管控，DestinationRule用于对后端真实的服务再做进一步的划分。比如存在一个Service名为paycenter，指向后端多个paycenter的Pod（该Pod可能是不同的Deployment创建的），而DestinationRule可以对后端的多个Pod区分新旧版本，划分成不同的subnet，之后VirtualService可以针对不同的版本进行流量管控。 <ul>
-<li>⏱ 2024-01-28 08:11:52</li>
+          <p><img src="https://cdn.weread.qq.com/weread/cover/64/cpplatform_c56nkbq8f8xxagk49wwuss/t7_cpplatform_c56nkbq8f8xxagk49wwuss1684822837.jpg" alt=" 跨越不可能|200"></p>
+<h2 id="推荐序一-从这本书开始，找到适合自己的方法"><a href="#推荐序一-从这本书开始，找到适合自己的方法" class="headerlink" title="推荐序一 从这本书开始，找到适合自己的方法"></a>推荐序一 从这本书开始，找到适合自己的方法</h2><ul>
+<li>📌 “如果你认为你可以，你就可以；如果你认为你不行，你就不行。”这是史蒂芬·科特勒在书中引用他的朋友彼得·戴曼迪斯的一句话。这句话带出一个重要的概念——成长型思维，这个概念同时出现在这本书的“动机”和“学习力”两个部分。 <ul>
+<li>⏱ 2024-02-15 07:08:11</li>
+</ul>
+</li>
+</ul>
+<h2 id="推荐序三-在挑战中孕育人才"><a href="#推荐序三-在挑战中孕育人才" class="headerlink" title="推荐序三 在挑战中孕育人才"></a>推荐序三 在挑战中孕育人才</h2><ul>
+<li>📌 到2021年，樊登读书已经创立8年，我们每年都在思考“十倍好”这件事，盯着这个目标往前走。所以，我们有一位代理商，在3天内卖出了一万张卡，而按照惯性思维，一个人卖两三千张卡就已经很厉害了； <ul>
+<li>⏱ 2024-02-15 07:10:50</li>
+</ul>
+</li>
+</ul>
+<h2 id="前言-“不可能”的公式"><a href="#前言-“不可能”的公式" class="headerlink" title="前言 “不可能”的公式"></a>前言 “不可能”的公式</h2><ul>
+<li><p>📌 有一些极度不可能的事情，令人连想都不敢想，比如做出颠覆性的突破、4分钟内跑完1英里￼、对月发射航空器等。我们将这类不可能的事情用大写字母I（“不可能”的英语单词“impossible”的首字母）来表示。<br>还有一类不可能，我们用小写字母i来表示。i类“不可能”仍然超越了我们的能力和想象力，但是其程度较轻。i类“不可能”指的是那些让人主观上觉得不可能做到的事情，也就是说，包括我们自己在内的所有人，都从来没有想过自己能做到这些事——至少有一段时间是这样认为的。 </p>
+<ul>
+<li>⏱ 2024-02-15 07:11:40</li>
+</ul>
+</li>
+<li><p>📌 那些年我学到的最重要的一点是：一个戏法不管表面上看起来有多不可思议，它背后总有一套可解释的逻辑。也就是说，不可能的背后是有公式的。更神奇的是，如果我自己去挑战不可能，有时候就能学会那个公式。正如我的第一位魔术导师挂在嘴边的一句话：“只要长年累月地练习，几乎没有什么是不可能的。” </p>
+<ul>
+<li>⏱ 2024-02-15 07:13:00</li>
 </ul>
 </li>
 </ul>
@@ -237,7 +255,7 @@
           
             <li><a href="/booking/">BOOKING</a></li>
             <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
-            <li>云原生KUBERNETES全栈架构师实战</li>
+            <li>跨越不可能</li>
           
   </ul>
 
@@ -295,7 +313,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC7%E7%AF%87-%E6%8B%93%E5%B1%95%E7%AF%87"><span class="nav-text">第7篇 拓展篇</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%80-%E4%BB%8E%E8%BF%99%E6%9C%AC%E4%B9%A6%E5%BC%80%E5%A7%8B%EF%BC%8C%E6%89%BE%E5%88%B0%E9%80%82%E5%90%88%E8%87%AA%E5%B7%B1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">推荐序一 从这本书开始，找到适合自己的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E5%BA%8F%E4%B8%89-%E5%9C%A8%E6%8C%91%E6%88%98%E4%B8%AD%E5%AD%95%E8%82%B2%E4%BA%BA%E6%89%8D"><span class="nav-text">推荐序三 在挑战中孕育人才</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80-%E2%80%9C%E4%B8%8D%E5%8F%AF%E8%83%BD%E2%80%9D%E7%9A%84%E5%85%AC%E5%BC%8F"><span class="nav-text">前言 “不可能”的公式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -309,13 +327,13 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-count">300</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
