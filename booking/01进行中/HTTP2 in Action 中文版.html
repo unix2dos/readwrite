@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.readwrite.fun","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="1.1 万维网的原理 📌 由于因特网是全球性的，所以大公司通常会把服务器部署在世界各地。我们在向DNS查询IP地址时，通常会得到一个距离你最近的服务器的IP地址，以便你能快速访问。同样访问www.google.com，在美国的人和在欧洲的人很可能会得到不同的IP地址，这是很正常的。   ⏱ 2024-02-07 23:57:55   📌 第5个版本被指定为Internet Stream Pr">
+<meta property="og:type" content="website">
+<meta property="og:title" content="《HTTP&#x2F;2 in Action 中文版》">
+<meta property="og:url" content="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/HTTP2%20in%20Action%20%E4%B8%AD%E6%96%87%E7%89%88.html">
+<meta property="og:site_name" content="趣读写">
+<meta property="og:description" content="1.1 万维网的原理 📌 由于因特网是全球性的，所以大公司通常会把服务器部署在世界各地。我们在向DNS查询IP地址时，通常会得到一个距离你最近的服务器的IP地址，以便你能快速访问。同样访问www.google.com，在美国的人和在欧洲的人很可能会得到不同的IP地址，这是很正常的。   ⏱ 2024-02-07 23:57:55   📌 第5个版本被指定为Internet Stream Pr">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.weread.qq.com/weread/cover/50/YueWen_32517945/t7_YueWen_32517945.jpg">
+<meta property="article:published_time" content="2024-02-26T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-01T12:10:35.688Z">
+<meta property="article:author" content="levon">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.weread.qq.com/weread/cover/50/YueWen_32517945/t7_YueWen_32517945.jpg">
+
+<link rel="canonical" href="https://www.readwrite.fun/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/HTTP2%20in%20Action%20%E4%B8%AD%E6%96%87%E7%89%88.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>《HTTP/2 in Action 中文版》 | 趣读写
+</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">趣读写</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fas fa-home fa-fw"></i>Home</a>
+
+  </li>
+        
+         
+        <li class="menu-item menu-item-output">
+
+    <a href="/categories/1-output/" rel="section"><i class="fas fa-feather fa-fw"></i>Output</a>
+
+  </li>
+        <li class="menu-item menu-item-study">
+
+    <a href="/categories/2-study/" rel="section"><i class="fas fa-school fa-fw"></i>Study</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/3-book/" rel="section"><i class="fas fa-book fa-fw"></i>Book</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+  
+  
+
+          <div class="content page posts-expand">
+            
+
+    
+    
+    
+    <div class="post-block" lang="en">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">《HTTP/2 in Action 中文版》
+</h1>
+
+<div class="post-meta">
+  
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>HTTP2 IN ACTION 中文版</li>
+          
+  </ul>
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+          <p><img src="https://cdn.weread.qq.com/weread/cover/50/YueWen_32517945/t7_YueWen_32517945.jpg" alt=" HTTP/2 in Action 中文版|200"></p>
+<h4 id="1-1-万维网的原理"><a href="#1-1-万维网的原理" class="headerlink" title="1.1 万维网的原理"></a>1.1 万维网的原理</h4><ul>
+<li><p>📌 由于因特网是全球性的，所以大公司通常会把服务器部署在世界各地。我们在向DNS查询IP地址时，通常会得到一个距离你最近的服务器的IP地址，以便你能快速访问。同样访问<a target="_blank" rel="noopener" href="http://www.google.com,在美国的人和在欧洲的人很可能会得到不同的ip地址,这是很正常的./">www.google.com，在美国的人和在欧洲的人很可能会得到不同的IP地址，这是很正常的。</a> </p>
+<ul>
+<li>⏱ 2024-02-07 23:57:55</li>
+</ul>
+</li>
+<li><p>📌 第5个版本被指定为Internet Stream Protocol，其主要在实时音频和视频流应用中使用，与VoIP（Voice over IP，IP语音）后来的发展类似。可是，这个版本一直没启用，原因之一就是存在与第4版一样的地址限制。后来第6版出来的时候，第5版的工作被叫停，于是IPv6就成了IPv4的后续版本。 </p>
+<ul>
+<li>⏱ 2024-02-08 00:01:01</li>
+</ul>
+</li>
+<li><p>📌 假如IPv6还有后续版本，很可能会是IPv10或更高的版本。到时候，无疑还会导致与今天类似的疑惑。 </p>
+<ul>
+<li>⏱ 2024-02-08 00:01:10</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-2-什么是HTTP"><a href="#1-2-什么是HTTP" class="headerlink" title="1.2 什么是HTTP"></a>1.2 什么是HTTP</h4><ul>
+<li>📌 Telnet是一个简单的应用程序，它可以创建到服务器的TCP&#x2F;IP连接，然后你就能以文本形式输入命令，并查看响应。 <ul>
+<li>⏱ 2024-02-08 00:03:54</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-3-HTTP的语法和历史"><a href="#1-3-HTTP的语法和历史" class="headerlink" title="1.3 HTTP的语法和历史"></a>1.3 HTTP的语法和历史</h4><ul>
+<li><p>📌 HEAD方法允许客户端获取资源的所有元信息（例如HTTP头）而无须下载资源本身。在很多场景下，此方法很有用。例如，Google的网络爬虫可以检查资源是否已被更改并仅在其改变时才下载，从而为Google和目标Web服务器节省资源。 </p>
+<ul>
+<li>⏱ 2024-02-08 00:07:07</li>
+</ul>
+</li>
+<li><p>📌 HTTP&#x2F;1.1做了进一步的改进，以便充分利用HTTP协议（例如，持久连接、强制响应首部、更好的缓存选项和分块编码）。 </p>
+<ul>
+<li>⏱ 2024-02-08 00:08:39</li>
+</ul>
+</li>
+<li><p>📌 将Host作为必选项是HTTP&#x2F;1.1的重要改进，这使得服务器能够充分利用虚拟主机托管技术，无须顾及因为新增网站而新加独立主机所带来的复杂性，从而使得网络繁荣发展。另外，如果没有这个改进，我们会更早遭遇IPv4的IP地址不足的限制。 </p>
+<ul>
+<li>⏱ 2024-02-08 00:10:17</li>
+</ul>
+</li>
+<li><p>📌 客户端或服务器可以在任何时候关闭HTTP连接。关闭可能会意外发生（由于网络连接错误）或有意为之（例如，如果暂时不使用连接，那么服务器可以关闭连接以释放资源供其他连接使用）。因此，即使使用持久连接，客户端和服务器也应该监视连接并处理意外关闭的连接。一些请求会使情况变得更复杂。例如，你在电子商务网站上结账，你不会想要重复发起请求。 </p>
+<ul>
+<li>⏱ 2024-02-08 00:12:15</li>
+</ul>
+</li>
+<li><p>📌 曾经有一个惯例，是在这些首部中包含一个X-来表明它们没有被正式标准化（X-Content-Type、X-Frame-Options或X-XSS-Protection），但这个约定已经不推荐使用了[21]，这就导致新的实验性首部很难与HTTP&#x2F;1.1规范中的首部区分开来。 </p>
+<ul>
+<li>⏱ 2024-02-08 00:13:51</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-4-HTTPS简介"><a href="#1-4-HTTPS简介" class="headerlink" title="1.4 HTTPS简介"></a>1.4 HTTPS简介</h4><ul>
+<li>📌 HTTPS使用公钥加密，服务器在用户首次连接时以数字证书的形式提供公钥。你的浏览器使用此公钥加密消息，只有服务器可以解密，因为只有它拥有配对的私钥。 <ul>
+<li>⏱ 2024-02-08 04:05:31</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-1-HTTP-x2F-1-1和当前的万维网"><a href="#2-1-HTTP-x2F-1-1和当前的万维网" class="headerlink" title="2.1 HTTP&#x2F;1.1和当前的万维网"></a>2.1 HTTP&#x2F;1.1和当前的万维网</h4><ul>
+<li><p>📌 超过80％的时间用于等待消息在网络上传送。在此期间，Web浏览器和Web服务器都没有做太多事情，这段时间被浪费了，这是HTTP协议的一个主要问题。 </p>
+<ul>
+<li>⏱ 2024-02-08 04:08:12</li>
+</ul>
+</li>
+<li><p>📌 HTTP&#x2F;1.1尝试引入管道化，从而在收到响应之前并发发出请求，实现并行发送请求。初始的HTML仍然需要单独请求，但是当浏览器知道它需要两个图像时，它可以先后连续发出两个请求。 </p>
+<ul>
+<li>⏱ 2024-02-08 04:09:06</li>
+</ul>
+</li>
+<li><p>📌 管道化技术应该会对HTTP带来巨大的性能改善，但由于多种原因，它很难实现，易于出错，并且没有获得Web浏览器和Web服务器的良好支持[6]。因此，它很少被使用。没有一个主流的Web浏览器支持管道化技术[7]。<br>即使管道化技术得到了更好的支持，它仍然需要按照请求的顺序返回响应。如果图像2可用，但必须从另一台服务器获取图像1，则图像2的响应会等待，即使应该可以立即发送图像2。此问题被称为队头（HOL）阻塞问题，在其他网络协议及HTTP中很常见 </p>
+<ul>
+<li>⏱ 2024-02-08 04:09:38</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-2-解决HTTP-x2F-1-1性能问题的方案"><a href="#2-2-解决HTTP-x2F-1-1性能问题的方案" class="headerlink" title="2.2 解决HTTP&#x2F;1.1性能问题的方案"></a>2.2 解决HTTP&#x2F;1.1性能问题的方案</h4><ul>
+<li>📌 打开多个连接是解决HTTP&#x2F;1.1阻塞问题的最简单方法，这样可以同时开启多个HTTP请求。另外，与管道化技术不同，该技术不会导致HOL阻塞，因为每个HTTP连接都独立于其他HTTP连接。因此，大多数浏览器可以为每个域名打开6个连接。 <ul>
+<li>⏱ 2024-02-26 09:16:43</li>
+</ul>
+</li>
+</ul>
+<h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="2-1-HTTP-x2F-1-1和当前的万维网-1"><a href="#2-1-HTTP-x2F-1-1和当前的万维网-1" class="headerlink" title="2.1 HTTP&#x2F;1.1和当前的万维网"></a>2.1 HTTP&#x2F;1.1和当前的万维网</h2><h3 id="划线评论"><a href="#划线评论" class="headerlink" title="划线评论"></a>划线评论</h3><blockquote>
+<p>📌 如果图像2可用，但必须从另一台服务器获取图像1，则图像2的响应会等待，即使应该可以立即发送图像2。此问题被称为队头（HOL）阻塞问题，在其他网络协议及HTTP中很常见。  ^225207353-7OOCl9ado<br>    - 💭 这个是http队头阻塞<br>    - ⏱ 2024-02-08 04:10:06</p>
+</blockquote>
+<h1 id="本书评论"><a href="#本书评论" class="headerlink" title="本书评论"></a>本书评论</h1>
+      </div>
+      
+      
+      
+    </div>
+    
+  <ul class="breadcrumb">
+          
+            <li><a href="/booking/">BOOKING</a></li>
+            <li><a href="/booking/01%E8%BF%9B%E8%A1%8C%E4%B8%AD/">01进行中</a></li>
+            <li>HTTP2 IN ACTION 中文版</li>
+          
+  </ul>
+
+    
+    
+    
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E4%B8%87%E7%BB%B4%E7%BD%91%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">1.1 万维网的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E4%BB%80%E4%B9%88%E6%98%AFHTTP"><span class="nav-text">1.2 什么是HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-HTTP%E7%9A%84%E8%AF%AD%E6%B3%95%E5%92%8C%E5%8E%86%E5%8F%B2"><span class="nav-text">1.3 HTTP的语法和历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-HTTPS%E7%AE%80%E4%BB%8B"><span class="nav-text">1.4 HTTPS简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-HTTP-x2F-1-1%E5%92%8C%E5%BD%93%E5%89%8D%E7%9A%84%E4%B8%87%E7%BB%B4%E7%BD%91"><span class="nav-text">2.1 HTTP&#x2F;1.1和当前的万维网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E8%A7%A3%E5%86%B3HTTP-x2F-1-1%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%A1%88"><span class="nav-text">2.2 解决HTTP&#x2F;1.1性能问题的方案</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-HTTP-x2F-1-1%E5%92%8C%E5%BD%93%E5%89%8D%E7%9A%84%E4%B8%87%E7%BB%B4%E7%BD%91-1"><span class="nav-text">2.1 HTTP&#x2F;1.1和当前的万维网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="nav-text">划线评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">levon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">309</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">京ICP备20000727号-4 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">levon</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'GeP0yYVQfmJ224422VTor9HS-gzGzoHsz',
+      appKey     : '6p5kFrCS2NlzNDNAEIy028No',
+      placeholder: "看累了，评论一下吧。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
