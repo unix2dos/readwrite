@@ -7,7 +7,7 @@ reviewCount: 0
 noteCount: 6
 readingStatus: 未标记
 progress: undefined%
-totalReadDay: 7
+totalReadDay: 8
 readingTime: 0小时0分钟
 readingDate: 2024-01-09
 isbn: 
