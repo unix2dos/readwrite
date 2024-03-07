@@ -4,15 +4,15 @@ bookId: "32517945"
 author: Barry Pollard
 cover: https://cdn.weread.qq.com/weread/cover/50/YueWen_32517945/t7_YueWen_32517945.jpg
 reviewCount: 1
-noteCount: 13
+noteCount: 14
 readingStatus: 在读
-progress: 15%
-totalReadDay: 2
-readingTime: 0小时25分钟
+progress: 16%
+totalReadDay: 3
+readingTime: 0小时29分钟
 readingDate: 2024-02-07
 isbn: 9787121386718
 title: 《HTTP/2 in Action 中文版》
-date: 2024-02-08
+date: 2024-02-26
 
 ---
 
@@ -69,6 +69,11 @@ date: 2024-02-08
 - 📌 管道化技术应该会对HTTP带来巨大的性能改善，但由于多种原因，它很难实现，易于出错，并且没有获得Web浏览器和Web服务器的良好支持[6]。因此，它很少被使用。没有一个主流的Web浏览器支持管道化技术[7]。
 即使管道化技术得到了更好的支持，它仍然需要按照请求的顺序返回响应。如果图像2可用，但必须从另一台服务器获取图像1，则图像2的响应会等待，即使应该可以立即发送图像2。此问题被称为队头（HOL）阻塞问题，在其他网络协议及HTTP中很常见 
     - ⏱ 2024-02-08 04:09:38 
+#### 2.2 解决HTTP/1.1性能问题的方案
+
+
+- 📌 打开多个连接是解决HTTP/1.1阻塞问题的最简单方法，这样可以同时开启多个HTTP请求。另外，与管道化技术不同，该技术不会导致HOL阻塞，因为每个HTTP连接都独立于其他HTTP连接。因此，大多数浏览器可以为每个域名打开6个连接。 
+    - ⏱ 2024-02-26 09:16:43 
 
 # 读书笔记
 

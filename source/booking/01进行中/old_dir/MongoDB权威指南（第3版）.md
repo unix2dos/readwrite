@@ -8,7 +8,7 @@ noteCount: 35
 readingStatus: 在读
 progress: 76%
 totalReadDay: 12
-readingTime: 5小时12分钟
+readingTime: 5小时19分钟
 readingDate: 2023-10-13
 isbn: 9787115576538
 title: 《MongoDB权威指南（第3版）》
