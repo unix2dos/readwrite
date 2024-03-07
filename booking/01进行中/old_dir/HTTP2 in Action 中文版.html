@@ -28,8 +28,8 @@
 <meta property="og:description" content="1.1 万维网的原理 📌 由于因特网是全球性的，所以大公司通常会把服务器部署在世界各地。我们在向DNS查询IP地址时，通常会得到一个距离你最近的服务器的IP地址，以便你能快速访问。同样访问www.google.com，在美国的人和在欧洲的人很可能会得到不同的IP地址，这是很正常的。   ⏱ 2024-02-07 23:57:55   📌 第5个版本被指定为Internet Stream Pr">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.weread.qq.com/weread/cover/50/YueWen_32517945/t7_YueWen_32517945.jpg">
-<meta property="article:published_time" content="2024-02-08T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-19T03:58:06.901Z">
+<meta property="article:published_time" content="2024-02-26T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-07T12:25:44.901Z">
 <meta property="article:author" content="levon">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.weread.qq.com/weread/cover/50/YueWen_32517945/t7_YueWen_32517945.jpg">
@@ -294,6 +294,12 @@
 </ul>
 </li>
 </ul>
+<h4 id="2-2-解决HTTP-x2F-1-1性能问题的方案"><a href="#2-2-解决HTTP-x2F-1-1性能问题的方案" class="headerlink" title="2.2 解决HTTP&#x2F;1.1性能问题的方案"></a>2.2 解决HTTP&#x2F;1.1性能问题的方案</h4><ul>
+<li>📌 打开多个连接是解决HTTP&#x2F;1.1阻塞问题的最简单方法，这样可以同时开启多个HTTP请求。另外，与管道化技术不同，该技术不会导致HOL阻塞，因为每个HTTP连接都独立于其他HTTP连接。因此，大多数浏览器可以为每个域名打开6个连接。 <ul>
+<li>⏱ 2024-02-26 09:16:43</li>
+</ul>
+</li>
+</ul>
 <h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><h2 id="2-1-HTTP-x2F-1-1和当前的万维网-1"><a href="#2-1-HTTP-x2F-1-1和当前的万维网-1" class="headerlink" title="2.1 HTTP&#x2F;1.1和当前的万维网"></a>2.1 HTTP&#x2F;1.1和当前的万维网</h2><h3 id="划线评论"><a href="#划线评论" class="headerlink" title="划线评论"></a>划线评论</h3><blockquote>
 <p>📌 如果图像2可用，但必须从另一台服务器获取图像1，则图像2的响应会等待，即使应该可以立即发送图像2。此问题被称为队头（HOL）阻塞问题，在其他网络协议及HTTP中很常见。  ^225207353-7OOCl9ado<br>    - 💭 这个是http队头阻塞<br>    - ⏱ 2024-02-08 04:10:06</p>
 </blockquote>
@@ -367,7 +373,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E4%B8%87%E7%BB%B4%E7%BD%91%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">1.1 万维网的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E4%BB%80%E4%B9%88%E6%98%AFHTTP"><span class="nav-text">1.2 什么是HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-HTTP%E7%9A%84%E8%AF%AD%E6%B3%95%E5%92%8C%E5%8E%86%E5%8F%B2"><span class="nav-text">1.3 HTTP的语法和历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-HTTPS%E7%AE%80%E4%BB%8B"><span class="nav-text">1.4 HTTPS简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-HTTP-x2F-1-1%E5%92%8C%E5%BD%93%E5%89%8D%E7%9A%84%E4%B8%87%E7%BB%B4%E7%BD%91"><span class="nav-text">2.1 HTTP&#x2F;1.1和当前的万维网</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-HTTP-x2F-1-1%E5%92%8C%E5%BD%93%E5%89%8D%E7%9A%84%E4%B8%87%E7%BB%B4%E7%BD%91-1"><span class="nav-text">2.1 HTTP&#x2F;1.1和当前的万维网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="nav-text">划线评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E4%B8%87%E7%BB%B4%E7%BD%91%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">1.1 万维网的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E4%BB%80%E4%B9%88%E6%98%AFHTTP"><span class="nav-text">1.2 什么是HTTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-HTTP%E7%9A%84%E8%AF%AD%E6%B3%95%E5%92%8C%E5%8E%86%E5%8F%B2"><span class="nav-text">1.3 HTTP的语法和历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-HTTPS%E7%AE%80%E4%BB%8B"><span class="nav-text">1.4 HTTPS简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-HTTP-x2F-1-1%E5%92%8C%E5%BD%93%E5%89%8D%E7%9A%84%E4%B8%87%E7%BB%B4%E7%BD%91"><span class="nav-text">2.1 HTTP&#x2F;1.1和当前的万维网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E8%A7%A3%E5%86%B3HTTP-x2F-1-1%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%A1%88"><span class="nav-text">2.2 解决HTTP&#x2F;1.1性能问题的方案</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0"><span class="nav-text">读书笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-HTTP-x2F-1-1%E5%92%8C%E5%BD%93%E5%89%8D%E7%9A%84%E4%B8%87%E7%BB%B4%E7%BD%91-1"><span class="nav-text">2.1 HTTP&#x2F;1.1和当前的万维网</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%92%E7%BA%BF%E8%AF%84%E8%AE%BA"><span class="nav-text">划线评论</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E4%B9%A6%E8%AF%84%E8%AE%BA"><span class="nav-text">本书评论</span></a></div>
       </div>
       <!--/noindex-->
 
@@ -381,7 +387,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">309</span>
+          <span class="site-state-item-count">311</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
