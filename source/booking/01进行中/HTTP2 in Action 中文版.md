@@ -6,9 +6,9 @@ cover: https://cdn.weread.qq.com/weread/cover/50/YueWen_32517945/t7_YueWen_32517
 reviewCount: 1
 noteCount: 33
 readingStatus: 在读
-progress: 45%
-totalReadDay: 5
-readingTime: 0小时57分钟
+progress: 48%
+totalReadDay: 6
+readingTime: 0小时58分钟
 readingDate: 2024-02-07
 isbn: 9787121386718
 title: 《HTTP/2 in Action 中文版》
